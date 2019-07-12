@@ -1,8 +1,9 @@
 <template>
 
   <LoginTemplate>
+
     <span slot="menu-left">
-      <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="responsive-img" alt="TimeNow">
+      <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="animated pulse responsive-img" alt="TimeNow">
     </span>
 
     <span slot="main">
@@ -33,8 +34,11 @@ export default {
 
 <style scoped>
 .responsive-img {
-  margin-top: 90px;
+  margin-top: 40px;
   width: 300px;
+}
+.btn {
+  margin-top: 16px;
 }
 
 
