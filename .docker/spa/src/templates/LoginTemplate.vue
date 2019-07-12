@@ -1,9 +1,9 @@
 <template>
   <span>
     <header>
-      <nav-bar logo="Social" url="#/" cor="grey darken-4">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/register">Cadastre-se</router-link></li>
+      <nav-bar logo="Social" url="#/" cor="green darken-3">
+        <li><router-link to="/login">Iniciar sessão</router-link></li>
+        <li><a href="http://www.timenow.com.br">Nosso Site</a></li>
         <li><a href="sass.html"><i class="material-icons">search</i></a></li>
         <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
       </nav-bar>
@@ -26,12 +26,11 @@
       </div>
     </main>
 
-    <footer-vue cor="grey darken-3" logo="Social" descricao="Teste de descrição" ano="2019">
+    <footer-vue cor="green darken-2" logo="Social" descricao="Teste de descrição" ano="2019">
 
-      <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Contato</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Portfolio</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Cases</a></li>
+      <li><a class="green-text text-lighten-3" href="#!">Home</a></li>
+      <li><a class="green-text text-lighten-3" href="#!">Contato</a></li>
+      <li><a class="green-text text-lighten-3" href="#!">Clientes</a></li>
 
     </footer-vue>
 
