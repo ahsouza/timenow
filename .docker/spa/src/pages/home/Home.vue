@@ -3,17 +3,22 @@
 
     <span slot="menu-left">
       <div class="row valign-wrapper">
-        <grid-vue tamanho="4">
-          <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+        <grid-vue tamanho="1 l6 m12">
+          <img src="http://materializecss.com/images/yuna.jpg" alt="" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
         </grid-vue>
-        <grid-vue tamanho="8">
+
+
+        <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <h5>Aníbal Henrique</h5>
-            Hii, I'm a Web Develop =}
+            <h6>@ahsouza</h6>
+            Financeiro
           </span>
         </grid-vue>
       </div>
     </span>
+
+
+
 
     <span slot="main">
       <public-content-vue />
@@ -54,5 +59,9 @@ export default {
 }
 </script>
 <style scoped>
+
+.about-avatar {
+  margin-left: 15px;
+}
 
 </style>

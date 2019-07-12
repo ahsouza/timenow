@@ -8,8 +8,12 @@
 
     <span slot="main">
         <h5>Login </h5><br><br> 
+        <label>Usuário</label>
         <input type="text" placeholder="E-mail" value="">
+
+        <label>Senha</label>
         <input type="password" placeholder="Senha" value=""><br><br><br>
+        
         <router-link class="btn pink" to="/register">CADASTRE-SE</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="btn light-blue">ENTRAR</button>
     </span>
@@ -33,6 +37,11 @@ export default {
 </script>
 
 <style scoped>
+
+label {
+  color: black;
+}
+
 .responsive-img {
   margin-top: 40px;
   width: 300px;

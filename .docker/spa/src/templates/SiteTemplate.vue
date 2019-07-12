@@ -1,7 +1,7 @@
 <template>
   <span>
     <header>
-      <nav-bar logo="@/assets/timenow.png" url="#/" cor="green darken-1" >
+      <nav-bar logo="@/assets/timenow.png" url="#/" cor="white" >
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/login">Mensagens</router-link></li>
         <li><router-link to="/contato">Agenda</router-link></li>
@@ -14,17 +14,26 @@
     <main>
       <div class="container">
         <div class="row">
-          <grid-vue tamanho="4">
+          <grid-vue tamanho="12 l4 m4">
             <card-menu-vue>
               <div class="row valign-wrapper">
                 <slot name="menu-left" />
               </div>
             </card-menu-vue>
+
             <card-menu-vue>
-              <h3>Teste</h3>
+              <h3>Notifications</h3>
             </card-menu-vue>
+
+            <card-menu-vue>
+              <h3>Tasks</h3>
+            </card-menu-vue>
+
+
           </grid-vue>
-          <grid-vue tamanho="8">
+
+
+          <grid-vue tamanho="12 l8 m8">
             <slot name="main" />
           </grid-vue>
 
@@ -61,6 +70,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+a {
+  color: black;
+}
 </style>

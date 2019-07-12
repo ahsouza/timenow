@@ -17,7 +17,7 @@
               <slot name="menu-left" />
           </grid-vue>
 
-          <grid-vue tamanho="12 m10 l6" class="animated fadeInRight delay-1s">
+          <grid-vue tamanho="12 m10 l6" class="animated fadeInRight">
             
             <CardMenuVue>
               <slot name="main" />
@@ -26,8 +26,6 @@
           </grid-vue>
 
         </div>
-
-       
 
       </div>
     </main>
