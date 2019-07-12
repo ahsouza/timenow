@@ -1,9 +1,9 @@
 <template>
   <span>
     <header>
-      <nav-bar logo="Social" url="#/" cor="grey darken-4">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/register">Cadastre-se</router-link></li>
+      <nav-bar logo="" url="/" cor="white">
+        <li><router-link to="/login">Iniciar sessão</router-link></li>
+        <li><a href="http://www.timenow.com.br">Nosso Site</a></li>
         <li><a href="sass.html"><i class="material-icons">search</i></a></li>
         <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
       </nav-bar>
@@ -12,26 +12,27 @@
     <main>
       <div class="container">
         <div class="row">
-          <grid-vue tamanho="6">
+          <grid-vue tamanho="12 m2 l6">
               <slot name="menu-left" />
           </grid-vue>
 
-          <grid-vue tamanho="6">
+          <grid-vue tamanho="12 m10 l6">
+            
             <CardMenuVue>
               <slot name="main" />
             </CardMenuVue >
+            
           </grid-vue>
 
         </div>
       </div>
     </main>
 
-    <footer-vue cor="grey darken-3" logo="Social" descricao="Teste de descrição" ano="2019">
+    <footer-vue cor="green darken-2" logo="Social" descricao="Teste de descrição" ano="2019">
 
-      <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Contato</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Portfolio</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Cases</a></li>
+      <li><a class="green-text text-lighten-3" href="#!">Quem somos</a></li>
+      <li><a class="green-text text-lighten-3" href="#!">Nosso Site</a></li>
+      <li><a class="green-text text-lighten-3" href="#!">Termos</a></li>
 
     </footer-vue>
 
@@ -52,10 +53,18 @@ export default {
     FooterVue,
     GridVue,
     CardMenuVue
+  },
+  data() {
+    return {
+      logo_marca: 'https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg'
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 
+a {
+  color: black;
+}
 </style>

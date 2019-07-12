@@ -2,16 +2,15 @@
 
   <LoginTemplate>
     <span slot="menu-left">
-      <img src="https://i.pinimg.com/280x280_RS/65/69/56/656956ace2c3031518da07bcddf8b24b.jpg" class="responsive-img" alt="@ahsouza">
+      <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="responsive-img" alt="TimeNow">
     </span>
 
     <span slot="main">
-        <h2>Login </h2>
+        <h5>Login </h5><br><br> 
         <input type="text" placeholder="E-mail" value="">
-        <input type="password" placeholder="Senha" value="">
-        <button class="btn">ENTRAR</button>
-        <router-link class="btn orange" to="/register">CADASTRE-SE</router-link>
-
+        <input type="password" placeholder="Senha" value=""><br><br><br>
+        <router-link class="btn pink" to="/register">CADASTRE-SE</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn light-blue">ENTRAR</button>
     </span>
 
   </LoginTemplate>
@@ -33,5 +32,10 @@ export default {
 </script>
 
 <style scoped>
+.responsive-img {
+  margin-top: 90px;
+  width: 300px;
+}
+
 
 </style>
