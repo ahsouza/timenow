@@ -10,13 +10,14 @@
     </header>
 
     <main>
-      <div class="container">
+      <div class="container" style="padding: 10px">
+
         <div class="row">
           <grid-vue tamanho="12 m2 l6">
               <slot name="menu-left" />
           </grid-vue>
 
-          <grid-vue tamanho="12 m10 l6">
+          <grid-vue tamanho="12 m10 l6" class="animated fadeInRight delay-1s">
             
             <CardMenuVue>
               <slot name="main" />
@@ -25,6 +26,9 @@
           </grid-vue>
 
         </div>
+
+       
+
       </div>
     </main>
 
@@ -35,8 +39,6 @@
       <li><a class="green-text text-lighten-3" href="#!">Termos</a></li>
 
     </footer-vue>
-
-
   </span>
 </template>
 
