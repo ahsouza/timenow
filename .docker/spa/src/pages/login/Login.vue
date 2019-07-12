@@ -6,11 +6,11 @@
     </span>
 
     <span slot="main">
-        <h3>Login </h3><br><br> 
+        <h5>Login </h5><br><br> 
         <input type="text" placeholder="E-mail" value="">
         <input type="password" placeholder="Senha" value=""><br><br><br>
-        <button class="btn">ENTRAR</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <router-link class="btn orange" to="/register">CADASTRE-SE</router-link>
+        <router-link class="btn pink" to="/register">CADASTRE-SE</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn light-blue">ENTRAR</button>
     </span>
 
   </LoginTemplate>
@@ -32,5 +32,10 @@ export default {
 </script>
 
 <style scoped>
+.responsive-img {
+  margin-top: 90px;
+  width: 300px;
+}
+
 
 </style>

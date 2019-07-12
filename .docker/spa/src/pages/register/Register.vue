@@ -6,15 +6,13 @@
     </span>
 
     <span slot="main">
-
-
         <h4>Criar conta</h4><br><br>
         <input type="text" placeholder="Nome" value="">
         <input type="text" placeholder="E-mail" value="">
         <input type="password" placeholder="Senha" value="">
         <input type="password" placeholder="Confirme sua senha" value=""><br><br><br>
-        <button class="btn">ENVIAR</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <router-link class="btn orange" to="/login">JÁ TENHO UMA CONTA</router-link>
+        <router-link class="btn deep-orange" to="/login">JÁ TENHO UMA CONTA</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn light-blue">ENVIAR</button>
 
     </span>
 
