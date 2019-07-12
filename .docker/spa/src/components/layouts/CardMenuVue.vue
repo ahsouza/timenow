@@ -18,5 +18,8 @@ export default {
 </script>
 
 <style scoped>
+.card-panel{
+	width: 100%
+}
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <span>
     <header>
-      <nav-bar logo="Social" url="# /" cor="green darken-1" >
+      <nav-bar logo="@/assets/timenow.png" url="#/" cor="green darken-1" >
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/login">Mensagens</router-link></li>
         <li><router-link to="/contato">Agenda</router-link></li>
@@ -32,7 +32,7 @@
       </div>
     </main>
 
-    <footer-vue cor="green darken-1" logo="" descricao="Sua de descrição" ano="2019">
+    <footer-vue cor="green darken-1" logo="@/assets/timenow.png" descricao="Sua de descrição" ano="2019">
 
       <li><a class="grey-text text-lighten-3" href="#!">Segurança & Privacidade</a></li>
       <li><a class="grey-text text-lighten-3" href="#!">Preferências</a></li>

@@ -1,7 +1,11 @@
 <template>
-  <nav :class="cor || 'green accent-2'">
+  <nav :class="cor || 'base'">
     <div class="nav-wrapper container">
-      <router-link :to="url || '/'" class="brand-logo">{{ logo || 'Sua Logo' }}</router-link>
+      <router-link :to="url || '/'" class="brand-logo">
+        <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt=""> -->
+        <img src="./../../assets/logo-timenow.jpg" height="55"  alt="">
+      </router-link>
+
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <slot />
       </ul>
@@ -15,7 +19,6 @@ export default {
   props: ['logo', 'url', 'cor'],
   data () {
     return {
-
     }
   }
 }
