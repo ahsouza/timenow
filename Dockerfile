@@ -1,14 +1,12 @@
-FROM php:7.3.6-fpm-alpine3.9 as build-stage
-
-WORKDIR /var/www
-
-RUN apk add bash && \
-    apk add composer
-
-RUN rm -rf /var/www/html
-COPY . /var/www
-RUN ls -s public html
+FROM node:lts-alpine as build-stage
+WORKDIR /app
+COPY .docker/spa/package.json ./
+RUN npm install
+COPY .docker/spa/ .
+RUN npm run build
 
 
-EXPOSE 9000
-ENTRYPOINT ["php-fpm"]
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
