@@ -4,7 +4,7 @@
     <span slot="menu-left">
       <div class="row valign-wrapper">
         <grid-vue tamanho="1 l6 m12">
-          <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
+          <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="75" class="circle responsive-img"> <!-- notice the "circle" class -->
         </grid-vue>
 
 
@@ -30,14 +30,41 @@
       data="21/03/2019 16:52">
       <card-detail-vue
       img="https://clickpetroleoegas.com.br/wp-content/uploads/2019/04/engenharia-752x440.jpg"
-      txt="Exeplo de texto"
-      title="Saiba mais da API Time-Now Engenharia"
+      txt="A Time-Now Engenharia se destaca no mercado há 23 anos oferecendo a seus clientes as melhores soluções em Gestão de Engenharia com foco no Gerenciamento de Implantação de Projetos, Gestão de Portfólio de Projetos e Gestão de Paradas de Plantas Industriais."
+      title="Saiba mais da Time-Now Engenharia"
       />
       </card-content-vue>
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+  </ul>
+</div>
+
+
+
+
     </span>
 
+
+
+
+
+
+
+
+
   </SiteTemplate>
+  
 </template>
+
+
 
 <script>
 import SiteTemplate from '@/templates/SiteTemplate'

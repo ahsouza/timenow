@@ -1,5 +1,5 @@
 <template>
-  <div class="card-panel grey lighten-5 z-depth-1">
+  <div class="card-panel grey lighten-5 z-depth-2">
     <slot />
   </div>
 
