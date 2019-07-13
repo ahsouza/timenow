@@ -4,11 +4,11 @@
       <nav-bar logo="@/assets/timenow.png" url="#/" cor="white" >
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/messages">Mensagens</router-link></li>
-        <li><router-link to="/portfolio">Tarefas</router-link></li>
-        <li><router-link to="/login">Grupos</router-link></li>
-        <li><router-link to="/contato"><a class="btn-floating btn-medium waves-effect waves-light green animated pulse"><i class="medium material-icons">notifications_active</i></a></router-link></li>
+        <li><router-link to="/tasks">Tarefas</router-link></li>
+        <li><router-link to="/groups">Grupos</router-link></li>
+        
         <li><a href="sass.html"><i class="material-icons animated fadeInRight">search</i></a></li>
-        <li><a href="mobile.html"><i class="material-icons animated fadeInRight delay-1s">more_vert</i></a></li>
+        <li><a href="mobile.html"><i class="material-icons animated fadeInRight delay-1s">exit_to_app</i></a></li>
       </nav-bar>
     </header>
 
@@ -30,8 +30,8 @@
             </card-menu-vue>
 
             <card-menu-vue class="animated fadeInLeft" id="favorites">
-              <h5><i class="small material-icons">favorite</i>&nbsp;Meus Favoritos</h5>
-              <br><br>
+              
+              <small>favoritos</small><br><br>
               <a class="margin-transition btn-floating btn-small waves-effect waves-light amber darken-4 animated fadeIn"><i class="small material-icons">photo</i></a>&nbsp;
               <a class="margin-transition btn-floating btn-small waves-effect waves-light red darken-4 animated fadeIn"><i class="small material-icons">movie</i></a>&nbsp;
               <a class="margin-transition btn-floating btn-small waves-effect waves-light purple darken-4 animated fadeIn"><i class="small material-icons">music_note</i></a>&nbsp;
@@ -55,11 +55,21 @@
 
       <li><a class="grey-text text-lighten-3" href="#!">Segurança & Privacidade</a></li>
       <li><a class="grey-text text-lighten-3" href="#!">Preferências</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Configurações</a></li>
+      <li><a class="grey-text text-lighten-3" href="/profile">Meu Perfil</a></li>
+      <li><a class="grey-text text-lighten-3" href="/settings">Configurações</a></li>
 
     </footer-vue>
 
 
+        <div class="fixed-action-btn" @mouseover="hover = true" @mouseout="hover = null">
+            <a class="btn-floating btn-large waves-effect waves-light red animated pulse"><i class="medium material-icons">notifications_active</i></a>
+          <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+          </ul>
+        </div>
   </span>
 </template>
 
