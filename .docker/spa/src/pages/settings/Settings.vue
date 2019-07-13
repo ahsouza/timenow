@@ -20,21 +20,46 @@
     </span>
 
 
-
-
     <span slot="main">
-      <public-content-vue />
-      <card-content-vue
-      perfil="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"
-      nome="Aníbal Henrique"
-      data="21/03/2019 16:52">
-      <card-detail-vue
-      img="https://clickpetroleoegas.com.br/wp-content/uploads/2019/04/engenharia-752x440.jpg"
-      txt="Exeplo de texto"
-      title="Saiba mais da API Time-Now Engenharia"
-      />
-      </card-content-vue>
+      <br><br><br><br>
+      <div class="row">
+        
+        <div class="col s4 m4">
+          
+
+
+          <div class="card">
+            
+            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
+            <h6>Janaina Alves</h6>
+            <div class="card-content">
+
+              <p>Oláaa, tenha uma boa tarde!!.😘</p>
+            </div>
+          </div>
+          
+          <div class="card">  
+            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
+            <h6>Janaina Alves</h6>
+            <div class="card-content">
+
+              <p>Deixei os documentos na sua mesa!</p>
+            </div>
+          </div>
+
+
+        </div>
+        
+
+
+
+      </div>
+             
+
     </span>
+
 
   </SiteTemplate>
 </template>
@@ -43,10 +68,9 @@
 import SiteTemplate from '@/templates/SiteTemplate'
 import CardContentVue from '@/components/patterns/CardContentVue'
 import CardDetailVue from '@/components/patterns/CardDetailVue'
-import PublicContentVue from '@/components/patterns/PublicContentVue'
 
 export default {
-  name: 'Home',
+  name: 'Settings',
   data () {
     return {
 
@@ -56,7 +80,6 @@ export default {
     CardContentVue,
     SiteTemplate,
     CardDetailVue,
-    PublicContentVue
   }
 }
 </script>

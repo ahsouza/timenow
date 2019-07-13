@@ -2,7 +2,7 @@
   <div class="row">
     <grid-vue class="input-field" tamanho="12">
       <textarea v-model="content" class="materialize-textarea"></textarea>
-      <label>Em que está pensando?</label>
+      <label>Publique algo para todos</label>
     </grid-vue>
     <p>
       <grid-vue v-if="content" class="btn waves-effect waves-light" tamanho="2 offset-s10">PUBLICAR</grid-vue>

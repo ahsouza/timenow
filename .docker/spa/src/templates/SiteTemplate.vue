@@ -3,7 +3,7 @@
     <header>
       <nav-bar logo="@/assets/timenow.png" url="#/" cor="white" >
         <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/login">Mensagens</router-link></li>
+        <li><router-link to="/messages">Mensagens</router-link></li>
         <li><router-link to="/portfolio">Tarefas</router-link></li>
         <li><router-link to="/login">Grupos</router-link></li>
         <li><router-link to="/contato"><a class="btn-floating btn-medium waves-effect waves-light green animated pulse"><i class="medium material-icons">notifications_active</i></a></router-link></li>
