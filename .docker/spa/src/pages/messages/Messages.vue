@@ -21,98 +21,58 @@
 
 
     <span slot="main">
-      <br><br><br><br>
       <div class="row">
         
-        <div class="col s4 m4">
-          
+        <div class="col s12 m12 l12">
+          <br><br>
+          <ul class="collection">
+            <li class="animated fadeInUp collection-item avatar">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl1ECKs6tftIi-blsBi9fi7yi0DB6v2gcXW2tx756y5-421vxInA" alt="" class="circle">
+              <!-- <i class="material-icons circle">folder</i> -->
+              <span class="title">Marcos Sebastião</span>
+              <p>Diretor <br>
+                 Pts: <b>1000</b>
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">mail_outline</i></a>
+            </li>
+            <li class="animated fadeInUp collection-item avatar">
+              <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" class="circle">
+              <span class="title">Julie Soares</span>
+              <p>Jurídico<a href=""><small style="margin-left: 150px">mariaeduarda@gmail.com</small></a><br>
+                 Pts: <b>340</b>
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">mail_outline</i></a>
+              
+            </li>
+            <li class="animated fadeInUp collection-item avatar">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThawaFPrZafxcOqeaC8M0obi0_bGYmI3KtowPJTaGxmfhZRDttTg" alt="" class="circle">
+              <!-- <i class="material-icons circle green">insert_chart</i> -->
+              <span class="title">Maria Eduarda</span>
+              <p>Publicidade<a href=""><small style="margin-left: 50%">mariaeduarda@gmail.com</small></a><br>
+                 Pts: <b>280</b>
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">mail_outline</i></a>
+            </li>
+            <li class="animated fadeInUp collection-item avatar">
+              <img src="http://s2.glbimg.com/-LAfElJk1d6d71rV_xulO8ShYs8=/620x465/s.glbimg.com/jo/g1/f/original/2016/06/11/larissa_e_henrique_tem_perfil_compartilhado_nas_redes_sociais.jpg" alt="" class="circle">
+              <!-- <i class="material-icons circle red">play_arrow</i> -->
+              <span class="title">Janaína Rozana</span>
+              <p>RH<a href=""><small style="margin-left: 50%">janaina_rozana@gmail.com</small></a><br>
+                 Pts: <b>160</b>
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">mail_outline</i></a>
+            </li>
+          </ul>
 
+        </div>
+      </div>
 
-          <div class="card">
+      <div class="row">
+        <div class="col s12 m12">
             
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
-
-              <p>Oláaa, tenha uma boa tarde!!.😘</p>
-            </div>
-          </div>
-          
-          <div class="card">  
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
-
-              <p>Deixei os documentos na sua mesa!</p>
-            </div>
-          </div>
-
 
         </div>
         
-        <div class="col s4 m4">
-          
-
-
-          <div class="card">
-            
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
-
-              <p>Me envie o arquivo pdf por favor?</p>
-            </div>
-          </div>
-          
-          <div class="card">  
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
-
-              <p>Oláaa, tenha uma boa tarde!!.😘</p>
-            </div>
-          </div>
-
-
-        </div>
-        
-        <div class="col s4 m4">
-          
-
-
-          <div class="card">
-            
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
-
-              <p>Oláaa, tenha uma boa tarde!!.😘</p>
-            </div>
-          </div>
-          
-          <div class="card">  
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
-
-              <p>Oláaa, tenha uma boa tarde!!.😘</p>
-            </div>
-          </div>
-
-
-        </div>
-
-
-
-
-
-
       </div>
              
 
@@ -126,6 +86,7 @@
 import SiteTemplate from '@/templates/SiteTemplate'
 import CardContentVue from '@/components/patterns/CardContentVue'
 import CardDetailVue from '@/components/patterns/CardDetailVue'
+import TabsCardVue from '@/components/patterns/TabsCardVue'
 
 export default {
   name: 'Messages',
@@ -138,6 +99,7 @@ export default {
     CardContentVue,
     SiteTemplate,
     CardDetailVue,
+    TabsCardVue
   }
 }
 </script>

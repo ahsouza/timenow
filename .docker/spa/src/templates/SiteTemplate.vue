@@ -20,7 +20,7 @@
               <div class="row valign-wrapper animated fadeIn">
                 <slot name="menu-left" />
               </div>
-              <a class="btn-floating btn-small waves-effect waves-light blue animated fadeIn"><i class="small material-icons">question_answer</i></a>&nbsp;
+              <a class="btn-floating btn-small waves-effect waves-light blue animated fadeIn tooltipped" data-position="bottom" data-tooltip="I am a tooltip"><i class="small material-icons">question_answer</i></a>&nbsp;
               <a class="btn-floating btn-small waves-effect waves-light blue animated fadeIn"><i class="small material-icons">record_voice_over</i></a>
               &nbsp;&nbsp;&nbsp;
               <a class="btn-floating btn-small waves-effect waves-light green animated fadeIn"><i class="small material-icons">done</i></a>&nbsp;
@@ -67,8 +67,8 @@
 import NavBar from '@/components/layouts/NavBar'
 import FooterVue from '@/components/layouts/FooterVue'
 import GridVue from '@/components/layouts/GridVue'
-import CardMenuVue from '@/components/layouts/CardMenuVue'
-
+import CardMenuVue from '@/components/layouts/CardMenuVue'        
+  
 export default {
   name: 'SiteTemplate',
   components:{
