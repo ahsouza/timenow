@@ -4,7 +4,7 @@
     <span slot="menu-left">
       <div class="row valign-wrapper">
         <grid-vue tamanho="1 l6 m12">
-          <img src="http://materializecss.com/images/yuna.jpg" alt="" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
+          <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
         </grid-vue>
 
 
@@ -12,6 +12,8 @@
           <span class="black-text">
             <h6>@ahsouza</h6>
             Financeiro
+            <br>
+            Pts: <b>120</b>
           </span>
         </grid-vue>
       </div>
@@ -23,13 +25,13 @@
     <span slot="main">
       <public-content-vue />
       <card-content-vue
-      perfil="http://materializecss.com/images/yuna.jpg"
+      perfil="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"
       nome="Aníbal Henrique"
       data="21/03/2019 16:52">
       <card-detail-vue
-      img="https://materializecss.com/images/sample-1.jpg"
-      txt="Jogo educacional causa vicío em escolas para ensino fundamental e médio em toda região da grande Vitória"
-      title="A aplicação IQuizz é show!"
+      img="https://clickpetroleoegas.com.br/wp-content/uploads/2019/04/engenharia-752x440.jpg"
+      txt="Exeplo de texto"
+      title="Saiba mais da API Time-Now Engenharia"
       />
       </card-content-vue>
     </span>
