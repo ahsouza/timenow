@@ -21,13 +21,14 @@ RUN apk add composer
 # RUN rm -rf /etc/nginx/conf.d/default.conf
 # COPY ./nginx.conf /etc/nginx/conf.d
 COPY .docker/api/ /var/www
+COPY up.sh /var/www
 RUN ln -s public html
 
-RUN composer update --no-plugins --no-scripts
+#RUN composer update --no-plugins --no-scripts
     # && php artisan key:generate \
     # && php artisan cache:clear \
     # && chmod -R 775 storage
-RUN npm install
+
 #WORKDIR /usr/local/etc/php/conf.d
 
 
