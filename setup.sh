@@ -82,22 +82,35 @@ ITEM_SELECIONADO=$(zenity --height="360" --width="720" --list --text "Iniciando 
 			    TRUE ahsouza/laravel FALSE ahsouza/vuejs);
 
 			# Caso a imagem foi realmente selecionada
-				if [[ "$IMAGEM_SELECIONADO" ]]; then
+				if [[ "${IMAGEM_SELECIONADO}" == "ahsouza/laravel" ]]; then
 
-						sleep 1s
-						zenity --height="120" --width="360" --notification --text "\Construindo ${IMAGEM_SELECIONADO}..."
 
-						echo "Building imagem...\n" "info";
-						echo "Building ${IMAGEM_SELECIONADO}..." "info";
+					sleep 1s
+					zenity --height="120" --width="360" --notification --text "\Construindo ${IMAGEM_SELECIONADO}..."
+					echo "Building imagem...\n" "info";
+					echo "Building ${IMAGEM_SELECIONADO}..." "info";
+					docker build -t ${IMAGEM_SELECIONADO} -f laravel.Dockerfile .
+					#docker run -d --name ahsouza -v $(pwd):/var/www -p 8000:8000 ahsouza/laravel-5.8
+					docker run -d -p 8000:8000 --name timenow-dev-laravel ${IMAGEM_SELECIONADO}
+					#docker exec -it ahsouza bash server.sh
+					docker exec -it timenow-dev-laravel bash up.sh
+					sleep 1s
+					zenity --height="120" --width="300" --info --text "\nImagem <b>${IMAGEM_SELECIONADO}</b> \n\construida com sucesso!"
 
-						docker build -t ${IMAGEM_SELECIONADO} -f laravel.Dockerfile .
-						#docker run -d --name ahsouza -v $(pwd):/var/www -p 8000:8000 ahsouza/laravel-5.8
-						docker run -d -p 8000:8000 --name timenow-dev-laravel ${IMAGEM_SELECIONADO}
-						
-						#docker exec -it ahsouza bash server.sh
-						docker exec -it timenow-dev-laravel bash up.sh
-						sleep 1s
-						zenity --height="120" --width="300" --info --text "\nImagem <b>${IMAGEM_SELECIONADO}</b> \n\construida com sucesso!"
+				elif [[ "${IMAGEM_SELECIONADO}" == "ahsouza/vuejs" ]]; then
+				
+					sleep 1s
+					zenity --height="120" --width="360" --notification --text "\Construindo ${IMAGEM_SELECIONADO}..."
+
+					echo "Building imagem...\n" "info";
+					echo "Building ${IMAGEM_SELECIONADO}..." "info";
+					docker build -t ${IMAGEM_SELECIONADO} -f vue.Dockerfile .
+					#docker run -d --name ahsouza -v $(pwd):/var/www -p 8000:8000 ahsouza/vuejs
+					docker run -d -p 8080:8080 --name timenow-dev-vue ${IMAGEM_SELECIONADO}
+					#docker exec -it ahsouza bash server.sh
+					docker exec -it timenow-dev-vue bash up.sh
+					sleep 1s
+					zenity --height="120" --width="300" --info --text "\nImagem <b>${IMAGEM_SELECIONADO}</b> \n\construida com sucesso!"
 
 				else
 					# Caso nenhum. Saia!

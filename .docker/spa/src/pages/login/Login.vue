@@ -41,14 +41,13 @@ export default {
   },
   methods: {
     login() {
-      
-      axios.post(`http://localhost:8000/api/login`, {
+
+      axios.post(`http://localhost:8000/login`, {
         email: this.email,
         password: this.password
       }).then(res => {
         if(res.data.token) {
           console.log('Autenticado with sucess!')
-
           // localStorage.setItem('user', JSON.stringify(res.data))
           sessionStorage.setItem('user', JSON.stringify(res.data))
         } else if(res.data.status == false){

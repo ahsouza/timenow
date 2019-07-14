@@ -29,19 +29,35 @@ Route::post('/login', function(Request $request) {
   	$user = auth()->user();
   	$user->token = $user->createToken($user->email)->accessToken;
   } else {
+  
   	return ['status'=>'Não foi possível autenticar usuário'];
   }
 
-  // $user = User::create([
-  //        'name' => $data['name'],
-  //        'email' => $data['email'],
-  //        'password' => Hash::make($data['password']),
-  // ]);
+});
 
+Route::post('/register', function (Request $request) {
+    $data = $request->all();
 
-  return $user;
+    $valiacao = Validator::make($data, [
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:6|confirmed',
+    ]);
 
-})
+    if($valiacao->fails()){
+      return $valiacao->errors();
+    }
+
+    $user = User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => bcrypt($data['password']),
+    ]);
+    $user->token = $user->createToken($user->email)->accessToken;
+
+    return $user;
+});
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
