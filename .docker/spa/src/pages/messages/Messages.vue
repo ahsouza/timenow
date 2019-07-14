@@ -2,7 +2,7 @@
   <SiteTemplate>
 
     <span slot="menu-left">
-      <div class="row valign-wrapper">
+      <div class="row valign-wrapper animated fadeIn">
         <grid-vue tamanho="1 l6 m12">
           <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
         </grid-vue>
