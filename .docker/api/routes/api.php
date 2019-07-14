@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Validator;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +15,16 @@ use App\User;
 */
 Route::post('/register', function(Request $request) {
   $data = $request->all();
+
+  $validacao = Validator::make($data, [
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+  ]);
+
+  if($validacao->fails()){
+  	return $validacao->errors();
+  }
 
   $user = User::create([
          'name' => $data['name'],
