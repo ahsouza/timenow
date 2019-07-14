@@ -2,8 +2,12 @@
   <span>
     <header>
       <nav-bar logo="" url="/" cor="white">
-        <li><router-link to="/login">Iniciar sessão</router-link></li>
-        <li><a href="http://www.timenow.com.br">Nosso Site</a></li>
+        <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
+        <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
+        <li v-if="user"><router-link to="/profile">{{user.name}}</router-link></li>
+        <li v-if="!user"><a href="http://www.timenow.com.br">Nosso Site</a></li>
+        <li v-if="user"><a v-on:click="exit()">Sair</a></li>
+
         <li><a href="sass.html"><i class="material-icons">search</i></a></li>
         <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
       </nav-bar>
@@ -56,7 +60,20 @@ export default {
   },
   data() {
     return {
-      logo_marca: 'https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg'
+      user: false
+    }
+  },
+  created() {
+    let userSession = sessionStorage.getItem('user')
+    
+    if(userSession) {
+      this.user = JSON.parse(userSession)
+    }
+  },
+  methods: {
+    exit() {
+      sessionStorage.clear()
+      this.user = false
     }
   }
 }

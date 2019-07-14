@@ -48,6 +48,7 @@ import SiteTemplate from '@/templates/SiteTemplate'
 import CardContentVue from '@/components/patterns/CardContentVue'
 import CardDetailVue from '@/components/patterns/CardDetailVue'
 import PublicContentVue from '@/components/patterns/PublicContentVue'
+import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'Home',
@@ -60,7 +61,8 @@ export default {
     CardContentVue,
     SiteTemplate,
     CardDetailVue,
-    PublicContentVue
+    PublicContentVue,
+    GridVue
   }
   
 }
