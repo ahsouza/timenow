@@ -54,7 +54,7 @@ export CONTAINER=$(docker ps -a --format "{{.Names}}")
 				else
 				# Caso nenhum. Saia!	
 					exit 0
-				fi	
+				fi
 			fi
 	fi
 # REMOÇÃO DE CONTAINERS E IMAGENS }	

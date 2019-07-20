@@ -9,5 +9,11 @@ composer require lucascudo/laravel-pt-br-localization
 php artisan vendor:publish --tag=laravel-pt-br-localization
 php artisan migrate 
 php artisan passport:install 
-# php artisan serve --host=0.0.0.0
-php artisan serve
+# php artisan make:model User --migration --controller --resource
+# php artisan make:model Task --migration --controller --resource
+# php artisan make:model Message --migration --controller --resource
+# php artisan make:model Record --migration --controller --resource
+# php artisan make:model Friend --migration --controller --resource
+# php artisan make:model Publication --migration --controller --resource
+
+php artisan serve --host=0.0.0.0

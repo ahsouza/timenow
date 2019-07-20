@@ -15,7 +15,7 @@
         <input type="password" placeholder="Senha" v-model="password"><br><br><br>
         
         <router-link class="btn pink" to="/register">CADASTRE-SE</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn light-blue" v-on:click="login">ENTRAR</button>
+        <button class="btn light-blue" v-on:click="login()">ENTRAR</button>
     </span>
 
   </LoginTemplate>
@@ -41,15 +41,17 @@ export default {
   },
   methods: {
     login() {
-
-      axios.post(`http://localhost:8000/login`, {
+      axios.post(`http://127.0.0.1:8000/api/login`, {
         email: this.email,
         password: this.password
-      }).then(res => {
+      })
+      .then(res => {
         if(res.data.token) {
-          console.log('Autenticado with sucess!')
           // localStorage.setItem('user', JSON.stringify(res.data))
+          console.log('Autenticado with sucess!')
           sessionStorage.setItem('user', JSON.stringify(res.data))
+          this.$router.push('/')
+
         } else if(res.data.status == false){
           
           console.log('User not found!')

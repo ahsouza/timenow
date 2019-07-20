@@ -11,17 +11,13 @@
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
             <h6>@ahsouza</h6>
-            Financeiro
+            {{ user.email }}
             <br>
             Pts: <b>120</b>
           </span>
         </grid-vue>
       </div>
     </span>
-
-
-
-
     <span slot="main">
       <public-content-vue />
       <card-content-vue
@@ -34,9 +30,6 @@
       title="Saiba mais da Time-Now Engenharia"
       />
       </card-content-vue>
-
-
-
     </span>
 
   </SiteTemplate>
@@ -52,9 +45,9 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'Home',
-  data () {
+  data() {
     return {
-
+      user: false
     }
   },
   components:{
@@ -63,6 +56,12 @@ export default {
     CardDetailVue,
     PublicContentVue,
     GridVue
+  },
+  created() {
+    let userSession = sessionStorage.getItem('user')
+    if (userSession) {
+      this.user = JSON.parse(userSession)
+    }
   }
   
 }

@@ -1,14 +1,18 @@
 <template>
   <span>
     <header>
-      <nav-bar logo="@/assets/timenow.png" url="#/" cor="white" >
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/messages">Mensagens</router-link></li>
-        <li><router-link to="/tasks">Tarefas</router-link></li>
-        <li><router-link to="/groups">Grupos</router-link></li>
+        <nav-bar logo="" url="/" cor="white">
+        <li v-if="user"><router-link to="/">Home</router-link></li>
+        <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
+        <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
+        <li v-if="user"><router-link to="/messages">Mensagens</router-link></li>
+        <li v-if="user"><router-link to="/tasks">Tarefas</router-link></li>
+        <li v-if="user"><router-link to="/groups">Grupos</router-link></li>
+        <li v-if="!user"><a href="http://www.timenow.com.br">Nosso Site</a></li>
+        <li v-if="user"><a v-on:click="exit()">Sair</a></li>
         
-        <li><a href="sass.html"><i class="material-icons animated fadeInRight">search</i></a></li>
-        <li><a href="mobile.html"><i class="material-icons animated fadeInRight delay-1s">exit_to_app</i></a></li>
+        <li v-if="user"><a href="sass.html"><i class="material-icons animated fadeInRight">search</i></a></li>
+        <li v-if="user"><a href="mobile.html"><i class="material-icons animated fadeInRight delay-1s">exit_to_app</i></a></li>
       </nav-bar>
     </header>
 
@@ -81,11 +85,30 @@ import CardMenuVue from '@/components/layouts/CardMenuVue'
   
 export default {
   name: 'SiteTemplate',
+  data() {
+    return {
+      user: false
+    }
+  },
   components:{
     NavBar,
     FooterVue,
     GridVue,
     CardMenuVue
+  },
+  created() {
+    let userSession = sessionStorage.getItem('user')
+    
+    if(userSession) {
+      this.user = JSON.parse(userSession)
+    }
+  },
+  methods: {
+    exit() {
+      sessionStorage.clear()
+      this.user = false
+      this.$router.push('/login')
+    }
   }
 }
 </script>

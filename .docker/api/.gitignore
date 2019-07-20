@@ -1,3 +1,4 @@
+.DS_Store
 /node_modules
 /public/hot
 /public/storage
@@ -9,5 +10,19 @@
 Homestead.json
 Homestead.yaml
 npm-debug.log
-yarn-error.log
 package-lock.json
+yarn-error.log
+yarn-debug.log*
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
+.rocketeer/
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

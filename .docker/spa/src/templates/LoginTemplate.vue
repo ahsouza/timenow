@@ -4,12 +4,8 @@
       <nav-bar logo="" url="/" cor="white">
         <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
         <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
-        <li v-if="user"><router-link to="/profile">{{user.name}}</router-link></li>
-        <li v-if="!user"><a href="http://www.timenow.com.br">Nosso Site</a></li>
+        <li v-if="user"><router-link to="/profile">Perfil</router-link></li>
         <li v-if="user"><a v-on:click="exit()">Sair</a></li>
-
-        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
       </nav-bar>
     </header>
 
@@ -68,12 +64,16 @@ export default {
     
     if(userSession) {
       this.user = JSON.parse(userSession)
+      this.$router.push('/')
+    } else {
+      // this.$router.push('/login')
     }
   },
   methods: {
     exit() {
       sessionStorage.clear()
       this.user = false
+      this.$router.push('/login')
     }
   }
 }
