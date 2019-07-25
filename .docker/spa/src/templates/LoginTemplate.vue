@@ -1,7 +1,7 @@
 <template>
   <span>
     <header>
-      <nav-bar logo="" url="/" cor="white">
+      <nav-bar v-if="user" logo="" url="/" cor="white">
         <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
         <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
         <li v-if="user"><router-link to="/profile">Perfil</router-link></li>

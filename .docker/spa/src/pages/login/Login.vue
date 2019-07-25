@@ -47,18 +47,18 @@ export default {
       })
       .then(res => {
         if(res.data.token) {
+          console.log('Autenticado com sucesso!')
           // localStorage.setItem('user', JSON.stringify(res.data))
-          console.log('Autenticado with sucess!')
           sessionStorage.setItem('user', JSON.stringify(res.data))
           this.$router.push('/')
 
         } else if(res.data.status == false){
           
-          console.log('User not found!')
-          alert('Login invalid')
+          console.log('Usuário não encontrado!')
+          alert('Usuário inválido')
         } else {
           
-          console.log('Error validation!')
+          console.log('Error de validação!')
           let errors = '';
           for(let error of Object,values(res.data)) {
             errors += error + ""
