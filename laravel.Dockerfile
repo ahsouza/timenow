@@ -20,6 +20,8 @@ RUN apk add composer
 # RUN rm -rf /etc/nginx/conf.d/default.conf
 # COPY ./nginx.conf /etc/nginx/conf.d
 COPY .docker/api/ /var/www
+
+VOLUME .docker/api/:/var/www
 COPY up.sh /var/www
 RUN ln -s public html
 

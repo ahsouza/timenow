@@ -64,3 +64,18 @@ Route::post('/login', function (Request $request) {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:api')->get('/dash', function (Request $request) {
+    return $request->user();
+});
+
+Route::middleware('auth:api')->put('/profile', function (Request $request) {
+  // Atribuindo $user ao usuário logado no Sistema  
+  $user = $request->user();
+  // Recebendo e atribuindo $data dados da requisição do cliente
+  $data = $request->all();
+
+  $user->token = $user->createToken($user->email)->accessToken;
+
+  return $data;
+});
