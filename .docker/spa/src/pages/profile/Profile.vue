@@ -2,29 +2,23 @@
   <SiteTemplate>
     
     <span slot="menu-left">
-      <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="animated pulse responsive-img" alt="@ahsouza">
+      <img :src="user.avatar" class="animated pulse responsive-img" alt="@ahsouza">
     </span>
 
     <span slot="main">
-        <h4>Profile</h4><br><br>
-
-
-          <div class="file-field input-field">
-            
-            <a class="btn-small waves-effect waves-light orange">
-              <i class="material-icons">photo</i>
-              <input type="file" v-on:change="saveAvatar">
-            </a>
-            
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
-            </div>
-          </div>
+      <h4>Profile</h4><br><br>
         
-
-
-
-
+      <div class="file-field input-field">      
+        <a class="btn-small waves-effect waves-light orange">
+          <i class="material-icons">photo</i>
+          <input type="file" v-on:change="saveAvatar">
+        </a>
+            
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+        
         <label>Nome</label>
         <input type="text" placeholder="Digite seu nome" v-model="name">
         <br>
@@ -84,7 +78,7 @@ export default {
         return;
       }
 
-      let reader = new FileReader();
+      let reader = new FileReader()
 
       reader.onload = (e) => {
         this.avatar = e.target.result
@@ -105,7 +99,9 @@ export default {
         if (res.data.token) {
           // Authentication Success!
           console.log(res.data.token)
-          sessionStorage.setItem('user', JSON.stringify(res.data));
+
+          this.user = res.data
+          sessionStorage.setItem('user', JSON.stringify(res.data))
           alert('Perfil atualizado com sucesso!')
 
         } else {
