@@ -75,10 +75,12 @@ export default {
         password_confirmation: this.password_confirmation 
       },{"headers":{"authorization":"Bearer " + this.user.token}})
       .then(res => {
+
         if (res.data.token) {
-          
-          console.log(res.data)
-          alert(res.data.token)
+          // Authentication Success!
+          console.log(res.data.token)
+          sessionStorage.setItem('user', JSON.stringify(res.data));
+          alert('Perfil atualizado com sucesso!')
 
         } else {
           console.log('erros de validação')

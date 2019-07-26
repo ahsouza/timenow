@@ -59,14 +59,16 @@ export default {
       .then(res => {
         if (res.data.token) {
           alert('Registrado com sucesso!')
+          console.log('Registrado com sucesso!')
           sessionStorage.setItem('user', JSON.stringfy(res.data))
           this.$router.push('/')
 
         } else if (res.data.status == false) {
-          console.log('Login não existe')
+          
           alert('Erro ao tentar cadastrar usuário. Tente novamente mais tarde')
+          console.log('Login não existe')
         } else {
-          console.log('erros de validação')
+          console.log('Error de validação')
           let erros = '';
           for(let erro of Object.values(res.data)) {
             erros += erro + " ";

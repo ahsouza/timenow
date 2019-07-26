@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validator\Rule;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,14 +18,14 @@ use Illuminate\Support\Facades\Validator;
 Route::post('/register', function (Request $request) {
     $data = $request->all();
 
-    $valiacao = Validator::make($data, [
+    $validacao = Validator::make($data, [
       'name' => 'required|string|max:255',
       'email' => 'required|string|email|max:255|unique:users',
       'password' => 'required|string|min:6|confirmed',
     ]);
 
-    if($valiacao->fails()){
-      return $valiacao->errors();
+    if($validacao->fails()){
+      return $validacao->errors();
     }
 
     $user = User::create([
@@ -74,6 +75,37 @@ Route::middleware('auth:api')->put('/profile', function (Request $request) {
   $user = $request->user();
   // Recebendo e atribuindo $data dados da requisição do cliente
   $data = $request->all();
+
+
+  if(isset($data['password'])) {
+
+    $validacao = Validator::make($data, [
+      'name' => 'required|string|max:255',
+      'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+      'password' => 'required|string|min:6|confirmed'
+    ]);
+
+    if($validacao->fails()){
+      return $validacao->errors();
+    }
+    
+    $user->password = Hash::make($data['password']);
+
+  } else {
+    
+    $validacao = Validator::make($data, [
+      'name' => 'required|string|max:255',
+      'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+    ]);
+
+    if($validacao->fails()){
+      return $validacao->errors();
+    }
+    $user->name = $data['name'];
+    $user->email = $data['email'];
+  }  
+
+  $user->save();
 
   $user->token = $user->createToken($user->email)->accessToken;
 
