@@ -62,14 +62,6 @@ Route::post('/login', function (Request $request) {
 
 });
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::middleware('auth:api')->get('/dash', function (Request $request) {
-    return $request->user();
-});
-
 Route::middleware('auth:api')->put('/profile', function (Request $request) {
   // Atribuindo $user ao usuário logado no Sistema  
   $user = $request->user();
@@ -103,11 +95,47 @@ Route::middleware('auth:api')->put('/profile', function (Request $request) {
     }
     $user->name = $data['name'];
     $user->email = $data['email'];
-  }  
+  }
 
+  if (isset($data['avatar'])) {
+    $time = time();
+
+    $pathHost = 'profiles';
+    $pathAvatar = $pathHost.DIRECTORY_SEPARATOR.'profile_id'.$user->id;
+    $ext = substr($data['avatar'], 11, strpos($data['avatar'], ';') - 11);
+    $url = $pathAvatar.DIRECTORY_SEPARATOR.$time.'.'.$ext;
+
+    $file = str_replace('data:image/'.$ext.';base64,','',$data['avatar']);
+    $file = base64_decode($file);
+
+    if (!file_exists($pathHost)) {
+      mkdir($pathHost, 0700);
+    }
+
+    if (!file_exists($pathAvatar)) {
+      mkdir($pathAvatar, 0700);
+    }
+
+    file_put_contents($url, $file);
+
+    $user->avatar = $url;
+
+
+  } 
+  
   $user->save();
-
+  $user->avatar = asset($user->avatar);
   $user->token = $user->createToken($user->email)->accessToken;
 
   return $data;
+});
+
+
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::middleware('auth:api')->get('/dash', function (Request $request) {
+    return $request->user();
 });

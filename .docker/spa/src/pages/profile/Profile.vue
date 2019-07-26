@@ -89,12 +89,7 @@ export default {
       reader.onload = (e) => {
         this.avatar = e.target.result
       }
-
       reader.readAsDataURL(file[0])
-
-      console.log(this.imagem)
-
-
     },
 
     profile() {
