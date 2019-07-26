@@ -7,9 +7,10 @@ php artisan config:cache
 composer require laravel/passport
 composer require lucascudo/laravel-pt-br-localization
 php artisan vendor:publish --tag=laravel-pt-br-localization
+php artisan migrate 
 php artisan passport:install 
 php artisan make:migration add_avatar_table_users --table=users
-php artisan migrate 
+php artisan migrate
 # php artisan make:model User --migration --controller --resource
 # php artisan make:model Task --migration --controller --resource
 # php artisan make:model Message --migration --controller --resource

@@ -95,7 +95,8 @@ ITEM_SELECIONADO=$(zenity --height="360" --width="720" --list --text "Iniciando 
 					#docker exec -it ahsouza bash server.sh
 					docker exec -it timenow-dev-laravel bash up.sh
 					# utilizando volumes e fazendo backup da aplicação
-					docker run --volumes-from timenow-dev-laravel -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /var/
+					# docker run --rm --volumes-from timenow-dev-laravel -v $(pwd):/backup ubuntu bash -c "cd /var/www && tar cvf /backup/backup.tar ."
+					docker run --rm --volumes-from timenow-dev-laravel -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /var/
 					
 					sleep 1s
 					zenity --height="120" --width="300" --info --text "\nImagem <b>${IMAGEM_SELECIONADO}</b> \n\construida com sucesso!"
