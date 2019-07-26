@@ -19,7 +19,7 @@ RUN apk add composer
 # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 # RUN rm -rf /etc/nginx/conf.d/default.conf
 # COPY ./nginx.conf /etc/nginx/conf.d
-COPY .docker/api/ /var/www
+#COPY .docker/api/ /var/www
 
 VOLUME .docker/api/:/var/www
 COPY up.sh /var/www
