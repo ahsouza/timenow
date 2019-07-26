@@ -8,14 +8,23 @@
     <span slot="main">
         <h4>Profile</h4><br><br>
 
+
           <div class="file-field input-field">
-            <a class="btn-small waves-effect waves-light orange"><i class="material-icons">photo</i><input type="file"></a>
+            
+            <a class="btn-small waves-effect waves-light orange">
+              <i class="material-icons">photo</i>
+              <input type="file" v-on:change="saveAvatar">
+            </a>
             
             <div class="file-path-wrapper">
               <input class="file-path validate" type="text">
             </div>
           </div>
         
+
+
+
+
         <label>Nome</label>
         <input type="text" placeholder="Digite seu nome" v-model="name">
         <br>
@@ -48,7 +57,8 @@ export default {
       name: '',
       email: '',
       password: '',
-      password_confirmation:''
+      password_confirmation:'',
+      avatar: ''
 
     }
   },
@@ -67,10 +77,31 @@ export default {
     SiteTemplate
   },
   methods: {
+    saveAvatar(e){
+      let file = e.target.files || e.dataTransfer.files
+      
+      if(!file.length) {
+        return;
+      }
+
+      let reader = new FileReader();
+
+      reader.onload = (e) => {
+        this.avatar = e.target.result
+      }
+
+      reader.readAsDataURL(file[0])
+
+      console.log(this.imagem)
+
+
+    },
+
     profile() {
       axios.put(`http://127.0.0.1:8000/api/profile`, {
         name: this.name,
         email: this.email,
+        avatar: this.avatar,
         password: this.password,
         password_confirmation: this.password_confirmation 
       },{"headers":{"authorization":"Bearer " + this.user.token}})

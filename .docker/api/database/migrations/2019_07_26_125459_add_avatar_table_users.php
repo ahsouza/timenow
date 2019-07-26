@@ -14,7 +14,8 @@ class AddAvatarTableUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+
+            $table->string('avatar')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddAvatarTableUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->dropColumn('avatar');
         });
     }
 }
