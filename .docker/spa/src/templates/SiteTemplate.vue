@@ -19,51 +19,23 @@
     <main>
       <div class="container">
         <div class="row">
-
-
-
           <grid-vue tamanho="12 l4 m4">
-            
+            <Sidebar></Sidebar><br>
 
-            <Sidebar></Sidebar>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- <card-menu-vue>
-              <div class="row valign-wrapper animated fadeIn">
-                <slot name="menu-left" />
-              </div>
-              <a class="btn-floating btn-small waves-effect waves-light blue animated fadeIn tooltipped" data-position="bottom" data-tooltip="I am a tooltip"><i class="small material-icons">question_answer</i></a>&nbsp;
-              <a class="btn-floating btn-small waves-effect waves-light blue animated fadeIn"><i class="small material-icons">record_voice_over</i></a>
-              &nbsp;&nbsp;&nbsp;
-              <a class="btn-floating btn-small waves-effect waves-light green animated fadeIn"><i class="small material-icons">done</i></a>&nbsp;
-              <a class="btn-floating btn-small waves-effect waves-light red animated pulse"><i class="small material-icons">priority_high</i></a>
-
-
-            </card-menu-vue>
-
-            <card-menu-vue class="animated fadeInLeft" id="favorites">
+              <a class="margin-transition btn-floating btn-small waves-effect waves-light blue animated fadeIn tooltipped" data-position="bottom" data-tooltip="I am a tooltip"><i class="small material-icons">question_answer</i></a>&nbsp;
+              <a class="margin-transition btn-floating btn-small waves-effect waves-light blue animated fadeIn"><i class="small material-icons">record_voice_over</i></a>
+              &nbsp;
+              <a class="margin-transition btn-floating btn-small waves-effect waves-light green animated fadeIn"><i class="small material-icons">done</i></a>&nbsp;
               
-              <small>favoritos</small><br><br>
+              <br><br>
               <a class="margin-transition btn-floating btn-small waves-effect waves-light amber darken-4 animated fadeIn"><i class="small material-icons">photo</i></a>&nbsp;
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light red darken-4 animated fadeIn"><i class="small material-icons">movie</i></a>&nbsp;
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light purple darken-4 animated fadeIn"><i class="small material-icons">music_note</i></a>&nbsp;
+              
+              <a class="margin-transition btn-floating btn-small waves-effect waves-light brown darken-1 animated fadeIn"><i class="small material-icons">library_books</i></a>
+
+              &nbsp;
               <a class="margin-transition btn-floating btn-small waves-effect waves-light brown darken-1 animated fadeIn"><i class="small material-icons">library_books</i></a>&nbsp;
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light red accent-4 animated fadeIn"><i class="small material-icons">location_on</i></a>
-            </card-menu-vue> -->
+              
+            
 
 
 

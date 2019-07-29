@@ -15,9 +15,10 @@
         <vs-sidebar-item index="1" icon="menu" @click="reduce=!reduce">
          Toggle Sidebar
         </vs-sidebar-item>
-        <vs-sidebar-item index="5" icon="verified_user">
+        <vs-sidebar-item index="5" icon="priority_high">
           Configurations
         </vs-sidebar-item>
+
         <vs-sidebar-group title="Store">
           <vs-sidebar-item index="2.1" icon="store">
             Store
@@ -45,11 +46,10 @@
         User
       </vs-divider>
 
-
       <vs-sidebar-item index="6" icon="account_box">
         Profile
       </vs-sidebar-item>
-
+      
       <div class="footer-sidebar" slot="footer">
         <vs-button icon="settings" color="primary" type="border"></vs-button>
       </div>
