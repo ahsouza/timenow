@@ -1,10 +1,13 @@
 <template>
   <SiteTemplate>
-
     <span slot="menu-left">
+    
+      <!-- TEST A - MODELO DE PAINEL PARA SIDEBAR -->
+      <!-- ################################################# -->
       <div class="row valign-wrapper">
+        
         <grid-vue tamanho="1 l6 m12">
-          <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="75" class="circle responsive-img"> <!-- notice the "circle" class -->
+          <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="75" class="circle responsive-img">
         </grid-vue>
 
 
@@ -16,8 +19,33 @@
             Pts: <b>120</b>
           </span>
         </grid-vue>
+
       </div>
+
+      <!-- TEST A - MODELO DE PAINEL PARA SIDEBAR -->
+      <!-- ################################################# -->
+
+
+
+
+      <!-- TEST B - MODELO DE PAINEL PARA SIDEBAR -->
+
+
+
+
+
+
     </span>
+
+
+
+
+
+
+
+
+
+
     <span slot="main">
       <public-content-vue />
       <card-content-vue

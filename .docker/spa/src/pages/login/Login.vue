@@ -1,21 +1,21 @@
 <template>
-
   <LoginTemplate>
 
     <span slot="menu-left">
       <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="animated pulse responsive-img" alt="TimeNow">
+    
     </span>
 
     <span slot="main">
-        <h5>Login </h5><br><br> 
-        <label>Usuário</label>
-        <input type="text" placeholder="E-mail" v-model="email">
+      <h5>Login </h5><br><br> 
+      <label>Usuário</label>
+      <input type="text" placeholder="E-mail" v-model="email">
 
-        <label>Senha</label>
-        <input type="password" placeholder="Senha" v-model="password"><br><br><br>
+      <label>Senha</label>
+      <input type="password" placeholder="Senha" v-model="password"><br><br><br>
         
-        <router-link class="btn pink" to="/register">CADASTRE-SE</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn light-blue" v-on:click="login()">ENTRAR</button>
+      <router-link class="btn pink" to="/register">CADASTRE-SE</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn light-blue" v-on:click="login()">ENTRAR</button>
     </span>
 
   </LoginTemplate>
@@ -23,7 +23,8 @@
 
 <script>
 import LoginTemplate from '@/templates/LoginTemplate'
-import axios from 'axios';
+import Button from '@/components/button/Button'
+import axios from 'axios'
 
 
 export default {
@@ -37,7 +38,8 @@ export default {
     }
   },
   components:{
-    LoginTemplate
+    LoginTemplate,
+    Button
   },
   methods: {
     login() {

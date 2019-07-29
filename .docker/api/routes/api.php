@@ -131,7 +131,7 @@ Route::middleware('auth:api')->put('/profile', function (Request $request) {
     $validacao = Validator::make($data, [
       'avatar' => 'base64image',
 
-    ],['base64image'=>'Imagem inválida']);
+    ],['base64image'=>'Imagem para avatar inválida']);
 
     if($validacao->fails()) {
       return $validacao->errors();

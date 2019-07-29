@@ -19,8 +19,30 @@
     <main>
       <div class="container">
         <div class="row">
+
+
+
           <grid-vue tamanho="12 l4 m4">
-            <card-menu-vue>
+            
+
+            <Sidebar></Sidebar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <card-menu-vue>
               <div class="row valign-wrapper animated fadeIn">
                 <slot name="menu-left" />
               </div>
@@ -41,10 +63,25 @@
               <a class="margin-transition btn-floating btn-small waves-effect waves-light purple darken-4 animated fadeIn"><i class="small material-icons">music_note</i></a>&nbsp;
               <a class="margin-transition btn-floating btn-small waves-effect waves-light brown darken-1 animated fadeIn"><i class="small material-icons">library_books</i></a>&nbsp;
               <a class="margin-transition btn-floating btn-small waves-effect waves-light red accent-4 animated fadeIn"><i class="small material-icons">location_on</i></a>
-            </card-menu-vue>
+            </card-menu-vue> -->
+
+
+
+
 
 
           </grid-vue>
+
+
+
+
+
+
+
+
+
+
+
 
 
           <grid-vue tamanho="12 l8 m8">
@@ -81,7 +118,8 @@
 import NavBar from '@/components/layouts/NavBar'
 import FooterVue from '@/components/layouts/FooterVue'
 import GridVue from '@/components/layouts/GridVue'
-import CardMenuVue from '@/components/layouts/CardMenuVue'        
+import CardMenuVue from '@/components/layouts/CardMenuVue'
+import Sidebar from '@/components/sidebar/SidebarReduce'
   
 export default {
   name: 'SiteTemplate',
@@ -94,7 +132,8 @@ export default {
     NavBar,
     FooterVue,
     GridVue,
-    CardMenuVue
+    CardMenuVue,
+    Sidebar
   },
   created() {
     let userSession = sessionStorage.getItem('user')

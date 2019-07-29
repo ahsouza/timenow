@@ -4,6 +4,7 @@
       <router-link :to="url || '/'" class="brand-logo">
         <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt=""> -->
         <img src="./../../assets/logo-timenow.jpg" height="55" class="animated fadeInLeft" alt="">
+        
       </router-link>
 
       <ul id="nav-mobile" class="right hide-on-med-and-down">

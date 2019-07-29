@@ -12,11 +12,13 @@
   "dependencies": {
     "axios": "^0.19.0",
     "emoji-vue": "^0.2.4",
+    "material-icons": "^0.3.1",
     "materialize-css": "^1.0.0-rc.2",
     "vue": "^2.5.2",
     "vue-fab": "^2.3.1",
     "vue-icons": "^2.0.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuesax": "^3.9.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
