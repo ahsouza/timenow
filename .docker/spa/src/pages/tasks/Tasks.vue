@@ -24,40 +24,238 @@
       <br><br><br><br>
       <div class="row">
         
-        <div class="col s4 m4">
-          
+        <div class="col s12 m12">
 
 
-          <div class="card">
-            
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Tasks</h6>
-            <div class="card-content">
 
-              <p>Oláaa, tenha uma boa tarde!!.😘</p>
-            </div>
-          </div>
-          
-          <div class="card">  
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
 
-              <p>Deixei os documentos na sua mesa!</p>
-            </div>
-          </div>
+  <div>
+    <vs-tabs :color="colorx">
+
+      <vs-tab @click="colorx = 'success'" label="Concluídas" icon="done">
+        <div class="con-tab-ejemplo">
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Tarefas Concluidas
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button color="success" icon="delete"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
+
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Tarefas Concluidas
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button color="success" icon="delete"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Tarefas Concluidas
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button color="success" icon="delete"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
 
 
         </div>
-        
+      </vs-tab>
 
+
+
+
+
+
+      <vs-tab @click="colorx = 'warning'" icon="priority_high" label="Pendentes">
+        <div class="con-tab-ejemplo">
+          
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Pendentes
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button color="warning" icon="share"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
+
+
+
+        </div>
+      </vs-tab>
+
+
+
+
+
+
+      <vs-tab @click="colorx = 'danger'" icon="sentiment_very_dissatisfied" label="Não Realizadas">
+        <div class="con-tab-ejemplo">
+          
+
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Não realizadas
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button color="danger" icon="refresh"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
+
+
+
+
+
+
+        </div>
+      </vs-tab>
+
+
+
+
+
+    </vs-tabs>
+  </div>
+
+
+
+
+
+
+
+          
+
+
+ <!--         <vs-row vs-justify="center">
+
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Hello world !
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
+                    <vs-button color="primary" icon="turned_in_not"></vs-button>
+                    <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Hello world !
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
+                    <vs-button color="primary" icon="turned_in_not"></vs-button>
+                    <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
+
+            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+              <vs-card>
+                <div slot="header">
+                  <h4>
+                    Hello world !
+                  </h4>
+                </div>
+                <div>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </span>
+                </div>
+                <div slot="footer">
+                  <vs-row vs-justify="flex-end">
+                    <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
+                    <vs-button color="primary" icon="turned_in_not"></vs-button>
+                    <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
+                  </vs-row>
+                </div>
+              </vs-card>
+            </vs-col>
+
+
+
+
+
+          </vs-row> -->
+
+        </div>
 
 
       </div>
-             
-
     </span>
 
 
@@ -71,11 +269,9 @@ import CardDetailVue from '@/components/patterns/CardDetailVue'
 
 export default {
   name: 'Tasks',
-  data () {
-    return {
-
-    }
-  },
+  data:()=>({
+    colorx:'success'
+  }),
   components:{
     CardContentVue,
     SiteTemplate,
@@ -83,34 +279,7 @@ export default {
   }
 }
 </script>
-<style scoped>
-
-.about-avatar {
-  margin-left: 15px;
-}
-
-@media only screen and (max-width: 600px) {
-  .circle { width: 50px;}
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  
-} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  
-}
-
+<style lang="stylus">
+.cardx
+  margin 15px
 </style>

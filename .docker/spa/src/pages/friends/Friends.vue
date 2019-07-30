@@ -34,8 +34,7 @@
               <template slot="header">
                 <h4>
                   Meus Amigos
-                  <font-awesome-icon icon="user-secret" />
-                  <font-awesome-icon icon="coffee"></font-awesome-icon>
+                  <!-- <font-awesome-icon icon="user-secret"/> -->
                 </h4>
               </template>
 
