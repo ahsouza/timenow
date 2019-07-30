@@ -27,7 +27,7 @@
           
 
 
-<br><br>
+        <br><br>
 
 
           <div>
@@ -40,46 +40,45 @@
               </template>
 
               <template slot-scope="{data}">
+
                 <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
-                  <vs-td :data="tr.email">
-                    {{tr.email}}
-                  </vs-td>
+                  <!-- <vs-td :data="tr.id">
+                    {{tr.id}}
+                  </vs-td> -->
+
+                  <vs-avatar :badge="tr.id" size="60px" :src="`https://randomuser.me/api/portraits/women/${indextr}.jpg`"/>
 
                   <vs-td :data="tr.username">
-                    {{tr.name}}
+                    <h6>{{tr.name}}</h6>
                   </vs-td>
 
-                  <vs-td :data="tr.website">
+                  <div>
+                    <vs-button vs-type="border" size="small" icon="phone_in_talk" class="btn-friend"></vs-button>
+                    <vs-button vs-type="gradient" size="small" color="success" icon="send" class="btn-friend"></vs-button>
+                    <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep" class="btn-friend"></vs-button>
+                  </div>
+
+                  <!-- <vs-td :data="tr.email">
+                    {{tr.email}}
+                  </vs-td> -->
+
+
+                  <!-- <vs-td :data="tr.website">
                     {{tr.website}}
-                  </vs-td>
+                  </vs-td> -->
 
-                  <vs-td :data="tr.id">
-                    {{tr.id}}
-                  </vs-td>
 
                   <template class="expand-user" slot="expand">
                     <div class="con-expand-users">
-                      <div class="con-btns-user">
-                        <div class="con-userx">
-                          <vs-avatar :badge="tr.id" size="45px" :src="`https://randomuser.me/api/portraits/women/${indextr}.jpg`"/>
-                          <span>
-                            {{ tr.name }}
-                          </span>
-                        </div>
-
-                        <div>
-                          <vs-button vs-type="border" size="small" icon="phone_in_talk"></vs-button>
-                          <vs-button vs-type="gradient" size="small" color="success" icon="send"></vs-button>
-                          <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep"></vs-button>
-                        </div>
-                      </div>
                       <vs-list>
                         <vs-list-item icon="mail" title="Email" :subtitle="tr.email"></vs-list-item>
                         <vs-list-item icon="check" title="Website" :subtitle="tr.website"></vs-list-item>
                       </vs-list>
                     </div>
                   </template>
+
                 </vs-tr>
+
               </template>
             </vs-table>
 
@@ -209,10 +208,12 @@ export default {
 
 
 <style lang="stylus">
+.btn-friend
+  margin-right 8px
 .con-expand-users
   .con-btns-user
     display flex
-    padding 10px
+    padding 30px
     padding-bottom 0px
     align-items center
     justify-content space-between
