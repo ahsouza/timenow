@@ -18,7 +18,8 @@
     "vue-fab": "^2.3.1",
     "vue-icons": "^2.0.0",
     "vue-router": "^3.0.1",
-    "vuesax": "^3.9.0"
+    "vuesax": "^3.9.0",
+    "vuetify": "^2.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

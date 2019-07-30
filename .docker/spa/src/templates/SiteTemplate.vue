@@ -21,26 +21,17 @@
         <div class="row">
           <grid-vue tamanho="12 l4 m4">
             <Sidebar></Sidebar><br>
-
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light blue animated fadeIn tooltipped" data-position="bottom" data-tooltip="I am a tooltip"><i class="small material-icons">question_answer</i></a>&nbsp;
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light blue animated fadeIn"><i class="small material-icons">record_voice_over</i></a>
-              &nbsp;
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light green animated fadeIn"><i class="small material-icons">done</i></a>&nbsp;
+              
+              <vs-button radius color="primary" type="gradient" icon="question_answer" class="btn-tasks"></vs-button>
+              <vs-button radius color="primary" type="gradient" icon="record_voice_over" class="btn-tasks"></vs-button>
+              <vs-button radius color="primary" type="gradient" icon="people" class="btn-tasks"></vs-button>
               
               <br><br>
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light amber darken-4 animated fadeIn"><i class="small material-icons">photo</i></a>&nbsp;
+
+              <vs-button radius color="warning" type="gradient" icon="photo" class="btn-tasks"></vs-button>
+              <vs-button radius color="warning" type="gradient" icon="library_books" class="btn-tasks"></vs-button>
+              <vs-button radius color="success" type="gradient" icon="done" class="btn-tasks"></vs-button>
               
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light brown darken-1 animated fadeIn"><i class="small material-icons">library_books</i></a>
-
-              &nbsp;
-              <a class="margin-transition btn-floating btn-small waves-effect waves-light brown darken-1 animated fadeIn"><i class="small material-icons">library_books</i></a>&nbsp;
-              
-            
-
-
-
-
-
 
           </grid-vue>
 
@@ -125,6 +116,10 @@ export default {
 </script>
 
 <style scoped>
+.btn-tasks {
+  margin-right: 8px
+}
+
 a {
   color: black;
 }
