@@ -93,10 +93,8 @@
 
       <div class="row">
         <div class="col s12 m12">
-            <h1>Other Line</h1>
-
+          <h1>Other Line</h1>
         </div>
-        
       </div>
              
 
