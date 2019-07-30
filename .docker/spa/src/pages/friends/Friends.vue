@@ -30,7 +30,7 @@
 
           <div>
             <vs-table
-              :data="users">
+              :data="users" style="overflow-y: scroll; overflow-x: hidden; height: 600px;">
               <template slot="header">
                 <h4>
                   Meus Amigos
