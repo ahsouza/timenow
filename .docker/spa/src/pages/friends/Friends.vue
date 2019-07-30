@@ -53,19 +53,51 @@
 
                   <div>
 
-                    <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20' + tr.name + '!'" target="blank"><vs-button vs-type="border" size="small" icon="phone_in_talk" class="btn-friend"></vs-button></a>
-                    <vs-button vs-type="gradient" size="small" color="success" icon="send" class="btn-friend"></vs-button>
+                    <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20' + tr.name + '!'" target="blank"><vs-button vs-type="border" color="success" size="small" icon="phone_in_talk" class="btn-friend"></vs-button></a>
+                    <vs-button vs-type="gradient" @click="activePrompt = true" size="small" color="primary" icon="send" class="btn-friend"></vs-button>
                     <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep" class="btn-friend"></vs-button>
                   </div>
 
-                  <!-- <vs-td :data="tr.email">
-                    {{tr.email}}
-                  </vs-td> -->
 
 
-                  <!-- <vs-td :data="tr.website">
-                    {{tr.website}}
-                  </vs-td> -->
+
+
+                  <!-- MODAL -->
+                    <div class="centerx con-exemple-prompt">
+                      <!-- <vs-button @click="openPrompt" color="primary" type="border">Run prompt</vs-button> -->
+             <!--          <div class="modelx">
+                        {{val==null?'null':val}}
+                      </div>
+                       <div class="modelx">
+                         {{valMultipe.value1}}
+                         {{valMultipe.value2}}
+                       </div>
+                        -->
+
+                       <vs-prompt
+                        @cancel="val=''"
+                        @accept="acceptAlert"
+                        @close="close"
+                        :active.sync="activePrompt">
+                         <div class="con-exemple-prompt">
+                            Enter the security code
+                           <vs-input placeholder="Para" v-model="val"/>
+                           <vs-textarea counter="20" label="Digite sua mensagem" :counter-danger.sync="counterDanger" v-model="textarea" />
+
+                           <vs-select
+                              class="selectExample"
+                              label="Figuras"
+                              v-model="select1"
+                              >
+                              <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+                            </vs-select>
+                         </div>
+                       </vs-prompt>
+                    </div>
+                  <!-- MODAL -->
+
+
+
 
 
                   <template class="expand-user" slot="expand">
@@ -114,6 +146,18 @@ import TabsCardVue from '@/components/patterns/TabsCardVue'
 export default {
   name: 'Friends',
   data:()=>({
+    select1:2,
+    options1:[
+      {text:'IT',value:0},
+      {text:'Blade Runner',value:2},
+      {text:'Thor Ragnarok',value:3},
+    ],
+    activePrompt:false,
+    val:'',
+    valMultipe:{
+      value1:'',
+      value2:''
+    },
     users:[
       {
         "id": 1,
@@ -202,6 +246,27 @@ export default {
     SiteTemplate,
     CardDetailVue,
     TabsCardVue
+  },
+  computed:{
+    validName(){
+      return (this.valMultipe.value1.length > 0 && this.valMultipe.value2.length > 0)
+    }
+  },
+  methods: {
+    acceptAlert(color){
+      this.$vs.notify({
+        color:'success',
+        title:'Accept Selected',
+        text:'Lorem ipsum dolor sit amet, consectetur'
+      })
+    },
+    close(){
+      this.$vs.notify({
+        color:'danger',
+        title:'Closed',
+        text:'You close a dialog!'
+      })
+    }
   }
 }
 </script>
@@ -224,4 +289,11 @@ export default {
   .list-icon
     i
       font-size .9rem !important
+
+.con-exemple-prompt
+  padding 10px;
+  padding-bottom 0px;
+  .vs-input
+    width 100%
+    margin-top 10px;
 </style>

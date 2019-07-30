@@ -43,11 +43,14 @@
                   </h4>
                 </div>
                 <div>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+
+
+                  </span>
                 </div>
                 <div slot="footer">
                   <vs-row vs-justify="flex-end">
-                    <vs-button color="success" icon="delete"></vs-button>
+                    <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
                   </vs-row>
                 </div>
               </vs-card>
@@ -67,7 +70,7 @@
                 </div>
                 <div slot="footer">
                   <vs-row vs-justify="flex-end">
-                    <vs-button color="success" icon="delete"></vs-button>
+                    <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
                   </vs-row>
                 </div>
               </vs-card>
@@ -85,7 +88,7 @@
                 </div>
                 <div slot="footer">
                   <vs-row vs-justify="flex-end">
-                    <vs-button color="success" icon="delete"></vs-button>
+                    <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
                   </vs-row>
                 </div>
               </vs-card>
@@ -270,12 +273,31 @@ import CardDetailVue from '@/components/patterns/CardDetailVue'
 export default {
   name: 'Tasks',
   data:()=>({
-    colorx:'success'
+    colorx:'success',
+    activeConfirm: false
   }),
   components:{
     CardContentVue,
     SiteTemplate,
     CardDetailVue,
+  },
+  methods:{
+    openConfirm(){
+      this.$vs.dialog({
+        type:'confirm',
+        color: 'danger',
+        title: `Excluir Tarefa`,
+        text: 'Tem certeza que deseja excluír a tarefa realizada?',
+        accept:this.acceptAlert
+      })
+    },
+    acceptAlert(color) {
+      this.$vs.notify({
+        color:'danger',
+        title:'Tarefa excluída',
+        text:'A tarefa selecionada foi excluída com sucesso!'
+      })
+    },
   }
 }
 </script>
