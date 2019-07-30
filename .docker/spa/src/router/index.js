@@ -5,6 +5,7 @@ import Home from '@/pages/home/Home'
 import Login from '@/pages/login/Login'
 import Register from '@/pages/register/Register'
 import Messages from '@/pages/messages/Messages'
+import Friends from '@/pages/friends/Friends'
 import Groups from '@/pages/groups/Groups'
 import Tasks from '@/pages/tasks/Tasks'
 import Settings from '@/pages/settings/Settings'
@@ -39,6 +40,11 @@ export default new Router({
       path: '/messages',
       name: 'Messages',
       component: Messages
+    },
+    {
+      path: '/friends',
+      name: 'Friends',
+      component: Friends
     },
     {
       path: '/groups',
