@@ -22,15 +22,17 @@
           <grid-vue tamanho="12 l4 m4">
             <Sidebar></Sidebar><br>
               
-              <vs-button radius color="primary" type="gradient" icon="question_answer" class="btn-tasks"></vs-button>
-              <vs-button radius color="primary" type="gradient" icon="record_voice_over" class="btn-tasks"></vs-button>
-              <vs-button radius color="primary" type="gradient" icon="people" class="btn-tasks"></vs-button>
+              <vs-button @click="messagesRoute" radius color="primary" type="gradient" icon="question_answer" class="btn-tasks"></vs-button>
+
+              <vs-button @click="recordsRoute" radius color="primary" type="gradient" icon="record_voice_over" class="btn-tasks"></vs-button>
+
+              <vs-button @click="friendsRoute" radius color="primary" type="gradient" icon="people" class="btn-tasks"></vs-button>
               
               <br><br>
 
-              <vs-button radius color="warning" type="gradient" icon="photo" class="btn-tasks"></vs-button>
-              <vs-button radius color="warning" type="gradient" icon="library_books" class="btn-tasks"></vs-button>
-              <vs-button radius color="success" type="gradient" icon="done" class="btn-tasks"></vs-button>
+              <vs-button @click="imagesRoute" radius color="warning" type="gradient" icon="photo" class="btn-tasks"></vs-button>
+              <vs-button @click="documentsRoute" radius color="warning" type="gradient" icon="library_books" class="btn-tasks"></vs-button>
+              <vs-button @click="tasksConfirmedRoute" radius color="success" type="gradient" icon="done" class="btn-tasks"></vs-button>
               
 
           </grid-vue>
@@ -110,6 +112,24 @@ export default {
       sessionStorage.clear()
       this.user = false
       this.$router.push('/login')
+    },
+    messagesRoute() {
+      this.$router.push('/messages')
+    },
+    recordsRoute() {
+      this.$router.push('/records')
+    },
+    friendsRoute() {
+      this.$router.push('/friends')
+    },
+    documentsRoute() {
+      this.$router.push('/documents')
+    },
+    imagesRoute() {
+      this.$router.push('/images')
+    },
+    tasksConfirmedRoute() {
+      this.$router.push('/tasks/confirmed')
     }
   }
 }

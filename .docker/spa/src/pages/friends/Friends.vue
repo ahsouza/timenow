@@ -24,8 +24,6 @@
       <div class="row">
         
         <div class="col s12 m12 l12">
-          
-
 
         <br><br>
 
@@ -34,9 +32,9 @@
             <vs-table
               :data="users">
               <template slot="header">
-                <h3>
+                <h4>
                   Meus Amigos
-                </h3>
+                </h4>
               </template>
 
               <template slot-scope="{data}">
@@ -54,7 +52,7 @@
 
                   <div>
 
-                    <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20meu%20amigo!'" target="blank"><vs-button vs-type="border" size="small" icon="phone_in_talk" class="btn-friend"></vs-button></a>
+                    <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20' + tr.name + '!'" target="blank"><vs-button vs-type="border" size="small" icon="phone_in_talk" class="btn-friend"></vs-button></a>
                     <vs-button vs-type="gradient" size="small" color="success" icon="send" class="btn-friend"></vs-button>
                     <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep" class="btn-friend"></vs-button>
                   </div>
@@ -87,10 +85,6 @@
             <pre>{{ selected }}</pre>
           </div>
 
-
-
-
-   
 
         </div>
       </div>
@@ -135,7 +129,7 @@ export default {
         "name": "Ervin Howell",
         "username": "Antonette",
         "email": "Shanna@melissa.tv",
-        "tel": "5527996206361",
+        "tel": "5527997516909",
         "website": "anastasia.net",
       },
       {
@@ -143,7 +137,7 @@ export default {
         "name": "Clementine Bauch",
         "username": "Samantha",
         "email": "Nathan@yesenia.net",
-        "tel": "5527996206361",
+        "tel": "5527998761122",
         "website": "ramiro.info",
       },
       {
@@ -151,7 +145,7 @@ export default {
         "name": "Patricia Lebsack",
         "username": "Karianne",
         "email": "Julianne.OConner@kory.org",
-        "tel": "5527996206361",
+        "tel": "5527998840401",
         "website": "kale.biz",
       },
       {
@@ -159,7 +153,7 @@ export default {
         "name": "Chelsey Dietrich",
         "username": "Kamren",
         "email": "Lucio_Hettinger@annie.ca",
-        "tel": "5527996206361",
+        "tel": "5527998887691",
         "website": "demarco.info",
       },
       {
@@ -167,7 +161,7 @@ export default {
         "name": "Mrs. Dennis Schulist",
         "username": "Leopoldo_Corkery",
         "email": "Karley_Dach@jasper.info",
-        "tel": "5527996206361",
+        "tel": "5527992437909",
         "website": "ola.org",
       },
       {
