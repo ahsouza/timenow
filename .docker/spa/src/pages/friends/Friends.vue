@@ -34,6 +34,8 @@
               <template slot="header">
                 <h4>
                   Meus Amigos
+                  <font-awesome-icon icon="user-secret" />
+                  <font-awesome-icon icon="coffee"></font-awesome-icon>
                 </h4>
               </template>
 
@@ -71,8 +73,8 @@
                     <div class="con-expand-users">
                       <vs-list>
                         <vs-list-item icon="mail" title="Email" :subtitle="tr.email"></vs-list-item>
-                        <vs-list-item icon="telephone" title="Telefone" :subtitle="tr.tel"></vs-list-item>
-                        <vs-list-item icon="check" title="Website" :subtitle="tr.website"></vs-list-item>
+                        <vs-list-item icon="phone" title="Telefone" :subtitle="tr.tel"></vs-list-item>
+                        <vs-list-item icon="done" title="Site" :subtitle="tr.website"></vs-list-item>
                       </vs-list>
                     </div>
                   </template>
