@@ -32,10 +32,10 @@
             <vs-table
               :data="users" style="overflow-y: scroll; overflow-x: hidden; height: 600px;">
               <template slot="header">
-                <h4>
+                <h5>
                   Meus Amigos
                   <!-- <font-awesome-icon icon="user-secret"/> -->
-                </h4>
+                </h5>
               </template>
 
               <template slot-scope="{data}">
@@ -124,11 +124,11 @@
 
 
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col s12 m12">
           <h1>Other Line</h1>
         </div>
-      </div>
+      </div> -->
              
 
     </span>

@@ -27,7 +27,6 @@
 
 
 
-
       <!-- TEST B - MODELO DE PAINEL PARA SIDEBAR -->
 
 
@@ -39,19 +38,26 @@
 
 
     <span slot="main">
-<!--       <public-content-vue />
-      <card-content-vue
-      perfil="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"
-      nome="Aníbal Henrique"
-      data="21/03/2019 16:52">
-      <card-detail-vue
-      img="https://clickpetroleoegas.com.br/wp-content/uploads/2019/04/engenharia-752x440.jpg"
-      txt="A Time-Now Engenharia se destaca no mercado há 23 anos oferecendo a seus clientes as melhores soluções em Gestão de Engenharia com foco no Gerenciamento de Implantação de Projetos, Gestão de Portfólio de Projetos e Gestão de Paradas de Plantas Industriais."
-      title="Saiba mais da Time-Now Engenharia"
-      />
-      </card-content-vue> -->
 
-      
+      <br><br><br><br><br>
+      <div class="con-example-images">
+        <vs-select
+        class="selectExample"
+          label="Figuras"
+          v-model="hover"
+          >
+          <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in hovers" />
+        </vs-select>
+
+        <vs-images :hover="hover">
+          <vs-image :key="index" :src="`https://picsum.photos/400/400?image=3${index}`" v-for="(image, index) in 9" />
+          <vs-image :key="index" :src="`https://picsum.photos/400/400?image=4${index}`" v-for="(image, index) in 7" />
+        </vs-images>
+      </div>
+
+
+
+
     </span>
 
   </SiteTemplate>
@@ -69,7 +75,16 @@ export default {
   name: 'Images',
   data() {
     return {
-      user: false
+      user: false,
+      hover: 'blur',
+      hovers:[
+        {text:'Default',value:'default'},
+        {text:'Blur',value:'blur'},
+        {text:'Zoom',value:'zoom'},
+        {text:'Dark',value:'dark'},
+        {text:'Scale',value:'scale'},
+        {text:'Curtain',value:'curtain'},
+      ],
     }
   },
   components:{
@@ -88,7 +103,7 @@ export default {
   
 }
 </script>
-<style scoped>
+<style scoped lang="stylus">
 
 .about-avatar {
   margin-left: 15px;
@@ -118,4 +133,8 @@ export default {
   
 }
 
+.con-example-images
+  max-height 500px
+  overflow auto
 </style>
+

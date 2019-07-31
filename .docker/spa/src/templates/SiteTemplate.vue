@@ -34,11 +34,11 @@
               
               <br><br>
 
-              <vs-button @click="imagesRoute" radius color="warning" type="gradient" icon="photo" class="btn-tasks"></vs-button>
+              <vs-button @click="imagesRoute" radius color="success" type="gradient" icon="photo" class="btn-tasks"></vs-button>
 
-              <vs-button @click="documentsRoute" radius color="warning" type="gradient" icon="library_books" class="btn-tasks"></vs-button>
+              <vs-button @click="documentsRoute" radius color="success" type="gradient" icon="library_books" class="btn-tasks"></vs-button>
 
-              <vs-button @click="tasksConfirmedRoute" radius color="success" type="gradient" icon="done" class="btn-tasks"></vs-button>
+              <vs-button @click="tasksRoute" radius color="success" type="gradient" icon="event_note" class="btn-tasks"></vs-button>
 
 
           </grid-vue>
@@ -153,8 +153,8 @@ export default {
     imagesRoute() {
       this.$router.push('/images')
     },
-    tasksConfirmedRoute() {
-      this.$router.push('/tasks/confirmed')
+    tasksRoute() {
+      this.$router.push('/tasks')
     },
 
 
@@ -284,7 +284,7 @@ body {
   pointer-events: none;
 }
 .modalbg .dialog {
-  width: 400px;
+  width: 380px;
   height: 250px;
   position: relative;
   top: -1000px;
