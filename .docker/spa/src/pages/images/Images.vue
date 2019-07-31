@@ -43,10 +43,10 @@
       <div class="con-example-images">
         <vs-select
         class="selectExample"
-          label="Figuras"
+          label="Screenshots"
           v-model="hover"
           >
-          <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in hovers" />
+          <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in typeImages" />
         </vs-select>
 
         <vs-images :hover="hover">
@@ -77,13 +77,11 @@ export default {
     return {
       user: false,
       hover: 'blur',
-      hovers:[
-        {text:'Default',value:'default'},
-        {text:'Blur',value:'blur'},
-        {text:'Zoom',value:'zoom'},
-        {text:'Dark',value:'dark'},
-        {text:'Scale',value:'scale'},
-        {text:'Curtain',value:'curtain'},
+      typeImages:[
+        {text:'Tarefas',value:'tasks'},
+        {text:'Reclamações',value:'claims'},
+        {text:'Prêmios',value:'awards'},
+        {text:'Mensagens',value:'messages'},
       ],
     }
   },

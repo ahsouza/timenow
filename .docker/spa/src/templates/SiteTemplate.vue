@@ -52,10 +52,10 @@
     <h5>Notificações</h5><br><br>   
 
     <vs-avatar size="50px" @click="friendsRoute" color="primary" :badge="badgeSolicitations" icon="group_add"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="danger" :badge="badgeMessages" icon="email"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="dark" :badge="badgeRecords" icon="record_voice_over"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="warning" :badge="badgeNotes" icon="event_note"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="success" :badge="badgePublish" icon="public"/>
+    <vs-avatar size="50px" @click="messagesRoute" color="danger" :badge="badgeMessages" icon="email"/>
+    <vs-avatar size="50px" @click="recordsRoute" color="dark" :badge="badgeRecords" icon="record_voice_over"/>
+    <vs-avatar size="50px" @click="tasksRoute" color="warning" :badge="badgeNotes" icon="event_note"/>
+    <vs-avatar size="50px" @click="publicationsRoute" color="success" :badge="badgePublish" icon="public"/>
     
     
     
@@ -155,6 +155,9 @@ export default {
     },
     tasksRoute() {
       this.$router.push('/tasks')
+    },
+    publicationsRoute() {
+      this.$router.push('/dash')
     },
 
 
