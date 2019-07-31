@@ -1,8 +1,9 @@
 <template>
   <span>
     <header>
-      <nav-bar logo="" url="/" cor="white">
+      <nav-bar logo="" url="/dash" cor="white">
         <li v-if="user"><router-link to="/">Home</router-link></li>
+
         <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
         <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
         <li v-if="user"><router-link to="/messages">Mensagens</router-link></li>
@@ -21,17 +22,22 @@
         <div class="row">
           <grid-vue tamanho="12 l4 m4">
             <Sidebar></Sidebar><br>
-              
+        
+        
               <vs-button @click="messagesRoute" radius color="primary" type="gradient" icon="question_answer" class="btn-tasks"></vs-button>
 
               <vs-button @click="recordsRoute" radius color="primary" type="gradient" icon="record_voice_over" class="btn-tasks"></vs-button>
 
-              <vs-button @click="friendsRoute" radius color="primary" type="gradient" icon="people" class="btn-tasks"></vs-button>
+              <vs-button :badge="badge1" @click="friendsRoute" radius color="primary" type="gradient" icon="people" class="btn-tasks"></vs-button>
+
+              
               
               <br><br>
 
               <vs-button @click="imagesRoute" radius color="warning" type="gradient" icon="photo" class="btn-tasks"></vs-button>
+
               <vs-button @click="documentsRoute" radius color="warning" type="gradient" icon="library_books" class="btn-tasks"></vs-button>
+
               <vs-button @click="tasksConfirmedRoute" radius color="success" type="gradient" icon="done" class="btn-tasks"></vs-button>
 
 
@@ -40,8 +46,23 @@
 
 
 
+<div id="openModal" class="modalbg">
+  <div class="dialog">
+    <a href="#close" title="Close" class="close">X</a>
+    <h5>Notificações</h5><br><br>
 
 
+    <vs-avatar size="50px" @click="friendsRoute" color="primary" :badge="badgeSolicitations" icon="people"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="warning" :badge="badgeSolicitations" icon="email"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="dark" :badge="badgeSolicitations" icon="record_voice_over"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="success" :badge="badgeSolicitations" icon="event_note"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="success" :badge="badgeSolicitations" icon="event_note"/>
+    
+
+    <p class="fineprint">Based on the article "Creating a modal window with HTML5 & CSS3" at <a href="webdesignerdepot.com">Webdesigner Depot</a></p>
+    <p class="fineprint">p.s. Sorry for calling you a dingus earlier.</p>
+  </div>
+</div>
 
 
 
@@ -68,7 +89,7 @@
 
 
         <div class="fixed-action-btn" @mouseover="hover = true" @mouseout="hover = null">
-            <a class="btn-floating btn-large waves-effect waves-light red animated pulse"><i class="medium material-icons">notifications_active</i></a>
+            <a href="#openModal" class="btn-floating btn-large waves-effect waves-light red animated pulse"><i class="medium material-icons">notifications_active</i></a>
           <ul>
             <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
             <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
@@ -90,7 +111,9 @@ export default {
   name: 'SiteTemplate',
   data() {
     return {
-      user: false
+      badgeSolicitations: 6,
+      user: false,
+ 
     }
   },
   components:{
@@ -130,7 +153,16 @@ export default {
     },
     tasksConfirmedRoute() {
       this.$router.push('/tasks/confirmed')
-    }
+    },
+
+
+
+
+
+
+
+
+
   }
 }
 </script>
@@ -172,10 +204,168 @@ a {
 .margin-transition{
   position: relative;
   left: 0;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 .margin-transition:hover{
   margin-bottom: 20px;
+}
+
+</style>
+
+
+
+<style scoped>
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Yanone Kaffeesatz Regular'), local('YanoneKaffeesatz-Regular'), url(https://fonts.gstatic.com/s/yanonekaffeesatz/v11/3y976aknfjLm_3lMKjiMgmUUYBs04Y8bH-8.ttf) format('truetype');
+}
+body {
+  width: 100%;
+  background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/grid.png) repeat #fefefe;
+}
+.button {
+  margin: 40px auto;
+  font-size: 72px;
+  font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #fff;
+  font-weight: 400;
+  color: #666;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 20px 70px 30px;
+  position: relative;
+  top: 50px;
+  background: #eee;
+  width: 300px;
+  display: block;
+  text-align: center;
+  box-shadow: 1px 1px 1px #fff;
+  -moz-box-shadow: 1px 1px 1px #fff;
+  -webkit-box-shadow: 1px 1px 1px #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.button:hover {
+  color: #333;
+  background: #eeffff;
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.modalbg {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 99999;
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -transition-delay: 0.1s;
+  display: block;
+  pointer-events: none;
+}
+.modalbg .dialog {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  top: -1000px;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #ccc);
+  background: -webkit-linear-gradient(#fff, #ccc);
+  background: -o-linear-gradient(#fff, #ccc);
+  box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+}
+.modalbg .dialog .ie7 {
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
+}
+.modalbg:target {
+  display: block;
+  pointer-events: auto;
+  background: rgba(4, 10, 30, 0.8);
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.modalbg:target .dialog {
+  top: -20px;
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -transition-delay: 0.1s;
+}
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -transition-delay: 0.1s;
+}
+.close .ie7 {
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
+}
+.close:hover {
+  background: #00d9ff;
+  -moz-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.fineprint {
+  font-style: italic;
+  font-size: 10px;
+  color: #646;
+}
+a {
+  color: #333;
+  text-decoration: none;
 }
 
 </style>

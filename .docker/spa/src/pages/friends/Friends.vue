@@ -80,13 +80,13 @@
                         @close="close"
                         :active.sync="activePrompt">
                          <div class="con-exemple-prompt">
-                            Enter the security code
+                            Destinatário
                            <vs-input placeholder="Para" v-model="val"/>
                            <vs-textarea counter="20" label="Digite sua mensagem" :counter-danger.sync="counterDanger" v-model="textarea" />
 
                            <vs-select
                               class="selectExample"
-                              label="Figuras"
+                              label="Provedores De Email"
                               v-model="select1"
                               >
                               <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
@@ -148,9 +148,9 @@ export default {
   data:()=>({
     select1:2,
     options1:[
-      {text:'IT',value:0},
-      {text:'Blade Runner',value:2},
-      {text:'Thor Ragnarok',value:3},
+      {text:'Outlook',value:2},
+      {text:'Gmail',value:0},
+      {text:'Corporativo',value:4},
     ],
     activePrompt:false,
     val:'',
@@ -256,15 +256,15 @@ export default {
     acceptAlert(color){
       this.$vs.notify({
         color:'success',
-        title:'Accept Selected',
-        text:'Lorem ipsum dolor sit amet, consectetur'
+        title:'Envio de e-mail',
+        text:'Seu e-mail foi enviado com sucesso!'
       })
     },
     close(){
       this.$vs.notify({
-        color:'danger',
-        title:'Closed',
-        text:'You close a dialog!'
+        color:'primary',
+        title:'Cancelando E-mail',
+        text:'Você fechou a caixa de menssagens!'
       })
     }
   }
@@ -295,5 +295,5 @@ export default {
   padding-bottom 0px;
   .vs-input
     width 100%
-    margin-top 10px;
+    margin-top 40px;
 </style>
