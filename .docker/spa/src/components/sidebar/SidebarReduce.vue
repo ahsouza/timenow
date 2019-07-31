@@ -13,31 +13,39 @@
       </div>
       <vs-sidebar-group open title="Application">
         <vs-sidebar-item index="1" icon="menu" @click="reduce=!reduce">
-         Toggle Sidebar
+         Toggle Sidebaaaar
         </vs-sidebar-item>
         <vs-sidebar-item index="5" icon="priority_high">
-          Configurations
+          Tarefas
         </vs-sidebar-item>
 
-        <vs-sidebar-group title="Store">
-          <vs-sidebar-item index="2.1" icon="store">
-            Store
+        <vs-sidebar-group title="Atividades">
+          <vs-sidebar-item index="2.1" @click="recordsRoute" icon="record_voice_over">
+            Gravações De Aúdio
           </vs-sidebar-item>
-          <vs-sidebar-item index="2.2" icon="nature_people">
-            Nature
+          <vs-sidebar-item index="2.2" @click="messagesRoute" icon="email">
+            Envio de Mensagens
           </vs-sidebar-item>
-          <vs-sidebar-item index="2.3" icon="style">
-            Style
+          <vs-sidebar-item index="2.3" @click="imagesRoute" icon="photo">
+            Galeria De Imagens
+          </vs-sidebar-item>
+
+          <vs-sidebar-item index="2.3" @click="tasksRoute" icon="event_note">
+            Tarefas
+          </vs-sidebar-item>
+
+          <vs-sidebar-item index="2.3" @click="documentsRoute" icon="library_books">
+            Documentos
           </vs-sidebar-item>
         </vs-sidebar-group>
-        <vs-sidebar-item index="2" icon="gavel">
-          History
+        <vs-sidebar-item index="2" @click="friendsRoute" icon="people">
+          Amigos
         </vs-sidebar-item>
         <vs-sidebar-item index="3" icon="https">
-          Security
+          Segurança & Privacidade
         </vs-sidebar-item>
         <vs-sidebar-item index="4" icon="help">
-          Help
+          Ajuda
         </vs-sidebar-item>
       </vs-sidebar-group>
 
@@ -47,7 +55,7 @@
       </vs-divider>
 
       <vs-sidebar-item index="6" icon="account_box">
-        Profile
+        Perfil
       </vs-sidebar-item>
       
       <div class="footer-sidebar" slot="footer">
@@ -100,7 +108,35 @@ export default {
     active:false,
     notExpand: false,
     reduce: true
-  })
+  }),
+  methods: {
+    exit() {
+      sessionStorage.clear()
+      this.user = false
+      this.$router.push('/login')
+    },
+    messagesRoute() {
+      this.$router.push('/messages')
+    },
+    recordsRoute() {
+      this.$router.push('/records')
+    },
+    friendsRoute() {
+      this.$router.push('/friends')
+    },
+    documentsRoute() {
+      this.$router.push('/documents')
+    },
+    imagesRoute() {
+      this.$router.push('/images')
+    },
+    tasksRoute() {
+      this.$router.push('/tasks')
+    },
+    publicationsRoute() {
+      this.$router.push('/dash')
+    },
+  }
 }
 </script>
 

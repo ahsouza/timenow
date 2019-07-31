@@ -42,35 +42,24 @@
 
 
           </grid-vue>
+          <div id="openModal" class="modalbg">
+            <div class="dialog">
+              <a href="#close" title="Close" class="close">X</a>
+              <h5>Notificações</h5><br><br>   
+
+              <vs-avatar size="50px" @click="friendsRoute" color="primary" :badge="badgeSolicitations" icon="group_add"/>
+              <vs-avatar size="50px" @click="messagesRoute" color="danger" :badge="badgeMessages" icon="email"/>
+              <vs-avatar size="50px" @click="recordsRoute" color="dark" :badge="badgeRecords" icon="record_voice_over"/>
+              <vs-avatar size="50px" @click="tasksRoute" color="warning" :badge="badgeNotes" icon="event_note"/>
+              <vs-avatar size="50px" @click="publicationsRoute" color="success" :badge="badgePublish" icon="public"/>
+              
+            </div>
+          </div>
 
 
-
-
-<div id="openModal" class="modalbg">
-  <div class="dialog">
-    <a href="#close" title="Close" class="close">X</a>
-    <h5>Notificações</h5><br><br>   
-
-    <vs-avatar size="50px" @click="friendsRoute" color="primary" :badge="badgeSolicitations" icon="group_add"/>
-    <vs-avatar size="50px" @click="messagesRoute" color="danger" :badge="badgeMessages" icon="email"/>
-    <vs-avatar size="50px" @click="recordsRoute" color="dark" :badge="badgeRecords" icon="record_voice_over"/>
-    <vs-avatar size="50px" @click="tasksRoute" color="warning" :badge="badgeNotes" icon="event_note"/>
-    <vs-avatar size="50px" @click="publicationsRoute" color="success" :badge="badgePublish" icon="public"/>
-    
-    
-    
-  </div>
-</div>
-
-
-
-
-
-
-
-          <grid-vue tamanho="12 l8 m8">
-            <slot name="main" />
-          </grid-vue>
+        <grid-vue tamanho="12 l8 m8">
+          <slot name="main" />
+        </grid-vue>
 
         </div>
       </div>
@@ -84,17 +73,15 @@
       <li><a class="grey-text text-lighten-3" href="/settings">Configurações</a></li>
 
     </footer-vue>
-
-
-        <div class="fixed-action-btn" @mouseover="hover = true" @mouseout="hover = null">
-            <a href="#openModal" class="btn-floating btn-large waves-effect waves-light red animated pulse"><i class="medium material-icons">notifications_active</i></a>
-          <ul>
-            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-          </ul>
-        </div>
+      <div class="fixed-action-btn" @mouseover="hover = true" @mouseout="hover = null">
+        <a href="#openModal" class="btn-floating btn-large waves-effect waves-light red animated pulse"><i class="medium material-icons">notifications_active</i></a>
+        <ul>
+          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+      </div>
   </span>
 </template>
 
@@ -159,15 +146,6 @@ export default {
     publicationsRoute() {
       this.$router.push('/dash')
     },
-
-
-
-
-
-
-
-
-
   }
 }
 </script>

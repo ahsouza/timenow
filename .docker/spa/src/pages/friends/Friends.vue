@@ -23,37 +23,6 @@
     <span slot="main">
       <div class="row">
         
-
-
-
-
-
-  <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
-    <vs-card>
-      <div slot="header">
-        <h3>
-          Hello world !
-        </h3>
-      </div>
-      <div>
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
-      </div>
-      <div slot="footer">
-        <vs-row vs-justify="flex-end">
-          <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
-          <vs-button color="primary" icon="turned_in_not"></vs-button>
-          <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
-        </vs-row>
-      </div>
-    </vs-card>
-  </vs-col>
-
-
-
-
-
-
-        
         <div class="col s12 m12 l12">
 
 <!--             <vs-chip closable color="#24c1a0" close-icon="close">
@@ -63,7 +32,6 @@
 
 
  -->
-
 
 
 
@@ -174,9 +142,29 @@
 
 
 
-      <!-- <div class="row">
+<!--       <div class="row">
         <div class="col s12 m12">
           <h1>Other Line</h1>
+
+          <vs-col type="flex" style="position: fixed; " vs-w="4">
+            <vs-card>
+              <div slot="header">
+                <h3>
+                  Hello world !
+                </h3>
+              </div>
+              <div>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+              </div>
+              <div slot="footer">
+                <vs-row vs-justify="flex-end">
+                  <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
+                  <vs-button color="primary" icon="turned_in_not"></vs-button>
+                  <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
+                </vs-row>
+              </div>
+            </vs-card>
+          </vs-col>
         </div>
       </div> -->
              

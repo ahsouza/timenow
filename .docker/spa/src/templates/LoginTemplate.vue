@@ -15,7 +15,7 @@
 
         <div class="row">
           <grid-vue tamanho="12 m2 l6">
-              <slot name="menu-left" />
+            <slot name="menu-left" />
           </grid-vue>
 
           <grid-vue tamanho="12 m10 l6" class="animated fadeInRight">
