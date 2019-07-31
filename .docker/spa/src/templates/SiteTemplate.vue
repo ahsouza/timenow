@@ -49,18 +49,16 @@
 <div id="openModal" class="modalbg">
   <div class="dialog">
     <a href="#close" title="Close" class="close">X</a>
-    <h5>Notificações</h5><br><br>
+    <h5>Notificações</h5><br><br>   
 
-
-    <vs-avatar size="50px" @click="friendsRoute" color="primary" :badge="badgeSolicitations" icon="people"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="warning" :badge="badgeSolicitations" icon="email"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="dark" :badge="badgeSolicitations" icon="record_voice_over"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="success" :badge="badgeSolicitations" icon="event_note"/>
-    <vs-avatar size="50px" @click="friendsRoute" color="success" :badge="badgeSolicitations" icon="event_note"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="primary" :badge="badgeSolicitations" icon="group_add"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="danger" :badge="badgeMessages" icon="email"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="dark" :badge="badgeRecords" icon="record_voice_over"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="warning" :badge="badgeNotes" icon="event_note"/>
+    <vs-avatar size="50px" @click="friendsRoute" color="success" :badge="badgePublish" icon="public"/>
     
-
-    <p class="fineprint">Based on the article "Creating a modal window with HTML5 & CSS3" at <a href="webdesignerdepot.com">Webdesigner Depot</a></p>
-    <p class="fineprint">p.s. Sorry for calling you a dingus earlier.</p>
+    
+    
   </div>
 </div>
 
@@ -112,6 +110,10 @@ export default {
   data() {
     return {
       badgeSolicitations: 6,
+      badgeMessages: 26,
+      badgeRecords: 2,
+      badgePublish: 12,
+      badgeNotes: 4,
       user: false,
  
     }
@@ -283,7 +285,7 @@ body {
 }
 .modalbg .dialog {
   width: 400px;
-  height: 300px;
+  height: 250px;
   position: relative;
   top: -1000px;
   margin: 10% auto;
