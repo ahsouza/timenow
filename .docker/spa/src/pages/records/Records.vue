@@ -57,10 +57,17 @@
       <div class="row">
         
         <div class="col s6 m6 l6">
-          <!-- Criar condicional para mudança de icones caso inicie gravações de aúdio -->
-          <vs-avatar size="100px" @click="friendsRoute" color="primary" icon="keyboard_voice"/>
-          
-          <vs-avatar class="animated pulse" size="100px" @click="friendsRoute" color="purple" icon="keyboard_voice"/>
+
+
+          <div v-if="record">
+            <vs-avatar @click="recordOn" class="animated fadeIn" size="100px" color="purple" icon="keyboard_voice"/>
+            
+          </div>
+          <div v-else>
+            <vs-avatar class="animated pulse" size="100px" color="brown" icon="keyboard_voice"/>
+
+          </div>
+
         
         </div>
         
@@ -93,7 +100,8 @@ export default {
   name: 'Records',
   data() {
     return {
-      user: false
+      user: false,
+      record: true
     }
   },
   components:{
@@ -107,6 +115,11 @@ export default {
     let userSession = sessionStorage.getItem('user')
     if (userSession) {
       this.user = JSON.parse(userSession)
+    }
+  },
+  methods: {
+    recordOn() {
+      this.record = false
     }
   }
   
