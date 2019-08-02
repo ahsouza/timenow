@@ -17,7 +17,7 @@
             {{ user.email }}
             <br>
             Pts: <b>120</b>
-          </span>
+          </span> 
         </grid-vue>
 
       </div>
@@ -50,6 +50,30 @@
       title="Saiba mais da Time-Now Engenharia"
       />
       </card-content-vue> -->
+
+      <h5>Gravações De Aúdio</h5>
+
+
+      <div class="row">
+        
+        <div class="col s6 m6 l6">
+          <!-- Criar condicional para mudança de icones caso inicie gravações de aúdio -->
+          <vs-avatar size="100px" @click="friendsRoute" color="primary" icon="keyboard_voice"/>
+          
+          <vs-avatar class="animated pulse" size="100px" @click="friendsRoute" color="purple" icon="keyboard_voice"/>
+        
+        </div>
+        
+        <div class="col s6 m6 l6">
+          <h5>Other Colummn</h5>          
+        </div>
+
+
+
+
+      </div>
+
+
 
 
     </span>
