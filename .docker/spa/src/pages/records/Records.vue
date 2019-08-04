@@ -57,31 +57,62 @@
       <div class="row">
         
         <div class="col s6 m6 l6">
-
-
+          <br><br><br><br>
           <div v-if="record">
             <vs-avatar @click="recordOn" class="animated fadeIn" size="100px" color="purple" icon="keyboard_voice"/>
             
           </div>
           <div v-else>
             <vs-avatar @click="recordOff" class="animated pulse" size="100px" color="brown" icon="keyboard_voice"/>
-
           </div>
 
-        
         </div>
+
+
         
         <div class="col s6 m6 l6">
-          <h5>Other Colummn</h5>          
+
+          <vs-list>
+            <!-- GRAVAÇÕES REALIZADAS -->
+            <vs-list-header title="Gravações Enviadas"></vs-list-header>
+
+            <vs-list-item title="Roberta Monderfani" subtitle="04/08/2019 - 14:11">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <vs-list-item title="Veronika Ossi" subtitle="12/06/2019 - 08:00">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <vs-list-item title="Edson Boltrini" subtitle="20/07/2019 - 10:30">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <!-- GRAVAÇÕES RECEBIDAS -->
+            <vs-list-header title="Gravações Recebidas" color="primary"></vs-list-header>          
+
+            <vs-list-item title="Roberta Monderfani" subtitle="04/08/2019 - 14:59">    
+              <vs-avatar color="danger" icon="keyboard_voice"/>
+            </vs-list-item>              
+
+            <vs-list-item title="Veronika Ossi" subtitle="12/06/2019 - 08:15">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <vs-list-item title="Edson Boltrini" subtitle="20/07/2019 - 11:07">
+              <vs-avatar color="danger" icon="keyboard_voice"/>
+            </vs-list-item>
+
+          </vs-list>
+
+
+
         </div>
 
 
 
 
       </div>
-
-
-
 
     </span>
 
@@ -101,7 +132,8 @@ export default {
   data() {
     return {
       user: false,
-      record: true
+      record: true,
+      recordReceived: true
     }
   },
   components:{
