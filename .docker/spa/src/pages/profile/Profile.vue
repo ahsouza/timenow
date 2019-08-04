@@ -6,34 +6,55 @@
     </span>
 
     <span slot="main">
-      <h4>Profile</h4><br><br>
-        
-      <div class="file-field input-field">      
-        <a class="btn-small waves-effect waves-light orange">
-          <i class="material-icons">photo</i>
-          <input type="file" v-on:change="saveAvatar">
-        </a>
-            
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
+      <h4>Editar Perfil</h4>
+      <br><br>
+
+      <div>
+        <vs-tabs :color="colorx">
+
+          <!-- ALTERAR DADOS PESSOAIS -->
+          <vs-tab label="Dados Pessoais" icon="account_circle" @click="colorx = '#0000FF'">
+            <br><br>
+            <label>Seu Nome</label>
+            <input type="text" placeholder="Digite seu nome" v-model="name">
+            <br><br>
+            <label>Seu E-mail</label>
+            <input type="text" placeholder="Digite seu e-mail" v-model="email" required>
+            <br><br><br>
+            <label>Senha Antiga</label>
+            <input type="password" placeholder="Digite sua senha" v-model="password" required>
+            <br><br>
+            <label>Nova Senha</label>
+            <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
+
+          </vs-tab>
+          
+          <!-- ALTERAR IMAGEM AVATAR -->
+          <vs-tab label="Alterar Imagem" icon="photo" @click="colorx = '#8B0000'">
+            <br><br><br><br>
+            <div class="file-field input-field">      
+              <a class="btn-small waves-effect waves-light orange">
+                <i class="material-icons">photo</i>
+                <input type="file" v-on:change="saveAvatar">
+              </a>
+                  
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </vs-tab>
+
+        </vs-tabs>
       </div>
-        
-        <label>Nome</label>
-        <input type="text" placeholder="Digite seu nome" v-model="name">
-        <br>
-        <label>Usuário</label>
-        <input type="text" placeholder="Digite seu e-mail" v-model="email" required>
-        <br>
-        <label>Senha Antiga</label>
-        <input type="text" placeholder="Digite sua senha" v-model="password" required>
-        <br>
-        <label>Nova Senha</label>
-        <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
+
+
+
 
         <br><br>
         <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button>
         <br><br>
+
     </span>
 
   </SiteTemplate>
@@ -47,6 +68,7 @@ export default {
   name: 'Profile',
   data () {
     return {
+      colorx: '#8B0000',
       user: false,
       name: '',
       email: '',
