@@ -33,25 +33,38 @@
 
     </span>
 
-
-
-
-
-
     <span slot="main">
-<!--       <public-content-vue />
-      <card-content-vue
-      perfil="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"
-      nome="Aníbal Henrique"
-      data="21/03/2019 16:52">
-      <card-detail-vue
-      img="https://clickpetroleoegas.com.br/wp-content/uploads/2019/04/engenharia-752x440.jpg"
-      txt="A Time-Now Engenharia se destaca no mercado há 23 anos oferecendo a seus clientes as melhores soluções em Gestão de Engenharia com foco no Gerenciamento de Implantação de Projetos, Gestão de Portfólio de Projetos e Gestão de Paradas de Plantas Industriais."
-      title="Saiba mais da Time-Now Engenharia"
-      />
-      </card-content-vue> -->
-
       
+      <h5>
+        Documentações Em Geral
+      </h5>
+      <br><br>
+      <vs-tabs alignment="center">
+        <vs-tab label="PDF's em Geral">
+          <div>
+
+          </div>
+        </vs-tab>
+        <vs-tab label="Notas Fiscais">
+          <div>
+
+          </div>
+        </vs-tab>
+        <vs-tab label="Planilhas">
+          <div>
+
+          </div>
+        </vs-tab>
+        <vs-tab label="Contratos De Serviços">
+          <div>
+
+          </div>
+        </vs-tab>
+      </vs-tabs>
+
+
+
+
     </span>
 
   </SiteTemplate>

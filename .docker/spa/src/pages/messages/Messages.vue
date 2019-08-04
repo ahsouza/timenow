@@ -37,8 +37,8 @@
             </li>
             <li class="animated fadeInUp collection-item avatar">
               <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" class="circle">
-              <span class="title">Julie Soares</span>
-              <p>Jurídico<br>
+              <span class="title">Letícia Fraga</span>
+              <p>Bióloga<br>
                  Pts: <b>340</b>
               </p>
               <a href="#!" class="secondary-content"><i class="material-icons">mail_outline</i></a>

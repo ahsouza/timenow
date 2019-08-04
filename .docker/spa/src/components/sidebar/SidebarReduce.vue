@@ -15,16 +15,18 @@
         <vs-sidebar-item index="1" icon="menu" @click="reduce=!reduce">
          Toggle Sidebaaaar
         </vs-sidebar-item>
-        <vs-sidebar-item index="5" icon="priority_high">
-          Tarefas
-        </vs-sidebar-item>
+   
+      <vs-divider icon="event_note" position="left">
+        Tarefas
+      </vs-divider>
+      
 
-        <vs-sidebar-group title="Atividades">
+        <vs-sidebar-group title="Atividades" icon="event_note">
           <vs-sidebar-item index="2.1" @click="recordsRoute" icon="record_voice_over">
             Gravações De Aúdio
           </vs-sidebar-item>
-          <vs-sidebar-item index="2.2" @click="messagesRoute" icon="email">
-            Envio de Mensagens
+          <vs-sidebar-item @click="messagesRoute" icon="email">
+            Mensagens
           </vs-sidebar-item>
           <vs-sidebar-item index="2.3" @click="imagesRoute" icon="photo">
             Galeria De Imagens
@@ -38,6 +40,11 @@
             Documentos
           </vs-sidebar-item>
         </vs-sidebar-group>
+
+      <vs-divider icon="person" position="left">
+        User
+      </vs-divider>
+
         <vs-sidebar-item index="2" @click="friendsRoute" icon="people">
           Amigos
         </vs-sidebar-item>
@@ -50,9 +57,6 @@
       </vs-sidebar-group>
 
 
-      <vs-divider icon="person" position="left">
-        User
-      </vs-divider>
 
       <vs-sidebar-item index="6" icon="account_box">
         Perfil
