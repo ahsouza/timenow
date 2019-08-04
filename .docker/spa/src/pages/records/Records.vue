@@ -64,7 +64,7 @@
             
           </div>
           <div v-else>
-            <vs-avatar class="animated pulse" size="100px" color="brown" icon="keyboard_voice"/>
+            <vs-avatar @click="recordOff" class="animated pulse" size="100px" color="brown" icon="keyboard_voice"/>
 
           </div>
 
@@ -120,6 +120,9 @@ export default {
   methods: {
     recordOn() {
       this.record = false
+    },
+    recordOff() {
+      this.record = true
     }
   }
   
