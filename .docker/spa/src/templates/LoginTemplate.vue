@@ -31,13 +31,15 @@
       </div>
     </main>
 
-    <footer-vue cor="green darken-2" logo="Social" descricao="Teste de descrição" ano="2019">
 
-      <li><a class="green-text text-lighten-3" href="#!">Quem somos</a></li>
-      <li><a class="green-text text-lighten-3" href="#!">Nosso Site</a></li>
-      <li><a class="green-text text-lighten-3" href="#!">Termos</a></li>
+    <footer-vue cor="green darken-1" logo="@/assets/timenow.png" descricao="Sua de descrição" ano="2019">
 
-    </footer-vue>
+      <li><a class="grey-text text-lighten-3" href="#!">Segurança & Privacidade</a></li>
+      <li><a class="grey-text text-lighten-3" href="#!">Preferências</a></li>
+      <li><a class="grey-text text-lighten-3" href="/profile">Meu Perfil</a></li>
+      <li><a class="grey-text text-lighten-3" href="/settings">Configurações</a></li>
+
+    </footer-vue> 
   </span>
 </template>
 

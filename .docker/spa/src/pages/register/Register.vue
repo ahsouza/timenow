@@ -20,10 +20,18 @@
         <label>Confirme senha</label>
         <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
 
-        <br><br>
+        <br><br><br><br>
 
-        <router-link class="btn deep-purple" to="/login">JÁ TENHO UMA CONTA</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn light-green" v-on:click="register()">SALVAR</button>
+
+        <vs-button color="primary" type="filled" to="/login">JÁ TENHO UMA CONTA</vs-button>&nbsp;
+        &nbsp;&nbsp;
+        <vs-button v-on:click="register()" @click="$vs.notify({
+          title:'Salvando Usuário...',
+          text:'Cadastro efetuado com sucesso!',
+          color:'success',
+          icon:'done',
+          position:'top-center'
+        })" color="success" type="filled">SALVAR</vs-button>
 
     </span>
 
@@ -58,10 +66,10 @@ export default {
       })
       .then(res => {
         if (res.data.token) {
-          alert('Registrado com sucesso!')
+          // alert('Registrado com sucesso!')
           console.log('Registrado com sucesso!')
           sessionStorage.setItem('user', JSON.stringfy(res.data))
-          this.$router.push('/')
+          this.$router.push('/login')
 
         } else if (res.data.status == false) {
           

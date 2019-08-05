@@ -12,10 +12,11 @@
       <input type="text" placeholder="E-mail" v-model="email">
 
       <label>Senha</label>
-      <input type="password" placeholder="Senha" v-model="password"><br><br><br>
+      <input type="password" placeholder="Senha" v-model="password"><br><br><br><br>
         
-      <router-link class="btn pink" to="/register">CADASTRE-SE</router-link>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button class="btn light-blue" v-on:click="login()">ENTRAR</button>
+
+      <vs-button color="purple" type="filled" to="/register">CADASTRE-SE</vs-button>&nbsp;&nbsp;&nbsp;
+      <vs-button color="primary" type="filled" v-on:click="login()">ENTRAR</vs-button>
     </span>
 
   </LoginTemplate>
@@ -52,7 +53,7 @@ export default {
           console.log('Autenticado com sucesso!')
           // localStorage.setItem('user', JSON.stringify(res.data))
           sessionStorage.setItem('user', JSON.stringify(res.data))
-          this.$router.push('/')
+          this.$router.push('/dash')
 
         } else if(res.data.status == false){
           

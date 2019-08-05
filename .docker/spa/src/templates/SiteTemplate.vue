@@ -2,7 +2,7 @@
   <span>
     <header>
       <nav-bar logo="" url="/dash" cor="white">
-        <li v-if="user"><router-link to="/">Home</router-link></li>
+        <li v-if="user"><router-link to="/dash">Home</router-link></li>
 
         <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
         <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
@@ -10,10 +10,9 @@
         <li v-if="user"><router-link to="/tasks">Tarefas</router-link></li>
         <li v-if="user"><router-link to="/groups">Grupos</router-link></li>
         <li v-if="!user"><a href="http://www.timenow.com.br">Nosso Site</a></li>
-        <li v-if="user"><a v-on:click="exit()">Sair</a></li>
         
         <li v-if="user"><a href="sass.html"><i class="material-icons animated fadeInRight">search</i></a></li>
-        <li v-if="user"><a href="mobile.html"><i class="material-icons animated fadeInRight delay-1s">exit_to_app</i></a></li>
+        <li v-if="user"><a v-on:click="exit()"><i class="material-icons animated fadeInRight delay-1s">exit_to_app</i></a></li>
       </nav-bar>
     </header>
 
@@ -64,7 +63,7 @@
         </div>
       </div>
     </main>
-
+<!-- 
     <footer-vue cor="green darken-1" logo="@/assets/timenow.png" descricao="Sua de descrição" ano="2019">
 
       <li><a class="grey-text text-lighten-3" href="#!">Segurança & Privacidade</a></li>
@@ -72,7 +71,7 @@
       <li><a class="grey-text text-lighten-3" href="/profile">Meu Perfil</a></li>
       <li><a class="grey-text text-lighten-3" href="/settings">Configurações</a></li>
 
-    </footer-vue>
+    </footer-vue> -->
       <div class="fixed-action-btn" @mouseover="hover = true" @mouseout="hover = null">
         <a href="#openModal" class="btn-floating btn-large waves-effect waves-light red animated pulse"><i class="medium material-icons">notifications_active</i></a>
         <ul>

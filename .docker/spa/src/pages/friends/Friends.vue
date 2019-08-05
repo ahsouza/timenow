@@ -23,23 +23,8 @@
     <span slot="main">
       <div class="row">
         
-        <div class="col s12 m12 l12">
-
-<!--             <vs-chip closable color="#24c1a0" close-icon="close">
-              <vs-avatar src="https://randomuser.me/api/portraits/men/16.jpg"/>
-                Closable chip
-            </vs-chip>
-
-
- -->
-
-
-
-
-            
+        <div class="col s12 m12 l12">            
         <br><br>
-
-
           <div>
 
             <vs-table
@@ -47,7 +32,6 @@
               <template slot="header">
                 <h5>
                   Meus Amigos
-                  <!-- <font-awesome-icon icon="user-secret"/> -->
                 </h5>
 
               </template>
@@ -71,10 +55,6 @@
                     <vs-button vs-type="gradient" @click="activePrompt = true" size="small" color="primary" icon="send" class="btn-friend"></vs-button>
                     <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep" class="btn-friend"></vs-button>
                   </div>
-
-
-
-
 
                   <!-- MODAL -->
                     <div class="centerx con-exemple-prompt">
@@ -109,11 +89,7 @@
                        </vs-prompt>
                     </div>
                   <!-- MODAL -->
-
-
-
-
-
+                  
                   <template class="expand-user" slot="expand">
                     <div class="con-expand-users">
                       <vs-list>
