@@ -1,7 +1,7 @@
 <template>
   <span>
     <header>
-      <nav-bar v-if="user" logo="" url="/" cor="white">
+      <nav-bar v-if="user" logo="" url="/dash" cor="white">
 
         <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
         <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
@@ -11,7 +11,7 @@
     </header>
 
     <main>
-      <div class="container" style="padding: 10px">
+      <div class="container" style="margin-top: 6%">
 
         <div class="row">
           <grid-vue tamanho="12 m2 l6">
@@ -31,8 +31,7 @@
       </div>
     </main>
 
-
-    <footer-vue cor="green darken-1" logo="@/assets/timenow.png" descricao="Sua de descrição" ano="2019">
+    <footer-vue cor="green darken-1" logo="@/assets/timenow.png" descricao="Sua de descrição" ano="2019" style="margin-top: 10%">
 
       <li><a class="grey-text text-lighten-3" href="#!">Segurança & Privacidade</a></li>
       <li><a class="grey-text text-lighten-3" href="#!">Preferências</a></li>

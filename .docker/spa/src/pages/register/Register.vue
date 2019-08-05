@@ -2,11 +2,11 @@
   <LoginTemplate>
     
     <span slot="menu-left">
-      <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="animated pulse responsive-img" alt="@ahsouza">
+      <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="animated pulse responsive-img" alt="timenow">
     </span>
 
     <span slot="main">
-        <h4>Criar conta</h4><br><br>
+        <h4>Novo Usuário</h4><br><br>
         
         <label>Nome</label>
         <input type="text" placeholder="Digite seu nome" v-model="name">
@@ -20,7 +20,7 @@
         <label>Confirme senha</label>
         <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
 
-        <br><br><br><br>
+        <br><br>
 
 
         <vs-button color="primary" type="filled" to="/login">JÁ TENHO UMA CONTA</vs-button>&nbsp;

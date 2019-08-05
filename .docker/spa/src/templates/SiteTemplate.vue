@@ -63,15 +63,7 @@
         </div>
       </div>
     </main>
-<!-- 
-    <footer-vue cor="green darken-1" logo="@/assets/timenow.png" descricao="Sua de descrição" ano="2019">
 
-      <li><a class="grey-text text-lighten-3" href="#!">Segurança & Privacidade</a></li>
-      <li><a class="grey-text text-lighten-3" href="#!">Preferências</a></li>
-      <li><a class="grey-text text-lighten-3" href="/profile">Meu Perfil</a></li>
-      <li><a class="grey-text text-lighten-3" href="/settings">Configurações</a></li>
-
-    </footer-vue> -->
       <div class="fixed-action-btn" @mouseover="hover = true" @mouseout="hover = null">
         <a href="#openModal" class="btn-floating btn-large waves-effect waves-light red animated pulse"><i class="medium material-icons">notifications_active</i></a>
         <ul>

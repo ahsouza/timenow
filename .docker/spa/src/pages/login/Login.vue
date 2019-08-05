@@ -7,7 +7,7 @@
     </span>
 
     <span slot="main">
-      <h5>Login </h5><br><br> 
+      <h5>Login </h5><br><br>
       <label>Usuário</label>
       <input type="text" placeholder="E-mail" v-model="email">
 
@@ -18,6 +18,7 @@
       <vs-button color="purple" type="filled" to="/register">CADASTRE-SE</vs-button>&nbsp;&nbsp;&nbsp;
       <vs-button color="primary" type="filled" v-on:click="login()">ENTRAR</vs-button>
     </span>
+
 
   </LoginTemplate>
 </template>
