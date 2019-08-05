@@ -54,6 +54,8 @@ Route::post('/login', function (Request $request) {
   if(Auth::attempt(['email'=>$data['email'], 'password'=>$data['password']])) {
     $user = auth()->user();
     $user->token = $user->createToken($user->email)->accessToken;
+    $user->avatar = asset($user->avatar);
+
     return $user;
   } else {
   
@@ -165,15 +167,14 @@ Route::middleware('auth:api')->put('/profile', function (Request $request) {
     file_put_contents($url, $file);
 
     $user->avatar = $url;
-
-
   } 
 
   $user->save();
+
   $user->avatar = asset($user->avatar);
   $user->token = $user->createToken($user->email)->accessToken;
 
-  return $data;
+  return $user;
 });
 
 

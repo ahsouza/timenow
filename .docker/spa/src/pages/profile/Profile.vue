@@ -2,11 +2,12 @@
   <SiteTemplate>
     
     <span slot="menu-left">
-      <img :src="user.avatar" class="animated pulse responsive-img" alt="@ahsouza">
+      <img :src="user.avatar" class="animated pulse responsive-img" :alt="user.name">
     </span>
 
     <span slot="main">
       <h4>Editar Perfil</h4>
+      <small>{{user.name}}</small>
       <br><br>
 
       <div>
@@ -15,6 +16,7 @@
           <!-- ALTERAR DADOS PESSOAIS -->
           <vs-tab label="Dados Pessoais" icon="account_circle" @click="colorx = '#0000FF'">
             <br><br>
+
             <label>Seu Nome</label>
             <input type="text" placeholder="Digite seu nome" v-model="name">
             <br><br>
@@ -26,12 +28,13 @@
             <br><br>
             <label>Nova Senha</label>
             <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
-
+            
+            <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button>
           </vs-tab>
           
           <!-- ALTERAR IMAGEM AVATAR -->
           <vs-tab label="Alterar Imagem" icon="photo" @click="colorx = '#8B0000'">
-            <br><br><br><br>
+            <br><br><br>
             <div class="file-field input-field">      
               <a class="btn-small waves-effect waves-light orange">
                 <i class="material-icons">photo</i>
@@ -48,12 +51,8 @@
         </vs-tabs>
       </div>
 
-
-
-
-        <br><br>
-        <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button>
-        <br><br>
+        <br>
+        <!-- <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button> -->
 
     </span>
 
@@ -68,14 +67,13 @@ export default {
   name: 'Profile',
   data () {
     return {
-      colorx: '#8B0000',
       user: false,
+      colorx: '#8B0000',
       name: '',
       email: '',
       password: '',
       password_confirmation:'',
       avatar: ''
-
     }
   },
   created() {
@@ -86,7 +84,6 @@ export default {
       this.name = this.user.name
       this.email = this.user.email
       this.password = this.user.name
-      
     }
   },
   components:{
@@ -107,7 +104,6 @@ export default {
       }
       reader.readAsDataURL(file[0])
     },
-
     profile() {
       axios.put(`http://127.0.0.1:8000/api/profile`, {
         name: this.name,
@@ -119,7 +115,6 @@ export default {
       .then(res => {
 
         if (res.data.token) {
-          // Authentication Success!
           console.log(res.data.token)
 
           this.user = res.data
@@ -136,12 +131,12 @@ export default {
         }
        
       })
-      .catch(e => { 
+      .catch(e => {
         console.log(e)
         alert('Tente novamente mais tarde!')
       })
     }
-  }  
+  }
 }
 </script>
 

@@ -1,9 +1,7 @@
 <template>
   <LoginTemplate>
-
     <span slot="menu-left">
       <img src="https://pbs.twimg.com/profile_images/1554788274/logo_TNE.jpg" class="animated pulse responsive-img" alt="TimeNow">
-    
     </span>
 
     <span slot="main">
@@ -13,10 +11,9 @@
 
       <label>Senha</label>
       <input type="password" placeholder="Senha" v-model="password"><br><br><br><br>
-        
 
-      <vs-button color="purple" type="filled" to="/register">CADASTRE-SE</vs-button>&nbsp;&nbsp;&nbsp;
-      <vs-button color="primary" type="filled" v-on:click="login()">ENTRAR</vs-button>
+      <vs-button color="primary" type="filled" to="/register">CADASTRE-SE</vs-button>&nbsp;&nbsp;&nbsp;
+      <vs-button color="success" type="filled" v-on:click="login()">ENTRAR</vs-button>
     </span>
 
 
@@ -27,7 +24,6 @@
 import LoginTemplate from '@/templates/LoginTemplate'
 import Button from '@/components/button/Button'
 import axios from 'axios'
-
 
 export default {
   name: 'Home',
@@ -52,7 +48,6 @@ export default {
       .then(res => {
         if(res.data.token) {
           console.log('Autenticado com sucesso!')
-          // localStorage.setItem('user', JSON.stringify(res.data))
           sessionStorage.setItem('user', JSON.stringify(res.data))
           this.$router.push('/dash')
 
@@ -92,6 +87,5 @@ label {
 .btn {
   margin-top: 16px;
 }
-
 
 </style>

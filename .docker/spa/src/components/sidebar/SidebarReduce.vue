@@ -4,8 +4,6 @@
     <br><br>
     <vs-avatar size="70px" @click="active=!active, notExpand = false" src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"type="filled" /> @ahsouza
 
-
-
     <vs-sidebar :reduce="reduce" :reduce-not-hover-expand="notExpand" parent="body" default-index="1"  color="success" class="sidebarx" spacer v-model="active">
 
       <div class="header-sidebar" slot="header">
@@ -60,6 +58,10 @@
 
       <vs-sidebar-item index="6" icon="account_box">
         Perfil
+      </vs-sidebar-item>
+
+      <vs-sidebar-item index="6" @click="logout" icon="exit_to_app">
+        Sair
       </vs-sidebar-item>
       
       <div class="footer-sidebar" slot="footer">
@@ -140,6 +142,11 @@ export default {
     publicationsRoute() {
       this.$router.push('/dash')
     },
+    logout() {
+      sessionStorage.clear()
+      this.user = false
+      this.$router.push('/login')
+    }
   }
 }
 </script>

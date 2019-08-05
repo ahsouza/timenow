@@ -4,14 +4,14 @@
     <span slot="menu-left">
       <div class="row valign-wrapper">
         <grid-vue tamanho="1 l6 m12">
-          <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
+          <img :src="user.avatar" :alt="user.name" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
         </grid-vue>
 
 
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <h6>@ahsouza</h6>
-            Financeiro
+            <h6>{{user.name}}</h6>
+            Informática
             <br>
             Pts: <b>120</b>
           </span>
@@ -26,8 +26,6 @@
         
         <div class="col s4 m4">
           
-
-
           <div class="card">
             
             <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
@@ -73,7 +71,13 @@ export default {
   name: 'Settings',
   data () {
     return {
-
+      user: false
+    }
+  },
+  created() {
+    let userSession = sessionStorage.getItem('user')
+    if(userSession) {
+      this.user = JSON.parse(userSession)
     }
   },
   components:{

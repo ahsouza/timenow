@@ -21,24 +21,16 @@
         <div class="row">
           <grid-vue tamanho="12 l4 m4">
             <Sidebar></Sidebar><br>
-        
-        
+
               <vs-button @click="messagesRoute" radius color="primary" type="gradient" icon="question_answer" class="btn-tasks"></vs-button>
-
               <vs-button @click="recordsRoute" radius color="primary" type="gradient" icon="record_voice_over" class="btn-tasks"></vs-button>
-
               <vs-button :badge="badge1" @click="friendsRoute" radius color="primary" type="gradient" icon="people" class="btn-tasks"></vs-button>
-
-              
-              
+            
               <br><br>
 
               <vs-button @click="imagesRoute" radius color="success" type="gradient" icon="photo" class="btn-tasks"></vs-button>
-
               <vs-button @click="documentsRoute" radius color="success" type="gradient" icon="library_books" class="btn-tasks"></vs-button>
-
               <vs-button @click="tasksRoute" radius color="success" type="gradient" icon="event_note" class="btn-tasks"></vs-button>
-
 
           </grid-vue>
           <div id="openModal" class="modalbg">
@@ -54,7 +46,6 @@
               
             </div>
           </div>
-
 
         <grid-vue tamanho="12 l8 m8">
           <slot name="main" />
@@ -105,7 +96,6 @@ export default {
   },
   created() {
     let userSession = sessionStorage.getItem('user')
-    
     if(userSession) {
       this.user = JSON.parse(userSession)
     }

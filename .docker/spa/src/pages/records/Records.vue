@@ -1,20 +1,15 @@
 <template>
   <SiteTemplate>
     <span slot="menu-left">
-    
-      <!-- TEST A - MODELO DE PAINEL PARA SIDEBAR -->
-      <!-- ################################################# -->
+
       <div class="row valign-wrapper">
-        
         <grid-vue tamanho="1 l6 m12">
-          <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="75" class="circle responsive-img">
+          <img :src="user.avatar" :alt="user.name" width="75" class="circle responsive-img">
         </grid-vue>
-
-
+        
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <h6>@ahsouza</h6>
-            {{ user.email }}
+            <h6>{{user.name}}</h6>
             <br>
             Pts: <b>120</b>
           </span> 
