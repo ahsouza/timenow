@@ -21,18 +21,17 @@
 
 
     <span slot="main">
-      <div class="row">
+      <div class="row" style="margin-top: 15%">
         
-        <div class="col s12 m12 l12">            
-        <br><br>
+        <div class="col s12 m12 l12">
           <div>
-
+            <h5 style="font-family: Indie Flower">
+              Meus Amigos
+            </h5>
+            <br><br>
             <vs-table
               :data="users" style="overflow-y: scroll; overflow-x: hidden; height: 600px;">
               <template slot="header">
-                <h5>
-                  Meus Amigos
-                </h5>
 
               </template>
 
@@ -58,15 +57,7 @@
 
                   <!-- MODAL -->
                     <div class="centerx con-exemple-prompt">
-                      <!-- <vs-button @click="openPrompt" color="primary" type="border">Run prompt</vs-button> -->
-             <!--          <div class="modelx">
-                        {{val==null?'null':val}}
-                      </div>
-                       <div class="modelx">
-                         {{valMultipe.value1}}
-                         {{valMultipe.value2}}
-                       </div>
-                        -->
+ 
 
                        <vs-prompt
                         @cancel="val=''"
@@ -111,35 +102,6 @@
 
         </div>
       </div>
-
-
-
-<!--       <div class="row">
-        <div class="col s12 m12">
-          <h1>Other Line</h1>
-
-          <vs-col type="flex" style="position: fixed; " vs-w="4">
-            <vs-card>
-              <div slot="header">
-                <h3>
-                  Hello world !
-                </h3>
-              </div>
-              <div>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
-              </div>
-              <div slot="footer">
-                <vs-row vs-justify="flex-end">
-                  <vs-button type="gradient" color="danger" icon="favorite"></vs-button>
-                  <vs-button color="primary" icon="turned_in_not"></vs-button>
-                  <vs-button color="rgb(230,230,230)" color-text="rgb(50,50,50)" icon="settings"></vs-button>
-                </vs-row>
-              </div>
-            </vs-card>
-          </vs-col>
-        </div>
-      </div> -->
-             
 
     </span>
 

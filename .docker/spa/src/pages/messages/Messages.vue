@@ -21,10 +21,8 @@
 
 
     <span slot="main">
-      <div class="row">
-        
+      <div class="row" style="margin-top: 14%">
         <div class="col s12 m12 l12">
-          <br><br><br>
           <ul class="collection" style="overflow-y: scroll; overflow-x: hidden; height: 600px;">
             <li class="animated fadeInUp collection-item avatar">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl1ECKs6tftIi-blsBi9fi7yi0DB6v2gcXW2tx756y5-421vxInA" alt="" class="circle">

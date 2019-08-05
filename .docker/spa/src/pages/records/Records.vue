@@ -22,19 +22,12 @@
 
       </div>
 
-
-
     </span>
 
     <span slot="main">
-
-      <h5>Gravações De Aúdio</h5>
-
-
-      <div class="row">
+      <div class="row" style="margin-top: 14%">
         
         <div class="col s6 m6 l6">
-          <br><br><br><br>
           <div v-if="record">
             <vs-avatar @click="recordOn" class="animated fadeIn" size="100px" color="purple" icon="keyboard_voice"/>
             
@@ -44,12 +37,10 @@
           </div>
 
         </div>
-
-
         
         <div class="col s6 m6 l6 animated fadeInRight"> 
 
-          <vs-list>
+          <vs-list style="overflow-y: scroll; overflow-x: hidden; height: 460px;">
             <!-- GRAVAÇÕES REALIZADAS -->
             <vs-list-header title="Gravações Enviadas"></vs-list-header>
 
@@ -82,12 +73,7 @@
 
           </vs-list>
 
-
-
         </div>
-
-
-
 
       </div>
 

@@ -11,7 +11,7 @@
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
             <h6>@ahsouza</h6>
-            Financeiro
+            Informática
             <br>
             Pts: <b>120</b>
           </span>
@@ -21,160 +21,129 @@
 
 
     <span slot="main">
-      <br><br><br><br>
-      <div class="row">
+      <div class="row" style="margin-top: 25%">
         
         <div class="col s12 m12">
 
+          <div>
+            <vs-tabs :color="colorx">
+
+              <vs-tab @click="colorx = 'success'" label="Concluídas" icon="done">
+                <div class="con-tab-ejemplo">
+
+                    <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+                      <vs-card>
+                        <div slot="header">
+                          <h4>
+                            Tarefas Concluidas
+                          </h4>
+                        </div>
+                        <div>
+                          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+
+
+                          </span>
+                        </div>
+                        <div slot="footer">
+                          <vs-row vs-justify="flex-end">
+                            <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
+                          </vs-row>
+                        </div>
+                      </vs-card>
+                    </vs-col>
 
 
 
-  <div>
-    <vs-tabs :color="colorx">
+                    <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+                      <vs-card>
+                        <div slot="header">
+                          <h4>
+                            Tarefas Concluidas
+                          </h4>
+                        </div>
+                        <div>
+                          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                        </div>
+                        <div slot="footer">
+                          <vs-row vs-justify="flex-end">
+                            <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
+                          </vs-row>
+                        </div>
+                      </vs-card>
+                    </vs-col>
 
-      <vs-tab @click="colorx = 'success'" label="Concluídas" icon="done">
-        <div class="con-tab-ejemplo">
-
-            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
-              <vs-card>
-                <div slot="header">
-                  <h4>
-                    Tarefas Concluidas
-                  </h4>
+                    <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+                      <vs-card>
+                        <div slot="header">
+                          <h4>
+                            Tarefas Concluidas
+                          </h4>
+                        </div>
+                        <div>
+                          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                        </div>
+                        <div slot="footer">
+                          <vs-row vs-justify="flex-end">
+                            <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
+                          </vs-row>
+                        </div>
+                      </vs-card>
+                    </vs-col>
                 </div>
-                <div>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+              </vs-tab>
 
 
-                  </span>
+              <vs-tab @click="colorx = 'warning'" icon="priority_high" label="Pendentes">
+                <div class="con-tab-ejemplo">
+                  
+
+                    <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+                      <vs-card>
+                        <div slot="header">
+                          <h4>
+                            Pendentes
+                          </h4>
+                        </div>
+                        <div>
+                          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                        </div>
+                        <div slot="footer">
+                          <vs-row vs-justify="flex-end">
+                            <vs-button color="warning" icon="share"></vs-button>
+                          </vs-row>
+                        </div>
+                      </vs-card>
+                    </vs-col>
+
                 </div>
-                <div slot="footer">
-                  <vs-row vs-justify="flex-end">
-                    <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
-                  </vs-row>
+              </vs-tab>
+
+              <vs-tab @click="colorx = 'danger'" icon="sentiment_very_dissatisfied" label="Não Realizadas">
+                <div class="con-tab-ejemplo">
+                  
+                    <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
+                      <vs-card>
+                        <div slot="header">
+                          <h4>
+                            Não realizadas
+                          </h4>
+                        </div>
+                        <div>
+                          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
+                        </div>
+                        <div slot="footer">
+                          <vs-row vs-justify="flex-end">
+                            <vs-button color="danger" icon="refresh"></vs-button>
+                          </vs-row>
+                        </div>
+                      </vs-card>
+                    </vs-col>
+
                 </div>
-              </vs-card>
-            </vs-col>
+              </vs-tab>
 
-
-
-            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
-              <vs-card>
-                <div slot="header">
-                  <h4>
-                    Tarefas Concluidas
-                  </h4>
-                </div>
-                <div>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
-                </div>
-                <div slot="footer">
-                  <vs-row vs-justify="flex-end">
-                    <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
-                  </vs-row>
-                </div>
-              </vs-card>
-            </vs-col>
-
-            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
-              <vs-card>
-                <div slot="header">
-                  <h4>
-                    Tarefas Concluidas
-                  </h4>
-                </div>
-                <div>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
-                </div>
-                <div slot="footer">
-                  <vs-row vs-justify="flex-end">
-                    <vs-button color="success" @click="openConfirm()" icon="delete"></vs-button>
-                  </vs-row>
-                </div>
-              </vs-card>
-            </vs-col>
-
-
-
-        </div>
-      </vs-tab>
-
-
-
-
-
-
-      <vs-tab @click="colorx = 'warning'" icon="priority_high" label="Pendentes">
-        <div class="con-tab-ejemplo">
-          
-
-            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
-              <vs-card>
-                <div slot="header">
-                  <h4>
-                    Pendentes
-                  </h4>
-                </div>
-                <div>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
-                </div>
-                <div slot="footer">
-                  <vs-row vs-justify="flex-end">
-                    <vs-button color="warning" icon="share"></vs-button>
-                  </vs-row>
-                </div>
-              </vs-card>
-            </vs-col>
-
-
-
-
-        </div>
-      </vs-tab>
-
-
-
-
-
-
-      <vs-tab @click="colorx = 'danger'" icon="sentiment_very_dissatisfied" label="Não Realizadas">
-        <div class="con-tab-ejemplo">
-          
-
-
-            <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="4">
-              <vs-card>
-                <div slot="header">
-                  <h4>
-                    Não realizadas
-                  </h4>
-                </div>
-                <div>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
-                </div>
-                <div slot="footer">
-                  <vs-row vs-justify="flex-end">
-                    <vs-button color="danger" icon="refresh"></vs-button>
-                  </vs-row>
-                </div>
-              </vs-card>
-            </vs-col>
-
-
-
-
-
-
-
-        </div>
-      </vs-tab>
-
-
-
-
-
-    </vs-tabs>
-  </div>
+            </vs-tabs>
+          </div>
 
 
 
@@ -249,19 +218,11 @@
               </vs-card>
             </vs-col>
 
-
-
-
-
           </vs-row> -->
 
         </div>
-
-
       </div>
     </span>
-
-
   </SiteTemplate>
 </template>
 
