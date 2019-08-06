@@ -29,7 +29,6 @@
             <label>Nova Senha</label>
             <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
             
-            <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button>
           </vs-tab>
           
           <!-- ALTERAR IMAGEM AVATAR -->
@@ -52,7 +51,7 @@
       </div>
 
         <br>
-        <!-- <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button> -->
+        <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button>
 
     </span>
 
