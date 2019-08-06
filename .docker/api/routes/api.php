@@ -29,9 +29,9 @@ Route::post('/register', function (Request $request) {
     }
 
     $user = User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password']),
+      'name' => $data['name'],
+      'email' => $data['email'],
+      'password' => Hash::make($data['password']),
     ]);
     $user->token = $user->createToken($user->email)->accessToken;
 
@@ -58,7 +58,6 @@ Route::post('/login', function (Request $request) {
 
     return $user;
   } else {
-  
     return ['status'=>'Não foi possível autenticar usuário'];
   }
 
@@ -69,7 +68,6 @@ Route::middleware('auth:api')->put('/profile', function (Request $request) {
   $user = $request->user();
   // Recebendo e atribuindo $data dados da requisição do cliente
   $data = $request->all();
-
 
   if(isset($data['password'])) {
 
@@ -100,7 +98,6 @@ Route::middleware('auth:api')->put('/profile', function (Request $request) {
   }
 
   if (isset($data['avatar'])) {
-
 
     Validator::extend('base64image', function ($attribute, $value, $parameters, $validator) {
       $explode = explode(',', $value);
@@ -177,12 +174,10 @@ Route::middleware('auth:api')->put('/profile', function (Request $request) {
   return $user;
 });
 
-
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
 });
 
 Route::middleware('auth:api')->get('/dash', function (Request $request) {
-    return $request->user();
+  return $request->user();
 });

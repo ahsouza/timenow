@@ -133,7 +133,7 @@ export default {
       })
       .catch(e => {
         console.log(e)
-        alert('Tente novamente mais tarde!')
+        alert('Não foi possível atualizar perfil!')
       })
     }
   }

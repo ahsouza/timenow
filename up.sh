@@ -4,9 +4,11 @@ cp .env.example .env
 composer update --no-plugins --no-scripts
 php artisan key:generate
 php artisan config:cache
+composer require barryvdh/laravel-cors
 composer require laravel/passport
 composer require lucascudo/laravel-pt-br-localization
 php artisan vendor:publish --tag=laravel-pt-br-localization
+php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
 php artisan migrate 
 php artisan passport:install 
 # php artisan make:migration add_avatar_table_users --table=users

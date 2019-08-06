@@ -92,7 +92,6 @@ ITEM_SELECIONADO=$(zenity --height="360" --width="720" --list --text "Iniciando 
 					docker build -t ${IMAGEM_SELECIONADO} -f laravel.Dockerfile .
 					#docker run -d --name ahsouza -v $(pwd):/var/www -p 8000:8000 ahsouza/laravel-5.8
 					docker run -d -p 8000:8000 --name timenow-dev-laravel ${IMAGEM_SELECIONADO}
-					#docker exec -it ahsouza bash server.sh
 					docker exec -it timenow-dev-laravel bash up.sh
 					# utilizando volumes e fazendo backup da aplicação
 					# docker run --rm --volumes-from timenow-dev-laravel -v $(pwd):/backup ubuntu bash -c "cd /var/www && tar cvf /backup/backup.tar ."
