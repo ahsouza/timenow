@@ -21,4 +21,8 @@ class content extends Model
     public function user() {
       return $this->belongsTo('App\User');
     }
+
+    public function likes() {
+      return $this->belongsToMany('App\User', 'likes', 'content_id', 'user_id');
+    }
 }
