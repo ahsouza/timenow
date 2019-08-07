@@ -23,7 +23,7 @@ class CreateContentsTable extends Migration
             $table->longText('text');
             $table->string('image');
             $table->string('link');
-            $table->dateTime('link');
+            $table->dateTime('date');
 
             $table->timestamps();
         });
