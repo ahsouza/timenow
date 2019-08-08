@@ -53,7 +53,8 @@ class UserController extends Controller {
 	  $user = User::create([
 	    'name' => $data['name'],
 	    'email' => $data['email'],
-	    'password' => Hash::make($data['password']),
+	    'password' => bcrypt($data['password']),
+	    // 'password' => Hash::make($data['password']),
 	    'avatar' => $avatar
 	  ]);
 	  $user->token = $user->createToken($user->email)->accessToken;

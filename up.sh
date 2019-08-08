@@ -13,8 +13,6 @@ php artisan migrate
 php artisan passport:install 
 # php artisan make:migration add_avatar_table_users --table=users
 php artisan migrate
-php artisan cache:clear
-php artisan route:cache
 # php artisan make:model User --migration --controller --resource
 # php artisan make:model Task --migration --controller --resource
 # php artisan make:model Message --migration --controller --resource
