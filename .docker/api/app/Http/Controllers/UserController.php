@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validator\Rule;
-use Auth;
-
 
 class UserController extends Controller {
 
@@ -30,7 +30,7 @@ class UserController extends Controller {
 
 	    return $user;
 	  } else {
-	    return ['status'=>'Não foi possível autenticar usuário'];
+	    return ['status'=> false];
 	  }
 	}
 
@@ -48,16 +48,19 @@ class UserController extends Controller {
 	    return $validacao->errors();
 	  }
 
+	  $avatar = "/avatars/default.jpg";
+
 	  $user = User::create([
 	    'name' => $data['name'],
 	    'email' => $data['email'],
 	    'password' => Hash::make($data['password']),
+	    'avatar' => $avatar
 	  ]);
 	  $user->token = $user->createToken($user->email)->accessToken;
+	  $user->avatar = asset($user->avatar);
 
 	  return $user;
 	}
-
 
 	public function user(Request $request) {
 	  return $request->user();
@@ -138,7 +141,7 @@ class UserController extends Controller {
 
 	    $time = time();
 
-	    $pathHost = 'profiles';
+	    $pathHost = 'avatars';
 	    $pathAvatar = $pathHost.DIRECTORY_SEPARATOR.'profile_id'.$user->id;
 	    $ext = substr($data['avatar'], 11, strpos($data['avatar'], ';') - 11);
 	    $url = $pathAvatar.DIRECTORY_SEPARATOR.$time.'.'.$ext;

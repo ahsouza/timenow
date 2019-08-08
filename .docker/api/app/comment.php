@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class comment extends Model
 {
-     
-    @var array
-    
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
       'content_id', 'text', 'date'
     ];
@@ -16,7 +18,7 @@ class comment extends Model
 
     // Relacionamentos
     public function user() {
-      return $this->belongsTo('App\User' );
+      return $this->belongsTo('App\User');
     }
 
     public function content() {

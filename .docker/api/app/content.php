@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class content extends Model
 {
-    @var array
-    
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+
     protected $fillable = [
-      'title', 'text', 'image', 'link', 'date '
+      'title', 'text', 'image', 'link', 'date'
     ];
 
 
