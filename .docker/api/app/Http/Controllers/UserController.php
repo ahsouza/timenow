@@ -54,7 +54,6 @@ class UserController extends Controller {
 	    'name' => $data['name'],
 	    'email' => $data['email'],
 	    'password' => bcrypt($data['password']),
-	    // 'password' => Hash::make($data['password']),
 	    'avatar' => $avatar
 	  ]);
 	  $user->token = $user->createToken($user->email)->accessToken;
@@ -67,6 +66,12 @@ class UserController extends Controller {
 	  return $request->user();
 	}
 
+
+
+
+
+
+
 	public function profile(Request $request) {
 	  // Atribuindo $user ao usuário logado no Sistema  
 	  $user = $request->user();
@@ -77,21 +82,21 @@ class UserController extends Controller {
 
 	    $validacao = Validator::make($data, [
 	      'name' => 'required|string|max:255',
-	      'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-	      'password' => 'required|string|min:6|confirmed'
+	      'email' => ['required','string','email','max:255', Rule::unique('users')->ignore($user->id)],
+	      'password' => 'required|string|min:6|confirmed',
 	    ]);
 
 	    if($validacao->fails()){
 	      return $validacao->errors();
 	    }
 	    
-	    $user->password = Hash::make($data['password']);
+	    $user->password = bcrypt($data['password']);
 
 	  } else {
 	    
 	    $validacao = Validator::make($data, [
 	      'name' => 'required|string|max:255',
-	      'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+	      'email' => ['required','string','email','max:255',Rule::unique('users')->ignore($user->id)],
 	    ]);
 
 	    if($validacao->fails()){
