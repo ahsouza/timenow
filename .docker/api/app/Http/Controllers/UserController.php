@@ -10,6 +10,10 @@ use Illuminate\Validator\Rule;
 
 class UserController extends Controller {
 
+	// ****************************************
+	// ******** AUTENTICAÇÃO DE LOGIN *********
+	// ****************************************
+
 	public function login(Request $request) {
       
       $data = $request->all();
@@ -33,6 +37,10 @@ class UserController extends Controller {
 	    return ['status'=> false];
 	  }
 	}
+
+	// ****************************************
+	// ********* CADASTRO DE USUÁRIO **********
+	// ****************************************
 
 	public function register(Request $request) {
     
@@ -59,18 +67,17 @@ class UserController extends Controller {
 	  $user->token = $user->createToken($user->email)->accessToken;
 	  $user->avatar = asset($user->avatar);
 
-	  return $user;
+	  // return $user;
+	  return redirect('/login');
 	}
 
 	public function user(Request $request) {
 	  return $request->user();
 	}
 
-
-
-
-
-
+	// ****************************************
+	// ******** ATUALIZAÇÃO DE PERFIL *********
+	// ****************************************
 
 	public function profile(Request $request) {
 	  // Atribuindo $user ao usuário logado no Sistema  
@@ -182,4 +189,8 @@ class UserController extends Controller {
 
 	  return $user;
 	}
+
+	// ****************************************
+	// ********** PRÓXIMO CONTROLLER **********
+	// ****************************************
 }

@@ -21,10 +21,10 @@
             <input type="text" placeholder="Digite seu nome" v-model="name">
             <br><br>
             <label>Seu E-mail</label>
-            <input type="text" placeholder="Digite seu e-mail" v-model="email" required>
+            <input type="text" placeholder="Digite seu e-mail" v-model="email">
             <br><br><br>
             <label>Senha Antiga</label>
-            <input type="password" placeholder="Digite sua senha" v-model="password" required>
+            <input type="password" placeholder="Digite sua senha" v-model="password">
             <br><br>
             <label>Nova Senha</label>
             <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
@@ -79,10 +79,9 @@ export default {
     let userSession = sessionStorage.getItem('user')
     
     if(userSession) {
-      this.user = JSON.parse(userSession)
-      this.name = this.user.name
-      this.email = this.user.email
-      this.password = this.user.name
+      this.user = JSON.parse(userSession);
+      this.name = this.user.name;
+      this.email = this.user.email;
     }
   },
   components:{
@@ -98,13 +97,13 @@ export default {
 
       let reader = new FileReader()
 
-      reader.onload = (e) => {
+      reader.onloadend = (e) => {
         this.avatar = e.target.result
       }
       reader.readAsDataURL(file[0])
     },
     profile() {
-      axios.put(`http://127.0.0.1:8000/api/profile`, {
+      axios.post(`http://127.0.0.1:8000/api/profile`, {
         name: this.name,
         email: this.email,
         avatar: this.avatar,
@@ -117,7 +116,7 @@ export default {
           console.log(res.data.token)
 
           this.user = res.data
-          sessionStorage.setItem('user', JSON.stringify(res.data))
+          sessionStorage.setItem('user', JSON.stringify(this.user))
           alert('Perfil atualizado com sucesso!')
 
         } else {
@@ -135,6 +134,8 @@ export default {
         alert('Não foi possível atualizar perfil!')
       })
     }
+
+
   }
 }
 </script>
