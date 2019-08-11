@@ -69,7 +69,7 @@ export default {
           // alert('Registrado com sucesso!')
           console.log('Registrado com sucesso!')
           sessionStorage.setItem('user', JSON.stringfy(res.data))
-          this.$router.push('/login')
+          this.$router.push('/api/login')
 
         } else if (res.data.status == false) {
           

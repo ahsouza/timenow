@@ -26,13 +26,12 @@ import Button from '@/components/button/Button'
 import axios from 'axios'
 
 export default {
-  name: 'Home',
+  name: 'Login',
   data () {
     return {
-      user: {
-        email: '',
-        password
-      }
+      email: '',
+      password: ''
+      
     }
   },
   components:{

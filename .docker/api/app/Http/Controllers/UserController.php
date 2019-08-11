@@ -11,7 +11,7 @@ use Illuminate\Validator\Rule;
 class UserController extends Controller {
 
 	// ****************************************
-	// ******** AUTENTICAÇÃO DE LOGIN *********
+	// ******** AUTENTICAÇÃO DE USUÁRIO *******
 	// ****************************************
 
 	public function login(Request $request) {

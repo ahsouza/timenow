@@ -108,8 +108,9 @@ export default {
         email: this.email,
         avatar: this.avatar,
         password: this.password,
-        password_confirmation: this.password_confirmation 
-      },{"headers":{"authorization":"Bearer " + this.user.token}})
+        password_confirmation: this.password_confirmation
+
+      },{"headers": {"authorization":"Bearer " + this.user.token}})
       .then(res => {
 
         if (res.data.token) {
