@@ -68,7 +68,7 @@ class UserController extends Controller {
 	  $user->avatar = asset($user->avatar);
 
 	  // return $user;
-	  return redirect('/login');
+	  return $user;
 	}
 
 	public function user(Request $request) {
