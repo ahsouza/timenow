@@ -2,16 +2,24 @@
   <footer :class="'page-footer '+ cor">
     <div class="container">
       <div class="row">
+   <!-- ***************
+        ****COL LEFT***
+        *************** -->
         <div class="col l6 s12">
           <h5 class="white-text">{{logo || 'Logo do Projeto'}}</h5>
           <p class="grey-text text-lighten-4">{{descricao || "Sua descrição"}}</p>
         </div>
+
+   <!-- ***************
+        *** COL RIGHT**
+        *************** -->
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Sobre Nós</h5>
           <ul>
             <slot></slot>
           </ul>
         </div>
+        
       </div>
     </div>
     <div class="footer-copyright">
@@ -28,7 +36,7 @@ export default {
   props:['cor','logo','descricao','ano'],
   data () {
     return {
-
+      
     }
   }
 }

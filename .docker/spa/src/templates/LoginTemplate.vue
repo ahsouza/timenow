@@ -31,7 +31,7 @@
       </div>
     </main>
 
-    <footer-vue cor="green darken-1" logo="@/assets/timenow.png" descricao="Sua de descrição" ano="2019" style="margin-top: 10%">
+    <footer-vue cor="green darken-1" logo="Time-Now Engenharia" :descricao="description" ano="2019" style="margin-top: 21%">
 
       <li><a class="grey-text text-lighten-3" href="#!">Segurança & Privacidade</a></li>
       <li><a class="grey-text text-lighten-3" href="#!">Preferências</a></li>
@@ -58,7 +58,8 @@ export default {
   },
   data() {
     return {
-      user: false
+      user: false,
+      description: 'Especialista em gerenciamento de empreendimentos e obras industriais. Gestão de portfólio de projetos, gerenciamento de implantação de projetos e gestão '
     }
   },
   created() {
