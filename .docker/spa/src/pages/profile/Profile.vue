@@ -11,7 +11,7 @@
       <br><br>
 
       <div>
-        <vs-tabs :color="colorx">
+        <vs-tabs :color="colorx" class="animated fadeIn">
 
           <!-- ALTERAR DADOS PESSOAIS -->
           <vs-tab label="Dados Pessoais" icon="account_circle" @click="colorx = '#0000FF'">
@@ -35,8 +35,8 @@
           <vs-tab label="Alterar Imagem" icon="photo" @click="colorx = '#8B0000'">
             <br><br><br>
             <div class="file-field input-field">      
-              <a class="btn-small waves-effect waves-light orange">
-                <i class="material-icons">photo</i>
+              <a class="btn-small waves-effect waves-light purple">
+                <i class="material-icons">photo_camera</i>
                 <input type="file" v-on:change="saveAvatar">
               </a>
                   
@@ -44,7 +44,7 @@
                 <input class="file-path validate" type="text">
               </div>
             </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br>
           </vs-tab>
 
         </vs-tabs>

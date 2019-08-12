@@ -8,6 +8,7 @@
         <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
         <li v-if="user"><router-link to="/messages">Mensagens</router-link></li>
         <li v-if="user"><router-link to="/tasks">Tarefas</router-link></li>
+        <li v-if="user"><router-link to="/friends">Amigos</router-link></li>
         <li v-if="user"><router-link to="/groups">Grupos</router-link></li>
         <li v-if="!user"><a href="http://www.timenow.com.br">Nosso Site</a></li>
         

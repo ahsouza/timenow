@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     routeBack() {
-      this.$router.push('/')
+      this.$router.push('/dash')
     }
   },
   components:{

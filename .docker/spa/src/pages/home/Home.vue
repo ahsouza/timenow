@@ -13,8 +13,6 @@
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
             <h6>{{user.name}}</h6>
-            <br>
-            Pts: <b>120</b>
           </span>
         </grid-vue>
 
@@ -84,7 +82,7 @@ export default {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   
-}
+} 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {

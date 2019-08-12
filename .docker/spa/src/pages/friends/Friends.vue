@@ -9,9 +9,6 @@
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
             <h6>{{user.name}}</h6>
-            Informática
-            <br>
-            Pts: <b>120</b>
           </span>
         </grid-vue>
       </div>
@@ -27,14 +24,14 @@
             </h5>
             <br><br>
             <vs-table
-              :data="users" style="overflow-y: scroll; overflow-x: hidden; height: 600px;">
+              :data="users" style="overflow-y: scroll; overflow-x: hidden; height: 600px;" class="animated fadeIn tb-friends">
               <template slot="header">
 
               </template>
 
               <template slot-scope="{data}">
 
-                <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
+                <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
                   <!-- <vs-td :data="tr.id">
                     {{tr.id}}
                   </vs-td> -->
@@ -45,10 +42,14 @@
                     <h6>{{tr.name}}</h6>
                   </vs-td>
 
-                  <div>
+                  <div class="communication-icons">
 
-                    <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20' + tr.name + '!'" target="blank"><vs-button vs-type="border" color="success" size="small" icon="phone_in_talk" class="btn-friend"></vs-button></a>
+                    <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20' + tr.name + '!'" target="blank">
+                      <vs-button vs-type="border" color="success" size="small" icon="phone_in_talk" class="btn-friend"></vs-button>
+                    </a>
+
                     <vs-button vs-type="gradient" @click="activePrompt = true" size="small" color="primary" icon="send" class="btn-friend"></vs-button>
+
                     <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep" class="btn-friend"></vs-button>
                   </div>
 
@@ -272,4 +273,32 @@ export default {
   .vs-input
     width 100%
     margin-top 40px;
+</style>
+
+<style scoped>
+@media only screen and (max-width: 600px) {
+  .communication-icons{
+    display:none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+} 
+
+ // Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {
+  
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
 </style>
