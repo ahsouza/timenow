@@ -15,6 +15,7 @@ import TasksConfirmed from '@/pages/tasks/confirmed/TasksConfirmed'
 import TasksPending from '@/pages/tasks/pending/TasksPending'
 import Settings from '@/pages/settings/Settings'
 import Profile from '@/pages/profile/Profile'
+import NotFound from '@/pages/404/NotFound'
 
 Vue.use(Router)
 
@@ -95,6 +96,11 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      component: NotFound
     }
   ]
 })

@@ -1,15 +1,10 @@
 <template>
   <SiteTemplate>
     <span slot="menu-left">
-    
-      <!-- TEST A - MODELO DE PAINEL PARA SIDEBAR -->
-      <!-- ################################################# -->
-      <div class="row valign-wrapper">
-        
-        <grid-vue tamanho="1 l6 m12">
-          <!-- <img src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4" alt="" width="75" class="circle responsive-img"> -->
-          <img :src="user.avatar" :alt="user.name" width="75" class="circle responsive-img">
 
+      <div class="row valign-wrapper">  
+        <grid-vue tamanho="1 l6 m12">
+          <img :src="user.avatar" :alt="user.name" width="75" class="circle responsive-img">
 
           <vs-icon icon="child_care" size="small" color="red"></vs-icon>
         </grid-vue>
