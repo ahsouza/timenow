@@ -72,7 +72,7 @@ export default {
           setInterval(() => {
             this.$router.push('/dash')
 
-          }, 3000)
+          }, 2000)
 
         } else if (res.data.status == false) {
           

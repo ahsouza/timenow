@@ -2,7 +2,12 @@
 
   <div id="parentx">
     <br><br>
-    <vs-avatar size="70px" @click="active=!active, notExpand = false" src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"type="filled" /> @ahsouza
+    
+    <vs-avatar size="70px" @click="active=!active, notExpand = false" src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"type="filled" />{{ user.name }}
+
+    <vs-button @click="profileRoute" radius color="primary" type="line" icon="edit"></vs-button>
+    
+    <br><br><br>
 
     <vs-sidebar :reduce="reduce" :reduce-not-hover-expand="notExpand" parent="body" default-index="1"  color="success" class="sidebarx" spacer v-model="active">
 
@@ -56,10 +61,6 @@
 
 
 
-      <vs-sidebar-item index="6" icon="account_box">
-        Perfil
-      </vs-sidebar-item>
-
       <vs-sidebar-item index="6" @click="logout" icon="exit_to_app">
         Sair
       </vs-sidebar-item>
@@ -111,10 +112,17 @@ button {
 export default {
   name: 'SidebarReduce',
   data:()=>({
+    user: false,
     active:false,
     notExpand: false,
     reduce: true
   }),
+  created() {
+    let userSession = sessionStorage.getItem('user')
+    if (userSession) {
+      this.user = JSON.parse(userSession)
+    }
+  },
   methods: {
     exit() {
       sessionStorage.clear()
@@ -141,6 +149,9 @@ export default {
     },
     publicationsRoute() {
       this.$router.push('/dash')
+    },
+    profileRoute() {
+      this.$router.push('/profile')
     },
     logout() {
       sessionStorage.clear()
