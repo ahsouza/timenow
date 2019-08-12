@@ -11,8 +11,8 @@
         <li v-if="user"><router-link to="/groups">Grupos</router-link></li>
         <li v-if="!user"><a href="http://www.timenow.com.br">Nosso Site</a></li>
         
-        <li v-if="user"><a href="sass.html"><i class="material-icons animated fadeInRight">search</i></a></li>
-        <li v-if="user"><a v-on:click="exit()"><i class="material-icons animated fadeInRight delay-1s">exit_to_app</i></a></li>
+        <li v-if="user"><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li v-if="user"><a v-on:click="exit()"><i class="material-icons">exit_to_app</i></a></li>
       </nav-bar>
     </header>
 
@@ -98,6 +98,8 @@ export default {
     let userSession = sessionStorage.getItem('user')
     if(userSession) {
       this.user = JSON.parse(userSession)
+    } else {
+      this.$router.push('/login')
     }
   },
   methods: {
