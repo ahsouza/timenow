@@ -69,7 +69,10 @@ export default {
           // alert('Registrado com sucesso!')
           console.log('Registrado com sucesso!')
           sessionStorage.setItem('user',JSON.stringify(res.data))
-          this.$router.push('/')
+          setInterval(() => {
+            this.$router.push('/dash')
+
+          }, 3000)
 
         } else if (res.data.status == false) {
           
