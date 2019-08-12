@@ -119,6 +119,7 @@ export default {
           this.user = res.data
           sessionStorage.setItem('user', JSON.stringify(this.user))
           alert('Perfil atualizado com sucesso!')
+          this.$router.push('/dash')
 
         } else {
           console.log('erros de validação')
