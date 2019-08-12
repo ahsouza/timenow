@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validator\Rule;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller {
 
@@ -89,7 +89,7 @@ class UserController extends Controller {
 
 	    $validacao = Validator::make($data, [
 	      'name' => 'required|string|max:255',
-	      'email' => ['required','string','email','max:255', Rule::unique('users')->ignore($user->id)],
+	      'email' => ['required','string','email','max:255',Rule::unique('users')->ignore($user->id)],
 	      'password' => 'required|string|min:6|confirmed',
 	    ]);
 
