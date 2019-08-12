@@ -32,8 +32,8 @@
     <span slot="main">
       <public-content-vue />
       <card-content-vue
-      perfil="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"
-      nome="Aníbal Henrique"
+      :perfil="user.avatar"
+      :nome="user.name"
       data="21/03/2019 16:52">
       <card-detail-vue
       img="https://clickpetroleoegas.com.br/wp-content/uploads/2019/04/engenharia-752x440.jpg"
