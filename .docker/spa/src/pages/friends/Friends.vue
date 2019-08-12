@@ -82,9 +82,27 @@
                   <template class="expand-user" slot="expand">
                     <div class="con-expand-users">
                       <vs-list>
-                        <vs-list-item icon="mail" title="Email" :subtitle="tr.email"></vs-list-item>
-                        <vs-list-item icon="phone" title="Telefone" :subtitle="tr.tel"></vs-list-item>
-                        <vs-list-item icon="done" title="Site" :subtitle="tr.website"></vs-list-item>
+
+                        <div class="communication-icons-mobile">
+                          
+                          <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20' + tr.name + '!'" target="blank">
+                            <vs-button vs-type="border" color="success" size="small" icon="phone_in_talk" class="btn-friend"></vs-button>
+                          </a>
+
+                          <vs-button vs-type="gradient" @click="activePrompt = true" size="small" color="primary" icon="send" class="btn-friend"></vs-button>
+
+                          <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep" class="btn-friend"></vs-button>
+                          
+                        </div>
+
+                        <div class="information-contacts">
+                          <vs-list-item icon="mail" title="Email" :subtitle="tr.email"></vs-list-item>
+                          <vs-list-item icon="phone" title="Telefone" :subtitle="tr.tel"></vs-list-item>
+                          <vs-list-item icon="done" title="Site" :subtitle="tr.website"></vs-list-item>
+                          
+                        </div>
+
+
                       </vs-list>
                     </div>
                   </template>
@@ -280,6 +298,9 @@ export default {
   .communication-icons{
     display:none;
   }
+  .information-contacts {
+    display:none;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -289,16 +310,24 @@ export default {
 
  // Medium devices (landscape tablets, 768px and up)
 @media only screen and (min-width: 768px) {
+  .communication-icons-mobile {
+    display: none;
+  }
   
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  
+  .communication-icons-mobile {
+    display: none;
+  }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  .communication-icons-mobile {
+    display: none;
+  }
   
 }
 </style>
