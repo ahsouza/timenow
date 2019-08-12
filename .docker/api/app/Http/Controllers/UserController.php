@@ -67,7 +67,6 @@ class UserController extends Controller {
 	  $user->token = $user->createToken($user->email)->accessToken;
 	  $user->avatar = asset($user->avatar);
 
-	  // return $user;
 	  return $user;
 	}
 
@@ -146,7 +145,7 @@ class UserController extends Controller {
 	    $validacao = Validator::make($data, [
 	      'avatar' => 'base64image',
 
-	    ],['base64image'=>'Imagem para avatar inválida']);
+	    ],['base64image'=>'Imagem inválida']);
 
 	    if($validacao->fails()) {
 	      return $validacao->errors();
@@ -163,22 +162,21 @@ class UserController extends Controller {
 	    $file = base64_decode($file);
 
 	    if (!file_exists($pathHost)) {
-	      mkdir($pathHost, 0700);
+	      mkdir($pathHost,0700);
 	    }
 
 	    if($user->avatar) {
 	      
-	      if(!file_exists($user->avatar)) {
+	      if(file_exists($user->avatar)) {
 	        unlink($user->avatar);
 	      }
 	    }
 
 	    if (!file_exists($pathAvatar)) {
-	      mkdir($pathAvatar, 0700);
+	      mkdir($pathAvatar,0700);
 	    }
 
 	    file_put_contents($url, $file);
-
 	    $user->avatar = $url;
 	  } 
 

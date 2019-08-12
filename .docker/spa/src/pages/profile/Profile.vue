@@ -79,9 +79,9 @@ export default {
     let userSession = sessionStorage.getItem('user')
     
     if(userSession) {
-      this.user = JSON.parse(userSession);
-      this.name = this.user.name;
-      this.email = this.user.email;
+      this.user = JSON.parse(userSession)
+      this.name = this.user.name
+      this.email = this.user.email
     }
   },
   components:{

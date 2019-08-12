@@ -12,7 +12,7 @@
     <vs-sidebar :reduce="reduce" :reduce-not-hover-expand="notExpand" parent="body" default-index="1"  color="success" class="sidebarx" spacer v-model="active">
 
       <div class="header-sidebar" slot="header">
-        <vs-avatar  size="70px" src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"/>
+        <vs-avatar  size="70px" :src="user.avatar" :alt="user.name"/>
       </div>
       <vs-sidebar-group open title="Application">
         <vs-sidebar-item index="1" icon="menu" @click="reduce=!reduce">
