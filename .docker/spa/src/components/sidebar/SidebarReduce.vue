@@ -3,7 +3,7 @@
   <div id="parentx">
     <br><br>
     
-    <vs-avatar size="70px" @click="active=!active, notExpand = false" src="https://avatars3.githubusercontent.com/u/28975240?s=460&v=4"type="filled" />{{ user.name }}
+    <vs-avatar size="70px" @click="active=!active, notExpand = false" :src="user.avatar" :alt="user.name" type="filled" />{{ user.name }}
 
     <vs-button @click="profileRoute" radius color="primary" type="line" icon="edit"></vs-button>
     

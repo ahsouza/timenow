@@ -56,7 +56,7 @@ class UserController extends Controller {
 	    return $validacao->errors();
 	  }
 
-	  $avatar = "/avatars/default.jpg";
+	  $avatar = "/avatars/default.svg";
 
 	  $user = User::create([
 	    'name' => $data['name'],
