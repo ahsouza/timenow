@@ -68,8 +68,8 @@ export default {
         if (res.data.token) {
           // alert('Registrado com sucesso!')
           console.log('Registrado com sucesso!')
-          sessionStorage.setItem('user', JSON.stringfy(res.data))
-          this.$router.push('/api/login')
+          sessionStorage.setItem('user',JSON.stringify(res.data))
+          this.$router.push('/')
 
         } else if (res.data.status == false) {
           
@@ -84,7 +84,7 @@ export default {
         }
        
       })
-      .catch(e => { 
+      .catch(e => {
         console.log(e)
         alert('Tente novamente mais tarde!')
       })

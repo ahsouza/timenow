@@ -67,8 +67,6 @@ export default {
     if(userSession) {
       this.user = JSON.parse(userSession)
       this.$router.push('/')
-    } else {
-      // this.$router.push('/login')
     }
   },
   methods: {
