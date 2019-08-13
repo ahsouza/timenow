@@ -32,31 +32,34 @@
               <template slot-scope="{data}">
 
                 <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
-                  <!-- <vs-td :data="tr.id">
-                    {{tr.id}}
-                  </vs-td> -->
-
                   <vs-avatar :badge="tr.id" size="60px" :src="`https://randomuser.me/api/portraits/women/${indextr}.jpg`"/>
 
                   <vs-td :data="tr.username">
                     <h6>{{tr.name}}</h6>
                   </vs-td>
 
+
+             <!-- ***********************************
+                  ******* ÍCONES DE COMUNICAÇÃO *****
+                  *********************************** -->
                   <div class="communication-icons">
 
                     <a :href="'https://api.whatsapp.com/send?phone=' + tr.tel +'&text=Olá,%20' + tr.name + '!'" target="blank">
                       <vs-button vs-type="border" color="success" size="small" icon="phone_in_talk" class="btn-friend"></vs-button>
                     </a>
 
-                    <vs-button vs-type="gradient" @click="activePrompt = true" size="small" color="primary" icon="send" class="btn-friend"></vs-button>
+                    <a :href="'https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=' + tr.email + '#'">
+                      <vs-button vs-type="gradient" size="small" color="primary" icon="send" class="btn-friend"></vs-button>
+                    </a>
 
                     <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep" class="btn-friend"></vs-button>
-                  </div>
 
+                  </div>
+             <!-- ***********************************
+                  ******* MODAL PARA ÍCONES *****
+                  *********************************** -->
                   <!-- MODAL -->
                     <div class="centerx con-exemple-prompt">
- 
-
                        <vs-prompt
                         @cancel="val=''"
                         @accept="acceptAlert"
@@ -79,6 +82,9 @@
                     </div>
                   <!-- MODAL -->
                   
+             <!-- ******************************************
+                  ******* ÍCONES DE COMUNICAÇÃO MOBILE *****
+                  ****************************************** -->
                   <template class="expand-user" slot="expand">
                     <div class="con-expand-users">
                       <vs-list>
@@ -152,7 +158,7 @@ export default {
         "id": 1,
         "name": "Leanne Graham",
         "username": "Bret",
-        "email": "Sincere@april.biz",
+        "email": "leane.graham@gmail.com",
         "tel": "5527996206361",
         "website": "hildegard.org",
       },
@@ -160,7 +166,7 @@ export default {
         "id": 2,
         "name": "Ervin Howell",
         "username": "Antonette",
-        "email": "Shanna@melissa.tv",
+        "email": "ervin.howell@gmail.com",
         "tel": "5527997516909",
         "website": "anastasia.net",
       },
@@ -168,7 +174,7 @@ export default {
         "id": 3,
         "name": "Clementine Bauch",
         "username": "Samantha",
-        "email": "Nathan@yesenia.net",
+        "email": "clementine@gmail.com",
         "tel": "5527998761122",
         "website": "ramiro.info",
       },
@@ -176,7 +182,7 @@ export default {
         "id": 4,
         "name": "Patricia Lebsack",
         "username": "Karianne",
-        "email": "Julianne.OConner@kory.org",
+        "email": "patricia.lebsack@gmail.com",
         "tel": "5527998840401",
         "website": "kale.biz",
       },
@@ -184,7 +190,7 @@ export default {
         "id": 5,
         "name": "Chelsey Dietrich",
         "username": "Kamren",
-        "email": "Lucio_Hettinger@annie.ca",
+        "email": "chelsey.dietrich@gmail",
         "tel": "5527998887691",
         "website": "demarco.info",
       },
@@ -192,7 +198,7 @@ export default {
         "id": 6,
         "name": "Mrs. Dennis Schulist",
         "username": "Leopoldo_Corkery",
-        "email": "Karley_Dach@jasper.info",
+        "email": "dennis.schulist@gmail.com",
         "tel": "5527992437909",
         "website": "ola.org",
       },
@@ -200,7 +206,7 @@ export default {
         "id": 7,
         "name": "Kurtis Weissnat",
         "username": "Elwyn.Skiles",
-        "email": "Telly.Hoeger@billy.biz",
+        "email": "kurtis.weissnat@gmail.com",
         "tel": "5527996206361",
         "website": "elvis.io",
       },
@@ -208,7 +214,7 @@ export default {
         "id": 8,
         "name": "Nicholas Runolfsdottir V",
         "username": "Maxime_Nienow",
-        "email": "Sherwood@rosamond.me",
+        "email": "nicholas.runolfsdottir@gmail.com",
         "tel": "5527996206361",
         "website": "jacynthe.com",
       },
@@ -216,7 +222,7 @@ export default {
         "id": 9,
         "name": "Glenna Reichert",
         "username": "Delphine",
-        "email": "Chaim_McDermott@dana.io",
+        "email": "glenna.reichert@gmail.com",
         "tel": "5527996206361",
         "website": "conrad.com",
       },
@@ -224,9 +230,17 @@ export default {
         "id": 10,
         "name": "Clementina DuBuque",
         "username": "Moriah.Stanton",
-        "email": "Rey.Padberg@karina.biz",
+        "email": "clementina.dubuque@gmail.com",
         "tel": "5527996206361",
         "website": "ambrose.net",
+      },
+      {
+        "id": 11,
+        "name": "Aníbal Henrique",
+        "username": "ahsouza",
+        "email": "annibalhsouza@gmail.com",
+        "tel": "5527996206361",
+        "website": "https://ahsouza.github.io"
       }
     ]
   }),
