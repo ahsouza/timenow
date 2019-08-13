@@ -20,7 +20,7 @@
         <div class="col s12 m12 l12">
           <div>
             <h5 style="font-family: Indie Flower">
-              Meus Amigos
+              Amigos De Trabalho
             </h5>
             <br><br>
             <vs-table

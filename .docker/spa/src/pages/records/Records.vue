@@ -20,7 +20,8 @@
     </span>
 
     <span slot="main">
-      <div class="row" style="margin-top: 14%">
+
+      <div class="row" style="margin-top: 18%">
         
         <div class="col s6 m6 l6">
           <div v-if="record">
@@ -33,9 +34,14 @@
 
         </div>
         
-        <div class="col s6 m6 l6 animated fadeInRight"> 
 
-          <vs-list style="overflow-y: scroll; overflow-x: hidden; height: 460px;">
+   <!-- ******************************************************
+        ******* LIST VOICES DESKTOP/TABLETS/NOTEBOOKS ********
+        ****************************************************** -->
+
+        <div class="col s6 m6 l6 animated fadeInRight list-voices-friends"> 
+
+          <vs-list style="overflow-y: scroll; overflow-x: hidden; height: 340px;">
             <!-- GRAVAÇÕES REALIZADAS -->
             <vs-list-header title="Gravações Enviadas"></vs-list-header>
 
@@ -67,10 +73,66 @@
             </vs-list-item>
 
           </vs-list>
-
         </div>
 
       </div>
+    <!--******************************************************
+        ******* LIST VOICES MOBILE ********
+        ****************************************************** -->
+
+
+
+      <div class="row row-mobile" style="margin-top: 10%">
+
+        <div class="col s6 m6 l6 animated fadeInRight list-voices-friends-mobile"> 
+
+          <vs-list style="overflow-y: scroll; overflow-x: hidden; width: 250px; height: 340px;">
+              <!-- GRAVAÇÕES REALIZADAS -->
+            <vs-list-header title="Gravações Enviadas"></vs-list-header>
+
+            <vs-list-item title="Roberta Monderfani" subtitle="04/08/2019 - 14:11">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <vs-list-item title="Veronika Ossi" subtitle="12/06/2019 - 08:00">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <vs-list-item title="Edson Boltrini" subtitle="20/07/2019 - 10:30">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <!-- GRAVAÇÕES RECEBIDAS -->
+            <vs-list-header title="Gravações Recebidas" color="primary"></vs-list-header>          
+
+            <vs-list-item title="Roberta Monderfani" subtitle="04/08/2019 - 14:59">    
+              <vs-avatar color="danger" icon="keyboard_voice"/>
+            </vs-list-item>              
+
+            <vs-list-item title="Veronika Ossi" subtitle="12/06/2019 - 08:15">
+              <vs-avatar color="primary" icon="keyboard_voice"/>
+            </vs-list-item>
+
+            <vs-list-item title="Edson Boltrini" subtitle="20/07/2019 - 11:07">
+              <vs-avatar color="danger" icon="keyboard_voice"/>
+            </vs-list-item>
+
+          </vs-list>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
     </span>
 
@@ -125,27 +187,51 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-  .circle { width: 50px;}
+  .list-voices-friends {
+    display: none;
+  }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  
+    .list-voices-friends-mobile {
+    display: none;
+  }
+  .row-mobile {
+    display: none;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  
+  .list-voices-friends-mobile {
+    display: none;
+  }
+  .row-mobile {
+    display: none;
+  }
+
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  
+  .list-voices-friends-mobile {
+    display: none;
+  }
+  .row-mobile {
+    display: none;
+  }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  
+  .list-voices-friends-mobile {
+    display: none;
+  }
+  .row-mobile {
+    display: none;
+  }
 }
 
 </style>
