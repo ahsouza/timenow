@@ -19,7 +19,7 @@
 
       <div class="row" style="margin-top: 22%">
         <div class="col s12 m12 l12">
-          <div style="padding-bottom: 30% ">
+          <div style="padding-bottom: 30%">
             <vs-tabs :color="colorx">
 
         <!--  ****************************

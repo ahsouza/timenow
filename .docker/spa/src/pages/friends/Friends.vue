@@ -18,7 +18,7 @@
       <div class="row" style="margin-top: 15%">
         
         <div class="col s12 m12 l12">
-          <div>
+          <div style="padding-bottom: 30%">
             <h5 style="font-family: Indie Flower">
               Amigos De Trabalho
             </h5>
