@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     login() {
-      this.$http.post(`http://127.0.0.1:8000/api/login`, {
+      this.$http.post(this.$url + `login`, {
         email: this.email,
         password: this.password
       })

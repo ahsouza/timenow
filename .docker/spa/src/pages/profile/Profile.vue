@@ -102,7 +102,7 @@ export default {
       reader.readAsDataURL(file[0])
     },
     profile() {
-      this.$http.post(`http://127.0.0.1:8000/api/profile`, {
+      this.$http.post(this.$url + `profile`, {
         name: this.name,
         email: this.email,
         avatar: this.avatar,
