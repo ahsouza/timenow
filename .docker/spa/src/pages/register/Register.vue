@@ -64,25 +64,26 @@ export default {
         password_confirmation: this.password_confirmation 
       })
       .then(res => {
-        if (res.data.token) {
-          // alert('Registrado com sucesso!')
+        if (res.data.status) {
+
           console.log('Registrado com sucesso!')
-          sessionStorage.setItem('user',JSON.stringify(res.data))
+          sessionStorage.setItem('user',JSON.stringify(res.data.user))
+          
           setInterval(() => {
             this.$router.push('/dash')
-
           }, 2000)
 
-        } else if (res.data.status == false) {
+        } else if (res.data.status == false && res.data.validacao) {
           
-          alert('Erro ao tentar cadastrar usuário. Tente novamente mais tarde')
-          console.log('Login não existe')
-        } else {
           console.log('Error de validação')
           let erros = '';
-          for(let erro of Object.values(res.data)) {
+          for(let erro of Object.values(res.data.erros)) {
             erros += erro + " ";
           }
+
+        } else {
+
+          alert('Erro ao tentar cadastrar usuário. Tente novamente mais tarde')
         }
        
       })

@@ -24,7 +24,7 @@ class UserController extends Controller {
 	  ]);
 
 	  if($validacao->fails()){
-	    return $validacao->errors();
+	    return ['status' => false, "validacao" => true, "erros" => $validacao->errors()];
 	  }
 
 	  if(Auth::attempt(['email'=>$data['email'], 'password'=>$data['password']])) {
@@ -32,7 +32,8 @@ class UserController extends Controller {
 	    $user->token = $user->createToken($user->email)->accessToken;
 	    $user->avatar = asset($user->avatar);
 
-	    return $user;
+	    return ['status' => true, "user" => $user];
+
 	  } else {
 	    return ['status'=> false];
 	  }
@@ -53,7 +54,7 @@ class UserController extends Controller {
 	  ]);
 
 	  if($validacao->fails()){
-	    return $validacao->errors();
+	    return ['status' => false, "validacao" => true, "erros" => $validacao->errors()];
 	  }
 
 	  $avatar = "/avatars/default.svg";
@@ -67,7 +68,7 @@ class UserController extends Controller {
 	  $user->token = $user->createToken($user->email)->accessToken;
 	  $user->avatar = asset($user->avatar);
 
-	  return $user;
+	  return ['status' => true, "user" => $user];
 	}
 
 	public function user(Request $request) {

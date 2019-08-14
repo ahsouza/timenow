@@ -16,12 +16,12 @@
       <vs-button color="success" type="filled" v-on:click="login()">ENTRAR</vs-button>
     </span>
 
-
   </LoginTemplate>
 </template>
 
 <script>
 import LoginTemplate from '@/templates/LoginTemplate'
+import Button from '@/components/button/Button'
 
 export default {
   name: 'Login',
@@ -43,12 +43,13 @@ export default {
         password: this.password
       })
       .then(res => {
-        if(res.data.token) {
+        if(res.data.status) {
+
           console.log('Autenticado com sucesso!')
-          sessionStorage.setItem('user', JSON.stringify(res.data))
+          sessionStorage.setItem('user', JSON.stringify(res.data.user))
           this.$router.push('/dash')
 
-        } else if(res.data.status == false){
+        } else if(res.data.status == false && res.data.validacao){
           
           console.log('Usuário não encontrado!')
           alert('Usuário inválido')
@@ -56,7 +57,7 @@ export default {
           
           console.log('Error de validação!')
           let errors = '';
-          for(let error of Object,values(res.data)) {
+          for(let error of Object,values(res.data.errors)) {
             errors += error + ""
           }
           alert(errors)
