@@ -7,13 +7,9 @@
           <img :src="user.avatar" :alt="user.name" width="100" class="circle responsive-img"> <!-- notice the "circle" class -->
         </grid-vue>
 
-
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <h6>{{user.name}}</h6>
-            Informática
-            <br>
-            Pts: <b>120</b>
+            
           </span>
         </grid-vue>
       </div>
@@ -21,43 +17,53 @@
 
 
     <span slot="main">
-      <br><br><br><br>
-      <div class="row">
-        
-        <div class="col s4 m4">
-          
-          <div class="card">
-            
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
 
-              <p>Oláaa, tenha uma boa tarde!!.😘</p>
-            </div>
-          </div>
-          
-          <div class="card">  
-            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
-            <img src="https://www.wefashiontrends.com/wp-content/uploads/2019/03/pose-para-fotos-de-perfil.jpg" alt="" width="50" class="circle responsive-img">
-            <h6>Janaina Alves</h6>
-            <div class="card-content">
+      <br>
+ <!-- ************************
+      ******* 1 LINHA ********
+      ************************ -->
+      <div class="row">     
+        <div class="col s12 m12 l12">
 
-              <p>Deixei os documentos na sua mesa!</p>
-            </div>
+
+           <div class="">
+            <vs-tabs>
+              <vs-tab label="Conta">
+                <div class="con-tab-ejemplo">
+                  Conta
+                </div>
+              </vs-tab>
+              <vs-tab label="Privacidade">
+                <div class="con-tab-ejemplo">
+                  Privacidade
+                </div>
+              </vs-tab>
+              <vs-tab label="Comunicação">
+                <div class="con-tab-ejemplo">
+                  Comunicação
+                </div>
+              </vs-tab>
+
+            </vs-tabs>
           </div>
+
+
 
 
         </div>
-        
-
-
-
       </div>
-             
+
+ <!-- ************************
+      ******* 2 LINHA ********
+      ************************ -->
+      <div class="row">     
+        <div class="col s12 m12 l12">
+                
+
+        </div>
+      </div>
 
     </span>
-
 
   </SiteTemplate>
 </template>
