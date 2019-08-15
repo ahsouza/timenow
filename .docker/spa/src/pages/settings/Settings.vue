@@ -28,16 +28,121 @@
 
            <div class="">
             <vs-tabs>
+
               <vs-tab label="Conta">
                 <div class="con-tab-ejemplo">
-                  Conta
+
+                  <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="12" vs-sm="12" vs-xs="12">
+                  
+                
+
+
+                       <div>
+                          <vs-table
+                            :data="users">
+                            <template slot="header">
+                              <h3>
+                                Users
+                              </h3>
+                            </template>
+                            <template slot="thead">
+                              <vs-th>
+                                Email
+                              </vs-th>
+                              <vs-th>
+                                Name
+                              </vs-th>
+                              <vs-th>
+                                Website
+                              </vs-th>
+                              <vs-th>
+                                Nro
+                              </vs-th>
+                            </template>
+
+                            <template slot-scope="{data}">
+                              <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
+                                <vs-td :data="tr.email">
+                                  {{tr.email}}
+                                </vs-td>
+
+                                <vs-td :data="tr.username">
+                                  {{tr.name}}
+                                </vs-td>
+
+                                <vs-td :data="tr.website">
+                                  {{tr.website}}
+                                </vs-td>
+
+                                <vs-td :data="tr.id">
+                                  {{tr.id}}
+                                </vs-td>
+
+                                <template class="expand-user" slot="expand">
+                                  <div class="con-expand-users">
+                                    <div class="con-btns-user">
+                                      <div class="con-userx">
+                                        <vs-avatar :badge="tr.id" size="45px" :src="`https://randomuser.me/api/portraits/women/${indextr}.jpg`"/>
+                                        <span>
+                                          {{ tr.name }}
+                                        </span>
+                                      </div>
+
+                                      <div>
+                                        <vs-button vs-type="border" size="small" icon="phone_in_talk"></vs-button>
+                                        <vs-button vs-type="gradient" size="small" color="success" icon="send"></vs-button>
+                                        <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep"></vs-button>
+                                      </div>
+                                    </div>
+                                    <vs-list>
+                                      <vs-list-item icon="mail" title="Email" :subtitle="tr.email"></vs-list-item>
+                                      <vs-list-item icon="check" title="Website" :subtitle="tr.website"></vs-list-item>
+                                    </vs-list>
+                                  </div>
+                                </template>
+                              </vs-tr>
+                            </template>
+                          </vs-table>
+
+                          <pre>{{ selected }}</pre>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  </vs-col>
+
+
+
                 </div>
               </vs-tab>
+
               <vs-tab label="Privacidade">
                 <div class="con-tab-ejemplo">
                   Privacidade
                 </div>
               </vs-tab>
+
               <vs-tab label="Comunicação">
                 <div class="con-tab-ejemplo">
                   Comunicação
@@ -77,7 +182,54 @@ export default {
   name: 'Settings',
   data () {
     return {
-      user: false
+      user: false,
+
+
+
+users:[
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        "website": "hildegard.org",
+      },
+      {
+        "id": 2,
+        "name": "Ervin Howell",
+        "username": "Antonette",
+        "email": "Shanna@melissa.tv",
+        "website": "anastasia.net",
+      },
+      {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "username": "Samantha",
+        "email": "Nathan@yesenia.net",
+        "website": "ramiro.info",
+      },
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
   },
   created() {
