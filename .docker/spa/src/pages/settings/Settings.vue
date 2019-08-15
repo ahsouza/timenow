@@ -29,54 +29,31 @@
            <div class="">
             <vs-tabs>
 
-              <vs-tab label="Conta">
+              <vs-tab label="Privacidade">
                 <div class="con-tab-ejemplo">
-
+                  <br><br><br>
                   <vs-col type="flex" vs-justify="center" vs-align="center" vs-w="12" vs-sm="12" vs-xs="12">
-                  
-                
-
+            
 
                        <div>
                           <vs-table
-                            :data="users">
+                            :data="privacy">
                             <template slot="header">
-                              <h3>
-                                Users
-                              </h3>
+                              <h5>
+                                Como as pessoas visualizam seu perfil e informações
+                              </h5>
                             </template>
-                            <template slot="thead">
-                              <vs-th>
-                                Email
-                              </vs-th>
-                              <vs-th>
-                                Name
-                              </vs-th>
-                              <vs-th>
-                                Website
-                              </vs-th>
-                              <vs-th>
-                                Nro
-                              </vs-th>
-                            </template>
+
 
                             <template slot-scope="{data}">
                               <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
-                                <vs-td :data="tr.email">
-                                  {{tr.email}}
+                                <vs-td :data="tr.option">
+                                  {{tr.option}}
                                 </vs-td>
 
-                                <vs-td :data="tr.username">
-                                  {{tr.name}}
-                                </vs-td>
 
-                                <vs-td :data="tr.website">
-                                  {{tr.website}}
-                                </vs-td>
 
-                                <vs-td :data="tr.id">
-                                  {{tr.id}}
-                                </vs-td>
+
 
                                 <template class="expand-user" slot="expand">
                                   <div class="con-expand-users">
@@ -102,6 +79,9 @@
                                 </template>
                               </vs-tr>
                             </template>
+
+
+
                           </vs-table>
 
                           <pre>{{ selected }}</pre>
@@ -183,53 +163,36 @@ export default {
   data () {
     return {
       user: false,
-
-
-
-users:[
-      {
-        "id": 1,
-        "name": "Leanne Graham",
-        "username": "Bret",
-        "email": "Sincere@april.biz",
-        "website": "hildegard.org",
-      },
-      {
-        "id": 2,
-        "name": "Ervin Howell",
-        "username": "Antonette",
-        "email": "Shanna@melissa.tv",
-        "website": "anastasia.net",
-      },
-      {
-        "id": 3,
-        "name": "Clementine Bauch",
-        "username": "Samantha",
-        "email": "Nathan@yesenia.net",
-        "website": "ramiro.info",
-      },
-    ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      privacy: [
+        {
+          "id": 1,
+          "option": "Quem pode visualizar seu e-mail",
+        },
+        {
+          "id": 2,
+          "option": "Quem pode ver seus amigos",
+        },
+        {
+          "id": 3,
+          "option": "Quem pode ver seu sobrenome",
+        },
+        {
+          "id": 4,
+          "option": "Quem pode ver quando você estiver no conectado ao Time-Now",
+        },
+        {
+          "id": 5,
+          "option": "Selecione quem pode seguir você e visualizar suas atualizações públicas",
+        },
+        {
+          "id": 6,
+          "option": "Visualize a lista de pessoas que você bloqueou",
+        },
+        {
+          "id": 7,
+          "option": "Visualize quem você parou de seguir e volte a seguir, se desejar",
+        },
+      ]
     }
   },
   created() {
