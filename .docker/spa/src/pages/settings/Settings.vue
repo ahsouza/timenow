@@ -40,7 +40,7 @@
                             :data="privacy">
                             <template slot="header">
                               <h5>
-                                Como as pessoas visualizam seu perfil e informações
+                                Como as pessoas visualizam seu perfil e privacidades
                               </h5>
                             </template>
 
@@ -48,8 +48,9 @@
                             <template slot-scope="{data}">
                               <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data" >
                                 <vs-td :data="tr.option">
-                                  {{tr.option}}
+                                  <h6>{{tr.option}}</h6>
                                 </vs-td>
+
 
 
 
@@ -57,26 +58,37 @@
 
                                 <template class="expand-user" slot="expand">
                                   <div class="con-expand-users">
+                                    
                                     <div class="con-btns-user">
+
                                       <div class="con-userx">
-                                        <vs-avatar :badge="tr.id" size="45px" :src="`https://randomuser.me/api/portraits/women/${indextr}.jpg`"/>
                                         <span>
-                                          {{ tr.name }}
+                                          <vs-select
+                                            class="selectExample"
+                                            label="Quem pode visualizar"
+                                            v-model="select1"
+                                            >
+
+                                            <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in options1" />
+                                          </vs-select>
+                                          
                                         </span>
                                       </div>
 
-                                      <div>
-                                        <vs-button vs-type="border" size="small" icon="phone_in_talk"></vs-button>
-                                        <vs-button vs-type="gradient" size="small" color="success" icon="send"></vs-button>
-                                        <vs-button vs-type="flat" size="small" color="danger" icon="delete_sweep"></vs-button>
-                                      </div>
                                     </div>
-                                    <vs-list>
-                                      <vs-list-item icon="mail" title="Email" :subtitle="tr.email"></vs-list-item>
-                                      <vs-list-item icon="check" title="Website" :subtitle="tr.website"></vs-list-item>
-                                    </vs-list>
+
+                            
+
                                   </div>
                                 </template>
+
+
+
+
+
+
+
+
                               </vs-tr>
                             </template>
 
@@ -163,10 +175,18 @@ export default {
   data () {
     return {
       user: false,
+      select1Normal:'',
+      select1:0,
+      options1:[
+        {text:'Todas As Pessoas',value:0},
+        {text:'Apenas Amigos',value:2},
+        {text:'Ninguém',value:3},
+      ],
       privacy: [
         {
           "id": 1,
           "option": "Quem pode visualizar seu e-mail",
+          "email": "annibalhsouza@gmail.com",
         },
         {
           "id": 2,
@@ -174,22 +194,18 @@ export default {
         },
         {
           "id": 3,
-          "option": "Quem pode ver seu sobrenome",
+          "option": "Selecione quem pode visualizar seus seguidores",
         },
         {
           "id": 4,
-          "option": "Quem pode ver quando você estiver no conectado ao Time-Now",
+          "option": "Quem pode ver quando você estiver conectado ao Time-Now",
         },
         {
           "id": 5,
-          "option": "Selecione quem pode seguir você e visualizar suas atualizações públicas",
-        },
-        {
-          "id": 6,
           "option": "Visualize a lista de pessoas que você bloqueou",
         },
         {
-          "id": 7,
+          "id": 6,
           "option": "Visualize quem você parou de seguir e volte a seguir, se desejar",
         },
       ]
