@@ -112,18 +112,17 @@ export default {
       },{"headers": {"authorization":"Bearer " + this.user.token}})
       .then(res => {
 
-        if (res.data.token) {
-          console.log(res.data.token)
+        if (res.data.status) {
 
-          this.user = res.data
+          this.user = res.data.user
           sessionStorage.setItem('user', JSON.stringify(this.user))
           alert('Perfil atualizado com sucesso!')
           this.$router.push('/dash')
 
-        } else {
-          console.log('erros de validação')
+        } else if (res.data.status == false && res.data.validacao) {
+          
           let erros = '';
-          for(let erro of Object.values(res.data)) {
+          for(let erro of Object.values(res.data.erros)) {
             erros += erro + " ";
           }
           alert(erros)

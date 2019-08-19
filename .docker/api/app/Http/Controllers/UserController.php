@@ -71,10 +71,6 @@ class UserController extends Controller {
 	  return ['status' => true, "user" => $user];
 	}
 
-	public function user(Request $request) {
-	  return $request->user();
-	}
-
 	// ****************************************
 	// ******** ATUALIZAÇÃO DE PERFIL *********
 	// ****************************************
@@ -94,7 +90,7 @@ class UserController extends Controller {
 	    ]);
 
 	    if($validacao->fails()){
-	      return $validacao->errors();
+	      return ['status' => false, "validacao" => true, "erros" => $validacao->errors()];
 	    }
 	    
 	    $user->password = bcrypt($data['password']);
@@ -107,7 +103,7 @@ class UserController extends Controller {
 	    ]);
 
 	    if($validacao->fails()){
-	      return $validacao->errors();
+	      return ['status' => false, "validacao" => true, "erros" => $validacao->errors()];
 	    }
 	    $user->name = $data['name'];
 	    $user->email = $data['email'];
@@ -149,7 +145,7 @@ class UserController extends Controller {
 	    ],['base64image'=>'Imagem inválida']);
 
 	    if($validacao->fails()) {
-	      return $validacao->errors();
+	      return ['status' => false, "validacao" => true, "erros" => $validacao->errors()];
 	    }
 
 	    $time = time();
@@ -186,7 +182,7 @@ class UserController extends Controller {
 	  $user->avatar = asset($user->avatar);
 	  $user->token = $user->createToken($user->email)->accessToken;
 
-	  return $user;
+	  return ['status' => true, "user" => $user];
 	}
 
 	// ****************************************

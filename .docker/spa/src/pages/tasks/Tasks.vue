@@ -17,7 +17,7 @@
 
     <span slot="main">
 
-      <div class="row" style="margin-top: 22%">
+      <div class="row" style="margin-top: 10%">
         <div class="col s12 m12 l12">
           <div style="padding-bottom: 30%">
             <vs-tabs :color="colorx">
