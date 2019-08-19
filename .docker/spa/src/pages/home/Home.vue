@@ -23,7 +23,9 @@
 
 
     <span slot="main">
-      <public-content-vue />
+
+      <PublicContentVue />
+
       <card-content-vue
       :perfil="user.avatar"
       :nome="user.name"
@@ -69,6 +71,10 @@ export default {
   },
 }
 </script>
+
+
+
+
 <style scoped>
 
 .about-avatar {

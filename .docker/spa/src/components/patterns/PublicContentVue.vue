@@ -1,11 +1,21 @@
 <template>
-  <div class="row">
+  <div class="row" style="margin-top: 10%">
     <grid-vue class="input-field" tamanho="12">
-      <textarea v-model="content" class="materialize-textarea"></textarea>
-      <label>Publique algo para todos</label>
+
+      <input type="text" v-model="content.title">
+
+      <textarea v-if="content.title" v-model="content.text" placeholder="Digite o conteúdo" class="materialize-textarea"></textarea>
+
+      <input v-if="content.title && content.text" type="text" v-model="content.link" placeholder="Link">
+
+      <input v-if="content.title && content.text" type="text" v-model="content.img" placeholder="URL da imagem">
+      
+
+      <label>O que está acontecendo?</label>
     </grid-vue>
+
     <p>
-      <grid-vue v-if="content" class="btn waves-effect waves-light" tamanho="2 offset-s10">PUBLICAR</grid-vue>
+      <grid-vue v-if="content.title && content.text" class="btn waves-effect waves-light" tamanho="2 offset-s10">PUBLICAR</grid-vue>
     </p>
   </div>
 
@@ -19,7 +29,7 @@ export default {
   props:[],
   data () {
     return {
-      content: ''
+      content: { title: '', text: '', link: '', img: '' }
     }
   },
   components:{
