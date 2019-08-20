@@ -22,7 +22,6 @@
 
         <br><br>
 
-
         <vs-button color="primary" type="filled" to="/login">JÁ TENHO UMA CONTA</vs-button>&nbsp;
         &nbsp;&nbsp;
         <vs-button v-on:click="register()" @click="$vs.notify({
@@ -71,7 +70,7 @@ export default {
           
           setInterval(() => {
             this.$router.push('/dash')
-          }, 2000)
+          }, 1000)
 
         } else if (res.data.status == false && res.data.validacao) {
           

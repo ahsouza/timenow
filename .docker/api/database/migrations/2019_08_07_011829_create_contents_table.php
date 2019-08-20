@@ -21,10 +21,9 @@ class CreateContentsTable extends Migration
 
             $table->string('title');
             $table->longText('text');
-            $table->string('image');
-            $table->string('link');
+            $table->string('image')->nullable();
+            $table->string('link')->nullable();
             $table->dateTime('date');
-
             $table->timestamps();
         });
     }

@@ -1,4 +1,5 @@
 <template>
+  
   <SiteTemplate>
     <span slot="menu-left">
 
@@ -24,7 +25,7 @@
 
     <span slot="main">
 
-      <PublicContentVue />
+      <PublicContentVue :user="user" />
 
       <card-content-vue
       :perfil="user.avatar"
