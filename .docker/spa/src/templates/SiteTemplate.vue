@@ -96,19 +96,23 @@ export default {
     Sidebar
   },
   created() {
-    let userSession = sessionStorage.getItem('user')
+
+    let userSession = this.$store.getters.getUser
     if(userSession) {
-      this.user = JSON.parse(userSession)
+      this.user = this.$store.getters.getUser
     } else {
       this.$router.push('/login')
     }
   },
   methods: {
     exit() {
+      this.$store.commit('setUser', null)
       sessionStorage.clear()
       this.user = false
       this.$router.push('/login')
     },
+
+
     messagesRoute() {
       this.$router.push('/messages')
     },

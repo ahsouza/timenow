@@ -63,18 +63,12 @@ export default {
     }
   },
   created() {
-    let userSession = sessionStorage.getItem('user')
+
+    let userSession = this.$store.getters.getUser
     
     if(userSession) {
-      this.user = JSON.parse(userSession)
-      this.$router.push('/')
-    }
-  },
-  methods: {
-    exit() {
-      sessionStorage.clear()
-      this.user = false
-      this.$router.push('/login')
+      this.user = this.$store.getters.getUser
+      this.$router.push('/dash')
     }
   }
 }

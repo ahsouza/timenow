@@ -66,6 +66,7 @@ export default {
         if (res.data.status) {
 
           console.log('Registrado com sucesso!')
+          this.$store.commit('setUser', res.data.user)
           sessionStorage.setItem('user',JSON.stringify(res.data.user))
           
           setInterval(() => {
