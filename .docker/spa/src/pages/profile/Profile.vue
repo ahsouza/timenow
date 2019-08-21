@@ -75,10 +75,10 @@ export default {
     }
   },
   created() {
-    let userSession = sessionStorage.getItem('user')
+    let userSession = this.$store.getters.getUser
     
     if(userSession) {
-      this.user = JSON.parse(userSession)
+      this.user = this.$store.getters.getUser
       this.name = this.user.name
       this.email = this.user.email
     }
@@ -109,12 +109,13 @@ export default {
         password: this.password,
         password_confirmation: this.password_confirmation
 
-      },{"headers": {"authorization":"Bearer " + this.user.token}})
+      },{"headers": {"authorization":"Bearer " + this.$store.getters.getToken}})
       .then(res => {
 
         if (res.data.status) {
 
           this.user = res.data.user
+          this.$store.commit('setUser', res.data.user)
           sessionStorage.setItem('user', JSON.stringify(this.user))
           alert('Perfil atualizado com sucesso!')
           this.$router.push('/dash')

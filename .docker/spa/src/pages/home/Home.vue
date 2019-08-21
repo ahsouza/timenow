@@ -1,7 +1,7 @@
 <template>
   
   <SiteTemplate>
-    
+
     <span slot="menu-left">
 
       <div class="row valign-wrapper">  
@@ -24,7 +24,7 @@
 
     <span slot="main">
 
-      <PublicContentVue :user="user" />
+      <PublicContentVue/>
 
       <card-content-vue
       :perfil="user.avatar"
@@ -64,9 +64,9 @@ export default {
     GridVue
   },
   created() {
-    let userSession = sessionStorage.getItem('user')
+    let userSession = this.$store.getters.getUser
     if(userSession) {
-      this.user = JSON.parse(userSession)
+      this.user = this.$store.getters.getUser
     }
   },
 }

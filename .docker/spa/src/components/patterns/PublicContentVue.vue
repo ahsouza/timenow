@@ -28,7 +28,6 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'PublicContentVue',
-  props:['user'],
   data () {
     return {
       content: { title: '', text: '', link: '', image: '' }
@@ -45,7 +44,7 @@ export default {
         link: this.content.link,
         image: this.content.image
 
-      },{"headers": {"autorization": "Bearer " + this.user.token}})
+      },{"headers": {"autorization": "Bearer " + this.$store.getters.getToken}})
         .then(res => {
 
           if (res.data.status) {
