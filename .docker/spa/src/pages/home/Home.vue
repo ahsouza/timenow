@@ -67,6 +67,8 @@ export default {
     let userSession = this.$store.getters.getUser
     if(userSession) {
       this.user = this.$store.getters.getUser
+
+      
     }
   },
 }

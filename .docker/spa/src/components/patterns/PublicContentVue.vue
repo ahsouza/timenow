@@ -44,7 +44,7 @@ export default {
         link: this.content.link,
         image: this.content.image
 
-      },{"headers": {"autorization": "Bearer " + this.$store.getters.getToken}})
+      },{"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
         .then(res => {
 
           if (res.data.status) {
