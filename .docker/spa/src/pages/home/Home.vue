@@ -26,15 +26,14 @@
 
       <PublicContentVue/>
 
-      <card-content-vue
-      :perfil="user.avatar"
-      :nome="user.name"
-      data="21/03/2019 16:52">
+      <card-content-vue v-for="item in contents" :key="item.id"
+        :perfil="item.user.avatar"
+        :nome="item.user.name"
+        :data="item.date">
       <card-detail-vue
-      img="https://clickpetroleoegas.com.br/wp-content/uploads/2019/04/engenharia-752x440.jpg"
-      txt="A Time-Now Engenharia se destaca no mercado há 23 anos oferecendo a seus clientes as melhores soluções em Gestão de Engenharia com foco no Gerenciamento de Implantação de Projetos, Gestão de Portfólio de Projetos e Gestão de Paradas de Plantas Industriais."
-      title="Saiba mais da Time-Now Engenharia"
-      />
+        :img="item.image"
+        :title="item.title"
+        :txt="item.text"/>
       </card-content-vue>
     </span>
 
@@ -53,7 +52,8 @@ export default {
   name: 'Home',
   data() {
     return {
-      user: false
+      user: false,
+      contents: [null]
     }
   },
   components:{
@@ -65,8 +65,21 @@ export default {
   },
   created() {
     let userSession = this.$store.getters.getUser
+
     if(userSession) {
       this.user = this.$store.getters.getUser
+      this.$http.get(this.$url + `content/list`, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
+        .then(res => {
+          console.log(res)
+
+          if(res.data.status) {
+            this.contents = res.data.contents.data
+          }
+
+        }).catch(e => {
+          console.log(e)
+          alert(`Erro! Tente novamente mais tarde!`)
+        })
 
       
     }

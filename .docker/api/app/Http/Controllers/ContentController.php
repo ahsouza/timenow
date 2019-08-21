@@ -12,7 +12,10 @@ class ContentController extends Controller {
 	// ****************************************
 	
 	public function listContent(Request $request) {
-		return content::with('user')->orderBy('data', 'DESC')->paginate(5);
+
+		$contents = Content::with('user')->orderBy('data', 'DESC')->paginate(5);
+
+		return ['status' => true, 'contents' => $contents];
 	}
 
 

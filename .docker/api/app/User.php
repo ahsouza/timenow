@@ -54,4 +54,8 @@ class User extends Authenticatable
     public function friends() {
       return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
     }
+
+    public function getAvatarAttribute($value) {
+      return asset($value);
+    }
 }

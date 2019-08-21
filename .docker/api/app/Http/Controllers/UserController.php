@@ -30,7 +30,7 @@ class UserController extends Controller {
 	  if(Auth::attempt(['email'=>$data['email'], 'password'=>$data['password']])) {
 	    $user = auth()->user();
 	    $user->token = $user->createToken($user->email)->accessToken;
-	    $user->avatar = asset($user->avatar);
+	    // $user->avatar = asset($user->avatar);
 
 	    return ['status' => true, "user" => $user];
 
@@ -66,7 +66,7 @@ class UserController extends Controller {
 	    'avatar' => $avatar
 	  ]);
 	  $user->token = $user->createToken($user->email)->accessToken;
-	  $user->avatar = asset($user->avatar);
+	  // $user->avatar = asset($user->avatar);
 
 	  return ['status' => true, "user" => $user];
 	}
@@ -163,9 +163,10 @@ class UserController extends Controller {
 	    }
 
 	    if($user->avatar) {
+	    	$avatarUser = str_replace(asset('/'), '', $user->avatar);
 	      
-	      if(file_exists($user->avatar)) {
-	        unlink($user->avatar);
+	      if(file_exists($avatarUser)) {
+	        unlink($avatarUser);
 	      }
 	    }
 
@@ -179,7 +180,7 @@ class UserController extends Controller {
 
 	  $user->save();
 
-	  $user->avatar = asset($user->avatar);
+	  // $user->avatar = asset($user->avatar);
 	  $user->token = $user->createToken($user->email)->accessToken;
 
 	  return ['status' => true, "user" => $user];
