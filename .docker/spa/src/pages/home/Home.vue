@@ -1,6 +1,7 @@
 <template>
   
   <SiteTemplate>
+    
     <span slot="menu-left">
 
       <div class="row valign-wrapper">  
@@ -19,9 +20,7 @@
 
       </div>
 
-
     </span>
-
 
     <span slot="main">
 

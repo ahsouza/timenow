@@ -49,7 +49,7 @@ Vue.prototype.$url = 'http://127.0.0.1:8000/api/'
 
 const store = {
   state: {
-    user: sessionStorage.getItem('user') ? JSON.parse(userAux) : null
+    user: sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')) : null
   },
   getters: {
     getUser: state => {
