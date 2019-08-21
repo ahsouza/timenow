@@ -62,7 +62,7 @@ const store = {
   },
   mutations: {
     setUser(state, x) {
-      state.user = n
+      state.user = x
     }
   }
 }

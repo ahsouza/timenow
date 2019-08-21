@@ -19,7 +19,7 @@
       <button @click="addContent" v-if="content.title && content.text" class="btn waves-effect waves-light" tamanho="2 offset-s10">PUBLICAR</button>
     </p>
 
- br  </div>
+  </div>
 
 </template>
 
