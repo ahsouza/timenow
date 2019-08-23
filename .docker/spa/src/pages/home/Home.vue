@@ -24,7 +24,7 @@
 
     <span slot="main">
 
-      <PublicContentVue/>
+      <PublicContentVue style="padding-bottom: 12%"/>
 
       <card-content-vue v-for="item in contents" :key="item.id"
         :perfil="item.user.avatar"
