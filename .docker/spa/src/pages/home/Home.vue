@@ -33,7 +33,8 @@
       <card-detail-vue
         :img="item.image"
         :title="item.title"
-        :txt="item.text"/>
+        :txt="item.text"
+        :link="item.link"/>
       </card-content-vue>
     </span>
 
