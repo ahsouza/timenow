@@ -48,7 +48,7 @@
                       <vs-button vs-type="border" color="success" size="small" icon="phone_in_talk" class="btn-friend"></vs-button>
                     </a>
 
-                    <a :href="'https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=' + tr.email + '#'">
+                    <a :href="'https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=' + tr.email + '#'" target="_blank">
                       <vs-button vs-type="gradient" size="small" color="primary" icon="send" class="btn-friend"></vs-button>
                     </a>
 

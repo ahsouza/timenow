@@ -12,7 +12,7 @@
         <vs-input v-if="content.title && content.text" class="inputx" v-model="content.link" placeholder="Link"/>
         <vs-input v-if="content.title && content.text" class="inputx" v-model="content.image" placeholder="URL da imagem"/>
 
-        <vs-button @click="addContent" v-if="content.title && content.text" color="success" type="filled" style="margin: 8% 0% 0% 18%" class="animated fadeInDown">Publicar</vs-button>
+        <vs-button @click="addContent" v-if="content.title && content.text" color="success" type="filled" style="margin: 8% 0% 0% 18%" class="animated fadeIn">Publicar</vs-button>
 
         <vs-button @click="popupActivo3=true" color="primary" type="filled" style="margin-left: 48%">Ajuda</vs-button>
 

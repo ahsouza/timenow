@@ -20,7 +20,7 @@
         </span>
         
       </span>
-      <p>{{ txt || 'Texto'}}</p>
+      <p>{{ txt || 'Texto'}}</p><br>
       <p v-if="link && link != '#'">
         <a :href="link" target="_blank">Saiba mais...</a>
       </p>
