@@ -30,11 +30,11 @@
         :perfil="item.user.avatar"
         :nome="item.user.name"
         :data="item.date">
-      <card-detail-vue
-        :img="item.image"
-        :title="item.title"
-        :txt="item.text"
-        :link="item.link"/>
+        <card-detail-vue
+          :img="item.image"
+          :title="item.title"
+          :txt="item.text"
+          :link="item.link"/>
       </card-content-vue>
     </span>
 
@@ -79,8 +79,6 @@ export default {
           console.log(e)
           alert(`Erro! Tente novamente mais tarde!`)
         })
-
-      
     }
   },
   computed: {
@@ -90,9 +88,6 @@ export default {
   }
 }
 </script>
-
-
-
 
 <style scoped>
 

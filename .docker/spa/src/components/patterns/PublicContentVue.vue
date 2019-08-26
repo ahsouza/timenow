@@ -44,6 +44,7 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'PublicContentVue',
+  props: [],
   data () {
     return {
       value1:'',
@@ -79,7 +80,7 @@ export default {
             for(let erro of Object.values(res.data.errors)) {
               errors += erro + " "
             }
-            alert(erros)
+            alert(errors)
           }
 
         }).catch(e =>{
