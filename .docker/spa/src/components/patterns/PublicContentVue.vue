@@ -70,7 +70,8 @@ export default {
         .then(res => {
 
           if (res.data.status) {
-            console.log(res.data.contents)
+            this.content = { title: '', text: '', link: '', image: '' }
+            this.$store.commit('setContentsTimeLine', res.data.contents.data)
           }
 
         }).catch(e =>{

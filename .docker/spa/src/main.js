@@ -58,11 +58,17 @@ const store = {
     getToken: state => {
       return state.user.token
 
+    },
+    getContentsTimeLine: state=> {
+      return state.contentsTimeLine
     }
   },
   mutations: {
     setUser(state, x) {
       state.user = x
+    },
+    setContentsTimeLine(state, x) {
+      state.contentsTimeLine = x
     }
   }
 }

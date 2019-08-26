@@ -26,7 +26,7 @@
 
       <PublicContentVue style="padding-bottom: 12%"/>
 
-      <card-content-vue v-for="item in contents" :key="item.id"
+      <card-content-vue v-for="item in listContents" :key="item.id"
         :perfil="item.user.avatar"
         :nome="item.user.name"
         :data="item.date">
@@ -52,11 +52,10 @@ export default {
   name: 'Home',
   data() {
     return {
-      user: false,
-      contents: [null]
+      user: false
     }
   },
-  components:{
+  components: {
     CardContentVue,
     SiteTemplate,
     CardDetailVue,
@@ -70,10 +69,9 @@ export default {
       this.user = this.$store.getters.getUser
       this.$http.get(this.$url + `content/list`, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
         .then(res => {
-          console.log(res)
 
           if(res.data.status) {
-            this.contents = res.data.contents.data
+            this.$store.commit('setContentsTimeLine', res.data.contents.data)
           }
 
         }).catch(e => {
@@ -84,6 +82,11 @@ export default {
       
     }
   },
+  computed: {
+    listContents() {
+      return this.$store.getters.getContentsTimeLine;
+    }
+  }
 }
 </script>
 
