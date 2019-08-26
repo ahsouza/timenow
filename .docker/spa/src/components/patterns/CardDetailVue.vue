@@ -1,7 +1,7 @@
 <template>
 
   <span>
-    <div v-if="img && != '#'" class="card-image">
+    <div v-if="img && img != '#'" class="card-image">
       <a v-if="link && link != '#'" :href="link" target="_blank">
         <img :src="img">
         <span class="card-title">{{ title || 'Título' }}</span>
