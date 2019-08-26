@@ -27,6 +27,7 @@
       <PublicContentVue style="padding-bottom: 12%"/>
 
       <card-content-vue v-for="item in listContents" :key="item.id"
+        :id="item.id"
         :perfil="item.user.avatar"
         :nome="item.user.name"
         :data="item.date">
