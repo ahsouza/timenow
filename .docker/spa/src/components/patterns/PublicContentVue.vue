@@ -72,6 +72,14 @@ export default {
           if (res.data.status) {
             this.content = { title: '', text: '', link: '', image: '' }
             this.$store.commit('setContentsTimeLine', res.data.contents.data)
+
+          } else if (res.data.status == false && res.data.validacao) {
+            let errors = ''
+
+            for(let erro of Object.values(res.data.errors)) {
+              errors += erro + " "
+            }
+            alert(erros)
           }
 
         }).catch(e =>{

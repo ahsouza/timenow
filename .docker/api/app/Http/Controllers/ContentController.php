@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\content;
 
 class ContentController extends Controller {
@@ -27,6 +28,19 @@ class ContentController extends Controller {
 		$data = $request->all();
 		$user = $request->user();
 
+		
+		// Validação
+		$validacao = Validator::make($data, [
+			'title' => 'required',
+			'text' => 'required'
+		]);
+
+		if ($validacao->fails()) {
+			return ['status' => false, "validacao" => true, "errors" => $validacao ->errors()];
+		}
+
+
+
 		$content = new content;
 
 		$content->title = $data['title'];
@@ -38,7 +52,7 @@ class ContentController extends Controller {
 		$user->contents()->save($content);
 
 		$contents = Content::with(`user`)->orderBy(`data`, `DESC`)->paginate(5);
-		
+
 		return ['status' => true, 'contents' => $user->contents];
 
 	}
