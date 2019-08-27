@@ -21,9 +21,9 @@
     <div class="card-action">
       <p>
         <a style="cursor: pointer" @click="liked(id)">
-          <i class="material-icons">{{ like }}</i>7
+          <i class="material-icons" style="color: red">{{ like }}</i>7
         </a>
-        <i class="material-icons">insert_comment</i>
+        <i class="material-icons" style="color: #3a0160">question_answer</i>
       </p>
     </div>
 
@@ -49,7 +49,6 @@ export default {
   methods: {
     liked(id) {
 
-      alert(id)
       if (this.like == 'favorite_border') {
         this.like = 'favorite'
       } else {

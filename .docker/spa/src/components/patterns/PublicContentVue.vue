@@ -25,9 +25,6 @@
                <b>Recomendações:</b> É necessário está de acordo com os deveres da <b>Time-Now Engenharia</b>.
             </p>
 
-            <p>
-              <button @click="addContent" v-if="content.title && content.text" class="btn waves-effect waves-light" tamanho="2 offset-s10">PUBLICAR</button>
-            </p>
           </vs-popup>
       </vs-popup>
 
