@@ -88,7 +88,7 @@ class ContentController extends Controller {
 		  return [
 		  	'status'=> true, 
 		  	'likes' => $content->likes()->count(), 
-		  	'list' => $this->list($request)
+		  	'list' => $this->listContent($request)
 		  ];
 
 		} else {
