@@ -36,11 +36,11 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'CardContentVue',
-  props:['id', 'perfil','nome','data'],
+  props:['id', 'perfil','nome','data', 'totalLikes'],
   data () {
     return {
       like: 'favorite_border',
-      totalLikes: 0
+      totalLikes: this.totalLikes
 
     }
   },

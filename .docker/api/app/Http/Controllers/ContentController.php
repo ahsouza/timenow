@@ -15,6 +15,11 @@ class ContentController extends Controller {
 	public function listContent(Request $request) {
 
 		$contents = Content::with('user')->orderBy('data', 'DESC')->paginate(5);
+		$user->$request->user();
+
+		foreach ($contents as $key => $content) {
+			$content->totalLikes = $content->likes()->count();
+		}
 
 		return ['status' => true, 'contents' => $contents];
 	}
@@ -38,7 +43,6 @@ class ContentController extends Controller {
 		if ($validacao->fails()) {
 			return ['status' => false, "validacao" => true, "erros" => $validacao->errors()];
 		}
-
 
 
 		$content = new content;
