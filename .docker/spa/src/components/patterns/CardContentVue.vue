@@ -21,7 +21,7 @@
     <div class="card-action">
       <p>
         <a style="cursor: pointer" @click="liked(id)">
-          <i class="material-icons" style="color: red">{{ like }}</i>7
+          <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
         </a>
         <i class="material-icons" style="color: #3a0160">question_answer</i>
       </p>
@@ -39,7 +39,8 @@ export default {
   props:['id', 'perfil','nome','data'],
   data () {
     return {
-      like: 'favorite_border'
+      like: 'favorite_border',
+      totalLikes: 0
 
     }
   },
@@ -48,12 +49,28 @@ export default {
   },
   methods: {
     liked(id) {
+      this.$http.put(this.$url + 'content/liked/' + id, {}, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
+        .then(res => {
 
-      if (this.like == 'favorite_border') {
-        this.like = 'favorite'
-      } else {
-        this.like = 'favorite_border'
-      }
+          if (res.status) {
+
+            this.totalLikes = res.data.likes
+            if (this.like == 'favorite_border') {
+              this.like = 'favorite'
+            } else {
+              this.like = 'favorite_border'
+            }
+
+          } else {
+            alert(res.data.erro)
+          }
+
+        }).catch(e =>{
+
+          console.log(e)
+          alert(`Error ${e}; Tente novamente mais tarde`)
+        })
+
     }
   } 
 }

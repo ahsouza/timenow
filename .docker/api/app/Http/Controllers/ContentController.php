@@ -57,6 +57,22 @@ class ContentController extends Controller {
 
 	}
 
+	// ****************************************
+	// ******** CURTINDO CONTEÚDOS ***********
+	// ****************************************
 
+	public function likedContent($id, Request $request) {
+
+		$content = Content::find($id);
+
+		if($content) {
+		  $user = $request->user();
+		  $user->likes()->toggle($content->id);
+
+		  return ['status'=> true, 'likes' => $content->likes()->count()];
+		} else {
+			return ['status' => false, "erro" => "Conteúdo não existe!"]
+		}
+	}
 
 }
