@@ -24,7 +24,7 @@
           <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
         </a>
         <a style="cursor: pointer" @click="openComment(id)">
-          <i class="material-icons" style="color: #3a0160">question_answer</i>22
+          <i class="material-icons" style="color: #3a0160">question_answer</i>{{totalcomments}}
         </a>
       </p>
 
@@ -61,7 +61,7 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'CardContentVue',
-  props:['id', 'perfil','nome','data','totallikes','likecontent'],
+  props:['id', 'perfil','nome','data','totallikes','likecontent', 'totalcomments'],
   data () {
     return {
       like: this.likecontent ? 'favorite' : 'favorite_border',

@@ -29,6 +29,7 @@
       <card-content-vue v-for="item in listContents" :key="item.id"
         :id="item.id"
         :totallikes="item.total_likes"
+        :totalcomments="item.total_comments"
         :likecontent="item.like_content"
         :perfil="item.user.avatar"
         :nome="item.user.name"
