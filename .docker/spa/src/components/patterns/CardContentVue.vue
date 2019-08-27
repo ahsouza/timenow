@@ -23,8 +23,33 @@
         <a style="cursor: pointer" @click="liked(id)">
           <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
         </a>
-        <i class="material-icons" style="color: #3a0160">question_answer</i>
+        <a style="cursor: pointer" @click="openComment(id)">
+          <i class="material-icons" style="color: #3a0160">question_answer</i>22
+        </a>
       </p>
+
+      <p v-if="showComment" class="right-align">
+        <vs-input class="inputx" placeholder="Digite comentário..."/>
+        <button><i class="material-icons">send</i></button>
+      </p>
+
+      <p v-if="showComment"> 
+        <ul class="collection">
+          
+          <li class="collection-item avatar">
+            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+
+            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
+            
+            <p>
+              Gostei desta publicação!
+            </p>
+          </li>
+
+        </ul>
+
+      </p>
+
     </div>
 
   </div>
@@ -40,7 +65,8 @@ export default {
   data () {
     return {
       like: this.likecontent ? 'favorite' : 'favorite_border',
-      totalLikes: this.totallikes
+      totalLikes: this.totallikes,
+      showComment: false
 
     }
   },
@@ -73,7 +99,11 @@ export default {
           console.log(e)
           alert(`Error ${e}; Tente novamente mais tarde!`)
         })
+    },
+    openComment(id) {
+      this.showComment = !this.showComment
     }
+
   } 
 }
 </script>
