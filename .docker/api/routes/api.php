@@ -1,5 +1,9 @@
 <?php
 
+use App\User;
+use App\content;
+use App\comment;
+
 Route::post('/register', "UserController@register");
 Route::post('/login', "UserController@login");
 

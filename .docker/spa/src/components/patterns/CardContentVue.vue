@@ -36,11 +36,11 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'CardContentVue',
-  props:['id', 'perfil','nome','data', 'totalLikes'],
+  props:['id', 'perfil','nome','data','totallikes','likecontent'],
   data () {
     return {
-      like: 'favorite_border',
-      totalLikes: this.totalLikes
+      like: this.likecontent ? 'favorite' : 'favorite_border',
+      totalLikes: this.totallikes
 
     }
   },
@@ -49,12 +49,15 @@ export default {
   },
   methods: {
     liked(id) {
-      this.$http.put(this.$url + 'content/liked/' + id, {}, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
+
+      this.$http.put(this.$url+`content/liked/`+ id, {}, {"headers": {"authorization":"Bearer " + this.$store.getters.getToken}})
         .then(res => {
 
           if (res.status) {
 
             this.totalLikes = res.data.likes
+            this.$store.commit('setContentsTimeLine', res.data.list.contents.data)
+
             if (this.like == 'favorite_border') {
               this.like = 'favorite'
             } else {
@@ -68,9 +71,8 @@ export default {
         }).catch(e =>{
 
           console.log(e)
-          alert(`Error ${e}; Tente novamente mais tarde`)
+          alert(`Error ${e}; Tente novamente mais tarde!`)
         })
-
     }
   } 
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,15 +14,21 @@ class ContentController extends Controller {
 	public function listContent(Request $request) {
 
 		$contents = Content::with('user')->orderBy('data', 'DESC')->paginate(5);
-		$user->$request->user();
+		$user = $request->user();
 
 		foreach ($contents as $key => $content) {
-			$content->totalLikes = $content->likes()->count();
+		  $content->total_likes = $content->likes()->count();
+		  $like = $user->likes()->find($content->id);
+
+		  if ($like) {
+		    $content->like_content = true;
+		  } else {
+		    $content->like_content = false;
+		  }
 		}
 
 		return ['status' => true, 'contents' => $contents];
 	}
-
 
     // ****************************************
 	// ******** ADICIONAR CONTEÚDOS ***********
@@ -41,9 +46,13 @@ class ContentController extends Controller {
 		]);
 
 		if ($validacao->fails()) {
-			return ['status' => false, "validacao" => true, "erros" => $validacao->errors()];
-		}
 
+			return [
+			  'status' => false, 
+			  "validacao" => true, 
+			  "erros" => $validacao->errors()
+			];
+		}
 
 		$content = new content;
 
@@ -57,7 +66,10 @@ class ContentController extends Controller {
 
 		$contents = Content::with('user')->orderBy('data', 'DESC')->paginate(5);
 
-		return ['status' => true, 'contents' => $contents];
+		return [
+		  'status' => true, 
+		  'contents' => $contents
+		];
 
 	}
 
@@ -73,9 +85,14 @@ class ContentController extends Controller {
 		  $user = $request->user();
 		  $user->likes()->toggle($content->id);
 
-		  return ['status'=> true, 'likes' => $content->likes()->count()];
+		  return [
+		  	'status'=> true, 
+		  	'likes' => $content->likes()->count(), 
+		  	'list' => $this->list($request)
+		  ];
+
 		} else {
-			return ['status' => false, "erro" => "Conteúdo não existe!"]
+		  return ['status' => false, "erro" => "Conteúdo não existe!"];
 		}
 	}
 

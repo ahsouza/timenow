@@ -82,7 +82,7 @@ export default {
 
         }).catch(e =>{
           console.log(e)
-          alert(`Error: ${e}`)
+          alert(`O seguinte error: ${e}`)
         })
     }
   }
