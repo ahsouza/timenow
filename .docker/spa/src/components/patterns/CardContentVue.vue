@@ -28,14 +28,14 @@
         </a>
       </p>
 
-      <p v-if="showComment" class="right-align">
+      <p v-if="showComment" class="right-align" style="padding: 5%">
 
-        <textarea id="textarea1" placeholder="Digite seu comentário..." class="materialize-textarea"></textarea>
-        <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3"><i class="material-icons">send</i></a>
+        <textarea id="textarea1" placeholder="Digite seu comentário..." class="materialize-textarea" maxlength="123"></textarea>
+        <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3" style="margin-top: 5%"><i class="material-icons">send</i></a>
 
       </p>
 
-      <p v-if="showComment"> 
+      <p v-if="showComment" style="margin-top: 10%"> 
         <ul class="collection">
           
           <li class="collection-item avatar">
