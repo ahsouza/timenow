@@ -47,55 +47,6 @@
               Gostei desta publicação!
             </p>
           </li>
-
-          <li class="collection-item avatar">
-            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
-
-            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
-            
-            <p>
-              Gostei desta publicação!
-            </p>
-          </li>
-
-
-
-          <li class="collection-item avatar">
-            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
-
-            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
-            
-            <p>
-              Gostei desta publicação!
-            </p>
-          </li>
-
-          <li class="collection-item avatar">
-            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
-
-            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
-            
-            <p>
-              Gostei desta publicação!
-            </p>
-          </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </ul>
 
       </p>

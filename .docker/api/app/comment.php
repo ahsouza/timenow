@@ -24,4 +24,7 @@ class comment extends Model
     public function content() {
       return $this->belongsTo('App\content');
     }
-}
+
+    public function getDateAttribute($value) {
+        return date('H:i d/m/Y', strtotime($value));
+    }

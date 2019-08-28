@@ -29,4 +29,10 @@ class content extends Model
     public function likes() {
       return $this->belongsToMany('App\User', 'likes', 'content_id', 'user_id');
     }
+
+    public function getDateAttribute($value) {
+      $data = date('H:i d/m/Y', strtotime($value));
+      
+      return str_replace(':', 'h', $data);
+    }
 }
