@@ -35,9 +35,12 @@
 
       </p>
 
-      <p v-if="showComment" style="margin-top: 10%"> 
-        <ul class="collection">
+      <p v-if="showComment" style="margin-top: 5%"> 
+        <ul class="collection animated fadeIn" style="overflow-y: scroll; overflow-x: hidden; height: 170px;">
           
+
+
+
           <li class="collection-item avatar">
             <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
 
@@ -47,6 +50,54 @@
               Gostei desta publicação!
             </p>
           </li>
+
+          <li class="collection-item avatar">
+            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+
+            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
+            
+            <p>
+              Gostei desta publicação!
+            </p>
+          </li>
+
+
+
+          <li class="collection-item avatar">
+            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+
+            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
+            
+            <p>
+              Gostei desta publicação!
+            </p>
+          </li>
+
+          <li class="collection-item avatar">
+            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+
+            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
+            
+            <p>
+              Gostei desta publicação!
+            </p>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </ul>
 
