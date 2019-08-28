@@ -31,19 +31,19 @@
       <p v-if="showComment" class="right-align" style="padding: 5%">
 
         <textarea id="textarea1" v-model="textComment" placeholder="Digite seu comentário..." class="materialize-textarea" maxlength="123"></textarea>
-        <a v-if="textComment" @click="comment(id)" class="btn-floating btn-small waves-effect waves-light light-blue accent-3" style="margin-top: 5%"><i class="material-icons">send</i></a>
+        <a v-if="textComment" @click="comment(id)" class="btn-floating btn-small waves-effect waves-light light-blue accent-3 animated fadeInRight" style="margin-top: 5%"><i class="material-icons">send</i></a>
 
       </p>
 
       <p v-if="showComment" style="margin-top: 5%"> 
         <ul class="collection animated fadeIn" style="overflow-y: scroll; overflow-x: hidden; height: 170px;">
 
-          <li class="collection-item avatar" v-for="item in totalcomments" :key="item.id" >
+          <li class="collection-item avatar" v-for="item in totalcomments" :key="item.id">
             <img :src="item.user.avatar" alt="" class="circle">
 
-            <span class="title">{{item.user.name}}<small> - {{item.data}}</small></span>
-            
-            <p>
+            <span class="title">{{item.user.name}}<small> &nbsp;&nbsp;-&nbsp;&nbsp; {{item.date}}</small></span>
+            <p style="padding-top: 15px; padding-left: 12px">
+              
               {{item.text}}
             </p>
           </li>
