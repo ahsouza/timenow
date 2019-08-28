@@ -102,8 +102,24 @@ class ContentController extends Controller {
 	// ****************************************
 
 	public function commentContent($id. Request $request) {
-
+		$data = $request->all();
 		$content = Content::find($id);
+
+		// Validação
+		$validacao = Validator::make($data, [
+		   'text' => 'required',
+		]);
+
+		if ($validacao->fails()) {
+
+			return [
+			  'status' => false, 
+			  "validacao" => true, 
+			  "erros" => $validacao->errors()
+			];
+		}
+		//
+
 
 		if ($content) {
 		  $user = $request->user();
