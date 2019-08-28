@@ -20,17 +20,19 @@
 
     <div class="card-action">
       <p>
-        <a style="cursor: pointer" @click="liked(id)">
+        <a style="cursor: pointer; color: red" @click="liked(id)">
           <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
         </a>
-        <a style="cursor: pointer" @click="openComment(id)">
-          <i class="material-icons" style="color: #3a0160">question_answer</i>{{totalcomments}}
+        <a style="cursor: pointer; color: #076305;" @click="openComment(id)">
+          <i class="material-icons" style="color: #076305">question_answer</i>{{totalcomments}}
         </a>
       </p>
 
       <p v-if="showComment" class="right-align">
-        <vs-input class="inputx" placeholder="Digite comentário..."/>
-        <button><i class="material-icons">send</i></button>
+
+        <textarea id="textarea1" placeholder="Digite seu comentário..." class="materialize-textarea"></textarea>
+        <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3"><i class="material-icons">send</i></a>
+
       </p>
 
       <p v-if="showComment"> 
