@@ -1,6 +1,6 @@
 <template>
 <div class="row">
-  <div class="card">
+  <div class="card animated fadeInUp">
 
     <div class="card-content">
       <div class="row valign-wrapper">
