@@ -97,4 +97,30 @@ class ContentController extends Controller {
 		}
 	}
 
+	// ****************************************
+	// ******** COMMENTANDO CONTEÚDOS *********
+	// ****************************************
+
+	public function commentContent($id. Request $request) {
+
+		$content = Content::find($id);
+
+		if ($content) {
+		  $user = $request->user();
+		  $user->comments()->create([
+		  	'content_id' => $content->id,
+		  	'text' => $request->text,
+		  	'data' => date('Y-m-d H:i:s')
+		  ]);
+
+		  return [
+		  	'status' => true,
+		  	'list' => $this->listContent($request)
+		  ];
+
+		} else {
+			return ['status' => false, 'erro' => 'Conteúdo não existe!'];
+		}
+	}
+
 }
