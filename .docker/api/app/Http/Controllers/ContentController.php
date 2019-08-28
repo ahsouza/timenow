@@ -13,7 +13,7 @@ class ContentController extends Controller {
 	
 	public function listContent(Request $request) {
 
-		$contents = Content::with('user')->orderBy('data', 'DESC')->paginate(5);
+		$contents = Content::with('user')->orderBy('date', 'DESC')->paginate(5);
 		$user = $request->user();
 
 		foreach ($contents as $key => $content) {
@@ -65,7 +65,7 @@ class ContentController extends Controller {
 
 		$user->contents()->save($content);
 
-		$contents = Content::with('user')->orderBy('data', 'DESC')->paginate(5);
+		$contents = Content::with('user')->orderBy('date', 'DESC')->paginate(5);
 
 		return [
 		  'status' => true, 
@@ -101,23 +101,23 @@ class ContentController extends Controller {
 	// ******** COMMENTANDO CONTEÚDOS *********
 	// ****************************************
 
-	public function commentContent($id. Request $request) {
+	public function commentContent($id, Request $request) {
 		$data = $request->all();
 		$content = Content::find($id);
 
 		// Validação
-		$validacao = Validator::make($data, [
-		   'text' => 'required',
-		]);
+		// $validacao = Validator::make($data, [
+		//    'text' => 'required',
+		// ]);
 
-		if ($validacao->fails()) {
+		// if ($validacao->fails()) {
 
-			return [
-			  'status' => false, 
-			  "validacao" => true, 
-			  "erros" => $validacao->errors()
-			];
-		}
+		// 	return [
+		// 	  'status' => false, 
+		// 	  "validacao" => true, 
+		// 	  "erros" => $validacao->errors()
+		// 	];
+		// }
 		//
 
 
@@ -126,7 +126,7 @@ class ContentController extends Controller {
 		  $user->comments()->create([
 		  	'content_id' => $content->id,
 		  	'text' => $request->text,
-		  	'data' => date('Y-m-d H:i:s')
+		  	'date' => date('Y-m-d H:i:s')
 		  ]);
 
 		  return [

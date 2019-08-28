@@ -26,5 +26,9 @@ class comment extends Model
     }
 
     public function getDateAttribute($value) {
-        return date('H:i d/m/Y', strtotime($value));
+
+        $data = date('H:i d/m/Y', strtotime($value));
+
+        return str_replace(':', 'h', $data);
     }
+}    

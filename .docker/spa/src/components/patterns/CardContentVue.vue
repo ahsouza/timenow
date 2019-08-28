@@ -38,13 +38,13 @@
       <p v-if="showComment" style="margin-top: 5%"> 
         <ul class="collection animated fadeIn" style="overflow-y: scroll; overflow-x: hidden; height: 170px;">
 
-          <li class="collection-item avatar" v-for="item in comments" :key="item.id" >
+          <li class="collection-item avatar" v-for="item in totalcomments" :key="item.id" >
             <img :src="item.user.avatar" alt="" class="circle">
 
-            <span class="title">{{item.user.name}}<small> - {{item.date}}</small></span>
+            <span class="title">{{item.user.name}}<small> - {{item.data}}</small></span>
             
             <p>
-              Gostei desta publicação!
+              {{item.text}}
             </p>
           </li>
         </ul>
@@ -62,7 +62,7 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'CardContentVue',
-  props:['id', 'perfil','nome','data','totallikes','likecontent', 'totalcomments'],
+  props:['id','perfil','nome','data','totallikes','likecontent','totalcomments'],
   data () {
     return {
       like: this.likecontent ? 'favorite' : 'favorite_border',
@@ -102,7 +102,7 @@ export default {
           alert(`Error ${e}; Tente novamente mais tarde!`)
         })
     },
-    openComment(id) {
+    openComment() {
       this.showComment = !this.showComment
     },
     comment(id) {
