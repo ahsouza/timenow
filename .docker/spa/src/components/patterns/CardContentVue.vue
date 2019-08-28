@@ -24,7 +24,7 @@
           <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
         </a>
         <a style="cursor: pointer; color: #076305;" @click="openComment(id)">
-          <i class="material-icons" style="color: #076305">question_answer</i>{{totalcomments}}
+          <i class="material-icons" style="color: #076305">question_answer</i>{{totalcomments.length}}
         </a>
       </p>
 
@@ -37,14 +37,11 @@
 
       <p v-if="showComment" style="margin-top: 5%"> 
         <ul class="collection animated fadeIn" style="overflow-y: scroll; overflow-x: hidden; height: 170px;">
-          
 
+          <li class="collection-item avatar" v-for="item in comments" :key="item.id" >
+            <img :src="item.user.avatar" alt="" class="circle">
 
-
-          <li class="collection-item avatar">
-            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
-
-            <span class="title">Maria Aparecida De Amaral <small> - 12h30 12/03/2019</small></span>
+            <span class="title">{{item.user.name}}<small> - {{item.date}}</small></span>
             
             <p>
               Gostei desta publicação!

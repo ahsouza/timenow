@@ -18,7 +18,7 @@ class ContentController extends Controller {
 
 		foreach ($contents as $key => $content) {
 		  $content->total_likes = $content->likes()->count();
-		  $content->total_comments = $content->comments()->count();
+		  $content->total_comments = $content->comments()->with('user')->get();
 		  $like = $user->likes()->find($content->id);
 
 		  if ($like) {
