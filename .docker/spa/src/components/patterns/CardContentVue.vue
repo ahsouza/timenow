@@ -23,15 +23,15 @@
         <a style="cursor: pointer; color: red" @click="liked(id)">
           <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
         </a>
-        <a style="cursor: pointer; color: #076305;" @click="openComment(id)">
+        <a style="cursor: pointer; color: #076305;" @click="openComment()">
           <i class="material-icons" style="color: #076305">question_answer</i>{{totalcomments.length}}
         </a>
       </p>
 
       <p v-if="showComment" class="right-align" style="padding: 5%">
 
-        <textarea id="textarea1" placeholder="Digite seu comentário..." class="materialize-textarea" maxlength="123"></textarea>
-        <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3" style="margin-top: 5%"><i class="material-icons">send</i></a>
+        <textarea id="textarea1" v-model="textComment" placeholder="Digite seu comentário..." class="materialize-textarea" maxlength="123"></textarea>
+        <a v-if="textComment" @click="comment(id)" class="btn-floating btn-small waves-effect waves-light light-blue accent-3" style="margin-top: 5%"><i class="material-icons">send</i></a>
 
       </p>
 
@@ -67,6 +67,7 @@ export default {
     return {
       like: this.likecontent ? 'favorite' : 'favorite_border',
       totalLikes: this.totallikes,
+      textComment: '',
       showComment: false
 
     }
@@ -103,6 +104,30 @@ export default {
     },
     openComment(id) {
       this.showComment = !this.showComment
+    },
+    comment(id) {
+      if(!this.textComment) {
+        return ;
+      }
+      this.$http.put(this.$url+`content/comment/`+ id, {
+          text: this.textComment
+
+        }, {"headers": {"authorization":"Bearer " + this.$store.getters.getToken}})
+        .then(res => {
+
+          if (res.status) {
+            this.textComment = ''
+            this.$store.commit('setContentsTimeLine', res.data.list.contents.data)
+
+          } else {
+            alert(res.data.erro)
+          }
+
+        }).catch(e =>{
+
+          console.log(e)
+          alert(`Error ${e}; Tente novamente mais tarde!`)
+        })
     }
 
   } 
