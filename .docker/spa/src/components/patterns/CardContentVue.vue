@@ -11,7 +11,7 @@
         </grid-vue>
         <grid-vue tamanho="11">
           <span class="black-text">
-            <strong>{{nome}}</strong> - <small>{{data}}</small>
+            <router-link :to="'/user/' + userId"><strong>{{nome}}</strong></router-link> - <small>{{data}}</small>
           </span>
         </grid-vue>
       </div>
