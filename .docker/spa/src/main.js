@@ -70,6 +70,13 @@ const store = {
     },
     setContentsTimeLine(state, x) {
       state.contentsTimeLine = x
+    },
+    setPaginationContentsTimeLine(state, array) {
+      state.contentsTimeLine = x
+
+      for(let item of array) {
+        state.contentsTimeLine.push(item)
+      }
     }
   }
 }

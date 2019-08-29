@@ -40,6 +40,8 @@
           :txt="item.text"
           :link="item.link"/>
       </card-content-vue>
+
+      <button @click="loadingPagination" v-if="urlNextPage" class="btn blue">ver mais...</button>
     </span>
 
   </SiteTemplate>
@@ -57,7 +59,8 @@ export default {
   name: 'Home',
   data() {
     return {
-      user: false
+      user: false,
+      urlNextPage: null
     }
   },
   components: {
@@ -77,6 +80,26 @@ export default {
 
           if(res.data.status) {
             this.$store.commit('setContentsTimeLine', res.data.contents.data)
+
+          }
+
+        }).catch(e => {
+          console.log(e)
+          alert(`Erro! Tente novamente mais tarde!`)
+        })
+    }
+  },
+  methods: {
+    loadingPagination() {
+      if (!this.urlNextPage) {
+        return;
+      }
+      this.$http.get(this.urlNextPage, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
+        .then(res => {
+
+          if(res.data.status) {
+            this.$store.commit('setPaginationContentsTimeLine', res.data.contents.data)
+            this.urlNextPage = res.data.contents.next_page_url
           }
 
         }).catch(e => {
