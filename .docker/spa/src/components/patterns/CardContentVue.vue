@@ -5,7 +5,9 @@
     <div class="card-content">
       <div class="row valign-wrapper">
         <grid-vue tamanho="1">
-          <img :src="perfil" :alt="nome" class="circle responsive-img"> <!-- notice the "circle" class -->
+          <router-link :to="'/user/' + userId">
+            <img :src="perfil" :alt="nome" class="circle responsive-img">
+          </router-link>  
         </grid-vue>
         <grid-vue tamanho="11">
           <span class="black-text">
@@ -62,7 +64,7 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'CardContentVue',
-  props:['id','perfil','nome','data','totallikes','likecontent','totalcomments'],
+  props:['id','perfil','nome','data','totallikes','likecontent','totalcomments', 'userId'],
   data () {
     return {
       like: this.likecontent ? 'favorite' : 'favorite_border',

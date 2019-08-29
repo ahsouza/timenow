@@ -34,6 +34,7 @@
         :totallikes="item.total_likes"
         :totalcomments="item.total_comments"
         :likecontent="item.like_content"
+        :userId="item.user.id"
         :perfil="item.user.avatar"
         :nome="item.user.name"
         :data="item.date">
