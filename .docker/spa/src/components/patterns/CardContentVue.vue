@@ -5,13 +5,13 @@
     <div class="card-content">
       <div class="row valign-wrapper">
         <grid-vue tamanho="1">
-          <router-link :to="'/user/' + userId">
+          <router-link :to="'/user/' + userId + '/' + $slug(user.name, {lower: true})">
             <img :src="perfil" :alt="nome" class="circle responsive-img">
           </router-link>  
         </grid-vue>
         <grid-vue tamanho="11">
           <span class="black-text">
-            <router-link :to="'/user/' + userId"><strong>{{nome}}</strong></router-link> - <small>{{data}}</small>
+            <router-link :to="'/user/' + userId + '/' + $slug(user.name, {lower: true})"><strong>{{nome}}</strong></router-link> - <small>{{data}}</small>
           </span>
         </grid-vue>
       </div>
