@@ -106,18 +106,18 @@ class ContentController extends Controller {
 		$content = Content::find($id);
 
 		// Validação
-		// $validacao = Validator::make($data, [
-		//    'text' => 'required',
-		// ]);
+		$validacao = Validator::make($data, [
+		   'text' => 'required',
+		]);
 
-		// if ($validacao->fails()) {
+		if ($validacao->fails()) {
 
-		// 	return [
-		// 	  'status' => false, 
-		// 	  "validacao" => true, 
-		// 	  "erros" => $validacao->errors()
-		// 	];
-		// }
+			return [
+			  'status' => false, 
+			  "validacao" => true, 
+			  "erros" => $validacao->errors()
+			];
+		}
 		//
 
 
