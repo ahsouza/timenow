@@ -10,7 +10,7 @@
       <small>{{user.name}}</small>
       <br><br>
 
-      <div>
+      <div style="padding-bottom: 35%">
         <vs-tabs :color="colorx" class="animated fadeIn">
 
           <!-- ALTERAR DADOS PESSOAIS -->
@@ -28,11 +28,12 @@
             <br><br>
             <label>Nova Senha</label>
             <input type="password" placeholder="Confirme sua senha" v-model="password_confirmation">
+            <br><br>
             
           </vs-tab>
           
           <!-- ALTERAR IMAGEM AVATAR -->
-          <vs-tab label="Alterar Imagem" icon="photo" @click="colorx = '#8B0000'">
+          <vs-tab label="Alterar Avatar" icon="photo" @click="colorx = '#8B0000'">
             <br><br><br>
             <div class="file-field input-field">      
               <a class="btn-small waves-effect waves-light purple">
@@ -44,14 +45,12 @@
                 <input class="file-path validate" type="text">
               </div>
             </div>
-            <br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br>
           </vs-tab>
 
         </vs-tabs>
+        <vs-button color="primary" style="margin-left: 50%" type="gradient" icon="refresh" v-on:click="profile()">Atualizar</vs-button>
       </div>
-
-        <br>
-        <button class="btn light-blue" v-on:click="profile()">ATUALIZAR</button>
 
     </span>
 
