@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\content;
+use App\User;
 use Illuminate\Support\Facades\Validator;
 
 class ContentController extends Controller {
@@ -29,6 +30,38 @@ class ContentController extends Controller {
 		}
 
 		return ['status' => true, 'contents' => $contents];
+	}
+
+	// ****************************************
+	// ***** LISTANDO CONTEÚDOS DO USUÁRIO ****
+	// ****************************************
+
+	public function pageUser($id, Request $request) {
+
+		$userPage = User::find($id);
+
+		if($userPage) {
+			$contents = $userPage->contents()->with('user')->orderBy('date', 'DESC')->paginate(5);
+			$user = $request->user();
+
+			foreach ($contents as $key => $content) {
+			  $content->total_likes = $content->likes()->count();
+			  $content->total_comments = $content->comments()->with('user')->get();
+			  $like = $user->likes()->find($content->id);
+
+			  if ($like) {
+			    $content->like_content = true;
+			  } else {
+			    $content->like_content = false;
+			  }
+			}
+
+			return ['status' => true, 'contents' => $contents];
+		} else {
+
+			return ['status' => false, 'errp' => 'Usuário não existe'];
+		}
+
 	}
 
     // ****************************************
