@@ -9,6 +9,7 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'vuesax/dist/vuesax.css'
 import 'material-icons/iconfont/material-icons.css'
+import slug from 'slug'
 
 library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -46,6 +47,7 @@ Vue.use(Vuesax, {
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Vue.prototype.$url = 'http://127.0.0.1:8000/api/'
+Vue.prototype.$slug = slug
 
 const store = {
   state: {
