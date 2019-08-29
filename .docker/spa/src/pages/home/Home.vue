@@ -40,8 +40,11 @@
           :txt="item.text"
           :link="item.link"/>
       </card-content-vue>
+      <!-- <button @click="loadingPagination" v-if="urlNextPage" class="btn blue">ver mais...</button> -->
+      <div v-scroll="handleScroll">
 
-      <button @click="loadingPagination" v-if="urlNextPage" class="btn blue">ver mais...</button>
+      </div>
+      
     </span>
 
   </SiteTemplate>
@@ -60,7 +63,8 @@ export default {
   data() {
     return {
       user: false,
-      urlNextPage: null
+      urlNextPage: null,
+      stopScroll: false
     }
   },
   components: {
@@ -90,6 +94,21 @@ export default {
     }
   },
   methods: {
+    handleScroll() {
+      // console.log(window.scrollY)
+      // console.log(document.body.clientHeight)
+
+
+      if(this.stopScroll) {
+        return;
+      }
+      if(window.scrollY >= document.body.clientHeight - 950) {
+        this.stopScroll = true
+        this.loadingPagination()
+      }
+
+
+    },
     loadingPagination() {
       if (!this.urlNextPage) {
         return;
@@ -100,6 +119,7 @@ export default {
           if(res.data.status) {
             this.$store.commit('setPaginationContentsTimeLine', res.data.contents.data)
             this.urlNextPage = res.data.contents.next_page_url
+            this.stopScroll = false
           }
 
         }).catch(e => {
