@@ -6,15 +6,14 @@
 
       <div class="row valign-wrapper">  
         <grid-vue tamanho="1 l6 m12">
-          <img :src="user.avatar" :alt="user.name" width="75" class="circle responsive-img">
+          <img :src="adminPage.avatar" :alt="adminPage.name" width="75" class="circle responsive-img">
 
           <vs-icon icon="child_care" size="small" color="red"></vs-icon>
         </grid-vue>
 
-
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <h6>{{user.name}}</h6>
+            <h6>{{adminPage.name}}</h6>
           </span>
         </grid-vue>
 
@@ -64,7 +63,8 @@ export default {
     return {
       user: false,
       urlNextPage: null,
-      stopScroll: false
+      stopScroll: false,
+      adminPage: { avatar: '', name: ''}
     }
   },
   components: {
@@ -84,6 +84,8 @@ export default {
 
           if(res.data.status) {
             this.$store.commit('setContentsTimeLine', res.data.contents.data)
+            this.urlNextPage = res.data.contents.next_page_url
+            this.adminPage =  res.data.adminPage
 
           }
 

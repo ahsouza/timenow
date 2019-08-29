@@ -84,6 +84,7 @@ export default {
 
           if(res.data.status) {
             this.$store.commit('setContentsTimeLine', res.data.contents.data)
+            this.urlNextPage = res.data.contents.next_page_url
 
           }
 
