@@ -6,14 +6,17 @@
 
       <div class="row valign-wrapper">  
         <grid-vue tamanho="1 l6 m12">
-          <img :src="adminPage.avatar" :alt="adminPage.name" width="75" class="circle responsive-img">
-
+          <router-link :to="'/user/' + adminPage.id">
+            <img :src="adminPage.avatar" :alt="adminPage.name" width="75" class="circle responsive-img">
+          </router-link>
           <vs-icon icon="child_care" size="small" color="red"></vs-icon>
         </grid-vue>
 
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <h6>{{adminPage.name}}</h6>
+            <router-link :to="'/user/' + adminPage.id">
+              <h6>{{adminPage.name}}</h6>
+            </router-link>  
           </span>
         </grid-vue>
 

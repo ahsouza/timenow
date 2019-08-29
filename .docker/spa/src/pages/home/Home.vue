@@ -6,15 +6,18 @@
 
       <div class="row valign-wrapper">  
         <grid-vue tamanho="1 l6 m12">
-          <img :src="user.avatar" :alt="user.name" width="75" class="circle responsive-img">
-
+          <router-link :to="'/user/' + user.id">
+            <img :src="user.avatar" :alt="user.name" width="75" class="circle responsive-img">
+          </route-link>
           <vs-icon icon="child_care" size="small" color="red"></vs-icon>
         </grid-vue>
 
 
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <h6>{{user.name}}</h6>
+            <router-link :to="'/user/' + user.id">
+              <h6>{{user.name}}</h6>
+            </route-link>  
           </span>
         </grid-vue>
 
