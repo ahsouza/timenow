@@ -79,7 +79,7 @@ export default {
 
     if(userSession) {
       this.user = this.$store.getters.getUser
-      this.$http.get(this.$url + `content/list`, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
+      this.$http.get(this.$url + `user/page/contents/` + this.$route.params.id, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
         .then(res => {
 
           if(res.data.status) {
