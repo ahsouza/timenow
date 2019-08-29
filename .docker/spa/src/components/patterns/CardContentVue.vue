@@ -24,7 +24,7 @@
           <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
         </a>
         <a style="cursor: pointer; color: #076305;" @click="openComment()">
-          <i class="material-icons" style="color: #076305">question_answer</i>{{totalcomments.length}}
+          <i class="material-icons" style="color: #076305">question_answer</i>{{listComments.length}}
         </a>
       </p>
 
@@ -68,7 +68,8 @@ export default {
       like: this.likecontent ? 'favorite' : 'favorite_border',
       totalLikes: this.totallikes,
       textComment: '',
-      showComment: false
+      showComment: false,
+      listComments: this.totalcomments || []
 
     }
   },
