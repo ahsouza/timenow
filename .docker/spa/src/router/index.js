@@ -15,6 +15,7 @@ import TasksConfirmed from '@/pages/tasks/confirmed/TasksConfirmed'
 import TasksPending from '@/pages/tasks/pending/TasksPending'
 import Settings from '@/pages/settings/Settings'
 import Profile from '@/pages/profile/Profile'
+import PageUser from '@/pages/user/PageUser'
 import NotFound from '@/pages/404/NotFound'
 
 Vue.use(Router)
@@ -41,6 +42,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/user/:id/:name?',
+      name: 'PageUser',
+      component: PageUser
     },
     {
       path: '/messages',
