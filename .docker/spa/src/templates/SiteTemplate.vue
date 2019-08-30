@@ -111,8 +111,6 @@ export default {
       this.user = false
       this.$router.push('/login')
     },
-
-
     messagesRoute() {
       this.$router.push('/messages')
     },

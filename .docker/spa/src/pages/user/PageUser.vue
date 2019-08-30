@@ -6,7 +6,7 @@
 
       <div class="row valign-wrapper">  
         <grid-vue tamanho="1 l6 m12">
-          <router-link :to="'/user/' + adminPage.id + '/' + $slug(user.name, {lower: true})">
+          <router-link :to="'/user/' + adminPage.id + '/' + $slug(nome, {lower: true})">
             <img :src="adminPage.avatar" :alt="adminPage.name" width="75" class="circle responsive-img">
           </router-link>
           <vs-icon icon="child_care" size="small" color="red"></vs-icon>
@@ -14,7 +14,7 @@
 
         <grid-vue tamanho="1 l6 m6" class="about-avatar">
           <span class="black-text">
-            <router-link :to="'/user/' + adminPage.id + '/' + $slug(user.name, {lower: true})">
+            <router-link :to="'/user/' + adminPage.id + '/' + $slug(nome, {lower: true})">
               <h6>{{adminPage.name}}</h6>
             </router-link>  
           </span>
@@ -83,7 +83,7 @@ export default {
 
     if(userSession) {
       this.user = this.$store.getters.getUser
-      this.$http.get(this.$url + `user/page/contents/` + this.$route.params.id, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
+      this.$http.get(this.$url + `user/` + this.$route.params.id, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
         .then(res => {
 
           if(res.data.status) {
