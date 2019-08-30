@@ -65,7 +65,7 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'CardContentVue',
-  props:['id','perfil','nome','data','totallikes','likecontent','totalcomments', 'userId'],
+  props: ['id','perfil','nome','data','totallikes','likecontent','totalcomments', 'userId'],
   data () {
     return {
       like: this.likecontent ? 'favorite' : 'favorite_border',

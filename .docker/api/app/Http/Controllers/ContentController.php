@@ -59,7 +59,7 @@ class ContentController extends Controller {
 			return ['status' => true, 'contents' => $contents, 'adminPage' => $userPage];
 		} else {
 
-			return ['status' => false, 'errp' => 'Usuário não existe'];
+			return ['status' => false, 'erro' => 'Usuário não existe'];
 		}
 
 	}
