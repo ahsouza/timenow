@@ -66,7 +66,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      user: false,
+      user: {avatar: '', name: ''},
       urlNextPage: null,
       stopScroll: false
     }
