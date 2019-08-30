@@ -6,9 +6,10 @@
 
       <div class="row valign-wrapper">  
         <grid-vue tamanho="1 l6 m12">
+
           <router-link :to="'/user/' + user.id + '/' + $slug(user.name, {lower: true})">
             <img :src="user.avatar" :alt="user.name" width="75" class="circle responsive-img">
-          </route-link>
+          </router-link>
           <vs-icon icon="child_care" size="small" color="red"></vs-icon>
         </grid-vue>
 
@@ -17,7 +18,7 @@
           <span class="black-text">
             <router-link :to="'/user/' + user.id + '/' + $slug(user.name, {lower: true})">
               <h6>{{user.name}}</h6>
-            </route-link>  
+            </router-link>  
           </span>
         </grid-vue>
 
