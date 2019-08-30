@@ -13,4 +13,4 @@ Route::get('/content/list', 'ContentController@listContent')->middleware('auth:a
 Route::put('/content/liked/{id}', 'ContentController@likedContent')->middleware('auth:api');
 Route::put('/content/comment/{id}', 'ContentController@commentContent')->middleware('auth:api');
 
-Route::get('/user/{id}', 'ContentController@pageUser')->middleware('auth:api');
+Route::get('/content/user/{id}', 'ContentController@pageUser')->middleware('auth:api');
