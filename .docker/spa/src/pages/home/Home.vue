@@ -1,9 +1,7 @@
 <template>
   
   <SiteTemplate>
-
     <span slot="menu-left">
-
       <div class="row valign-wrapper">  
         <grid-vue tamanho="1 l6 m12">
 
@@ -49,7 +47,6 @@
       <div v-scroll="handleScroll">
 
       </div>
-      
     </span>
 
   </SiteTemplate>
@@ -103,8 +100,6 @@ export default {
     handleScroll() {
       // console.log(window.scrollY)
       // console.log(document.body.clientHeight)
-
-
       if(this.stopScroll) {
         return;
       }
@@ -122,7 +117,7 @@ export default {
       this.$http.get(this.urlNextPage, {"headers": {"authorization": "Bearer " + this.$store.getters.getToken}})
         .then(res => {
 
-          if(res.data.status) {
+          if(res.data.status && this.$route.name == 'Home') {
             this.$store.commit('setPaginationContentsTimeLine', res.data.contents.data)
             this.urlNextPage = res.data.contents.next_page_url
             this.stopScroll = false
