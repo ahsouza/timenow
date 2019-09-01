@@ -157,6 +157,9 @@ export default {
       this.user = JSON.parse(userSession)
     }
   },
+  beforeCreate() {
+    console.log("Before Create!")
+  },
   methods: {
     recordOn() {
       this.record = false

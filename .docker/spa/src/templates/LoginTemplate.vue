@@ -62,6 +62,9 @@ export default {
       description: 'Especialista em gerenciamento de empreendimentos e obras industriais. Gestão de portfólio de projetos, gerenciamento de implantação de projetos e gestão '
     }
   },
+  beforeCreate() {
+    console.log("Before Create!")
+  },
   created() {
 
     let userSession = this.$store.getters.getUser

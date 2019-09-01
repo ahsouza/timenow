@@ -43,7 +43,6 @@
           :txt="item.text"
           :link="item.link"/>
       </card-content-vue>
-      <!-- <button @click="loadingPagination" v-if="urlNextPage" class="btn blue">ver mais...</button> -->
       <div v-scroll="handleScroll">
 
       </div>
@@ -77,6 +76,9 @@ export default {
     CardDetailVue,
     PublicContentVue,
     GridVue
+  },
+  beforeCreate() {
+    console.log("Before Create!")
   },
   created() {
     let userSession = this.$store.getters.getUser

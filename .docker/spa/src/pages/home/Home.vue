@@ -76,6 +76,9 @@ export default {
     PublicContentVue,
     GridVue
   },
+  beforeCreate() {
+    console.log("Before Create!")
+  },
   created() {
     let userSession = this.$store.getters.getUser
 

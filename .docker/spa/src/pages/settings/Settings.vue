@@ -100,31 +100,7 @@
                         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                   </vs-col>
-
-
 
                 </div>
               </vs-tab>
@@ -210,6 +186,9 @@ export default {
         },
       ]
     }
+  },
+  beforeCreate() {
+    console.log("Before Create!")
   },
   created() {
     let userSession = sessionStorage.getItem('user')

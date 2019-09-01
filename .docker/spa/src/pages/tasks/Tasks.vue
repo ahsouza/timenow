@@ -186,6 +186,9 @@ export default {
     SiteTemplate,
     CardDetailVue,
   },
+  beforeCreate() {
+    console.log("Before Create!")
+  },
   created() {
     let userSession = sessionStorage.getItem('user')
     if(userSession) {

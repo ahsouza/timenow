@@ -21,15 +21,6 @@
 
       </div>
 
-      <!-- TEST A - MODELO DE PAINEL PARA SIDEBAR -->
-      <!-- ################################################# -->
-
-
-
-
-      <!-- TEST B - MODELO DE PAINEL PARA SIDEBAR -->
-
-
     </span>
 
     <span slot="main">
@@ -90,6 +81,9 @@ export default {
     CardDetailVue,
     PublicContentVue,
     GridVue
+  },
+  beforeCreate() {
+    console.log("Before Create!")
   },
   created() {
     let userSession = sessionStorage.getItem('user')

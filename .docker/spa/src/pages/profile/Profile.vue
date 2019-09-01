@@ -73,6 +73,9 @@ export default {
       avatar: ''
     }
   },
+  beforeCreate() {
+    console.log("Before Create!")
+  },
   created() {
     let userSession = this.$store.getters.getUser
     
