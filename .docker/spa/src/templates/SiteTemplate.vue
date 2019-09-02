@@ -3,8 +3,6 @@
     <header>
       <nav-bar logo="" url="/dash" cor="white">
         <li v-if="user"><router-link to="/dash">Home</router-link></li>
-
-        <li v-if="!user"><router-link to="/login">Iniciar sessão</router-link></li>
         <li v-if="!user"><router-link to="/register">Cadastre-se</router-link></li>
         <li v-if="user"><router-link to="/messages">Mensagens</router-link></li>
         <li v-if="user"><router-link to="/tasks">Tarefas</router-link></li>
@@ -12,7 +10,7 @@
         <li v-if="user"><router-link to="/groups">Grupos</router-link></li>
         <li v-if="!user"><a href="http://www.timenow.com.br">Nosso Site</a></li>
         
-        <li v-if="user"><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li v-if="user"><router-link to="/settings"><i class="material-icons">settings</i></router-link></li>
         <li v-if="user"><a v-on:click="exit()"><i class="material-icons">exit_to_app</i></a></li>
       </nav-bar>
     </header>
