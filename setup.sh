@@ -128,6 +128,7 @@ ITEM_SELECIONADO=$(zenity --height="360" --width="720" --list --text "Iniciando 
 
 					docker build -t ahsouza/laravel -f laravel.Dockerfile .
 					docker run -d -p 8000:8000 --name timenow-dev-laravel ahsouza/laravel
+					docker exec -it timenow-dev-laravel bash up.sh
 
 					sleep 1s
 					zenity --height="120" --width="300" --info --text "\nImagens construídas com sucesso!"
