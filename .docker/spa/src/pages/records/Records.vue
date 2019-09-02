@@ -45,11 +45,11 @@
             <!-- GRAVAÇÕES REALIZADAS -->
             <vs-list-header title="Gravações Enviadas"></vs-list-header>
 
-            <vs-list-item title="Roberta Monderfani" subtitle="04/08/2019 - 14:11">
+            <vs-list-item title="Morgan Monderfani" subtitle="04/08/2019 - 14:11">
               <vs-avatar color="primary" icon="keyboard_voice"/>
             </vs-list-item>
 
-            <vs-list-item title="Veronika Ossi" subtitle="12/06/2019 - 08:00">
+            <vs-list-item title="Hudson Ossi" subtitle="12/06/2019 - 08:00">
               <vs-avatar color="primary" icon="keyboard_voice"/>
             </vs-list-item>
 
@@ -60,11 +60,11 @@
             <!-- GRAVAÇÕES RECEBIDAS -->
             <vs-list-header title="Gravações Recebidas" color="primary"></vs-list-header>          
 
-            <vs-list-item title="Roberta Monderfani" subtitle="04/08/2019 - 14:59">    
+            <vs-list-item title="Morgan Monderfani" subtitle="04/08/2019 - 14:59">    
               <vs-avatar color="danger" icon="keyboard_voice"/>
             </vs-list-item>              
 
-            <vs-list-item title="Veronika Ossi" subtitle="12/06/2019 - 08:15">
+            <vs-list-item title="Hudson Ossi" subtitle="12/06/2019 - 08:15">
               <vs-avatar color="primary" icon="keyboard_voice"/>
             </vs-list-item>
 

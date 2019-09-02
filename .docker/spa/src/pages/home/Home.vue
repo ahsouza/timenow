@@ -43,7 +43,7 @@
           :txt="item.text"
           :link="item.link"/>
       </card-content-vue>
-      <!-- <button @click="loadingPagination" v-if="urlNextPage" class="btn blue">ver mais...</button> -->
+      <button @click="loadingPagination" v-if="urlNextPage" class="btn blue">ver mais...</button>
       <div v-scroll="handleScroll">
 
       </div>
@@ -106,7 +106,7 @@ export default {
       if(this.stopScroll) {
         return;
       }
-      if(window.scrollY >= document.body.clientHeight - 950) {
+      if (window.scrollY >= document.body.clientHeight - 949) {
         this.stopScroll = true
         this.loadingPagination()
       }
