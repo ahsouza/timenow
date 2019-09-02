@@ -32,6 +32,11 @@
             <vs-avatar @click="recordOff" class="animated pulse" size="100px" color="brown" icon="keyboard_voice"/>
           </div>
 
+
+
+
+
+          <audio id="player" controls></audio>
         </div>
         
 
@@ -167,6 +172,20 @@ export default {
     recordOff() {
       this.record = true
     }
+  },
+  computed() {
+    const player = document.getElementById('player');
+
+    const handleSuccess = function(stream) {
+      if (window.URL) {
+        player.srcObject = stream;
+      } else {
+        player.src = stream;
+      }
+    };
+
+    navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);  
   }
   
 }
