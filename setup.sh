@@ -73,21 +73,23 @@ ITEM_SELECIONADO=$(zenity --height="360" --width="720" --list --text "Iniciando 
     # Caso algum método ágil para desenvolver foi selecionado
 	if [[ "$ITEM_SELECIONADO" ]]; then
 		# Caso método seja equivalente a Imagens
+		# **************************************
+		# ********** UP IMAGENS DOCKER *********
+		# **************************************
 		if [[ "${ITEM_SELECIONADO}" == "Imagens" ]]; then
 
-			IMAGEM_SELECIONADO=$(zenity --height="300" --width="600" --list --text "Escolhendo imagem" \
+			IMAGEM_SELECIONADO=$(zenity --height="300" --width="600" --list --text "Escolha suas imagens Dockerfile" \
 			    --radiolist \
 			    --column "Selecionar" \
 			    --column "Imagens" \
-			    TRUE ahsouza/laravel FALSE ahsouza/vuejs);
+			    TRUE ahsouza/laravel FALSE ahsouza/vuejs FALSE Todas);
 
 			# Caso a imagem foi realmente selecionada
 				if [[ "${IMAGEM_SELECIONADO}" == "ahsouza/laravel" ]]; then
 
-
 					sleep 1s
 					zenity --height="120" --width="360" --notification --text "\Construindo ${IMAGEM_SELECIONADO}..."
-					echo "Building imagem...\n" "info";
+
 					echo "Building ${IMAGEM_SELECIONADO}..." "info";
 					docker build -t ${IMAGEM_SELECIONADO} -f laravel.Dockerfile .
 					#docker run -d --name ahsouza -v $(pwd):/var/www -p 8000:8000 ahsouza/laravel-5.8
@@ -105,7 +107,6 @@ ITEM_SELECIONADO=$(zenity --height="360" --width="720" --list --text "Iniciando 
 					sleep 1s
 					zenity --height="120" --width="360" --notification --text "\Construindo ${IMAGEM_SELECIONADO}..."
 
-					echo "Building imagem...\n" "info";
 					echo "Building ${IMAGEM_SELECIONADO}..." "info";
 					docker build -t ${IMAGEM_SELECIONADO} -f vue.Dockerfile .
 					#docker run -d --name ahsouza -v $(pwd):/var/www -p 8000:8000 ahsouza/vuejs
@@ -115,13 +116,31 @@ ITEM_SELECIONADO=$(zenity --height="360" --width="720" --list --text "Iniciando 
 					sleep 1s
 					zenity --height="120" --width="300" --info --text "\nImagem <b>${IMAGEM_SELECIONADO}</b> \n\construida com sucesso!"
 
+				elif [[ "${IMAGEM_SELECIONADO}" == "Todas" ]]; then
+
+					sleep 1s
+					zenity --height="120" --width="360" --notification --text "\Construindo API Laravel & SPA Vue..."	
+
+					echo "Building API & SPA..."
+					
+					docker build -t ahsouza/vuejs -f vue.Dockerfile .
+					docker run -d -p 8080:8080 --name timenow-dev-vue ahsouza/vuejs
+
+					docker build -t ahsouza/laravel -f laravel.Dockerfile .
+					docker run -d -p 8000:8000 --name timenow-dev-laravel ahsouza/laravel
+
+					sleep 1s
+					zenity --height="120" --width="300" --info --text "\nImagens construídas com sucesso!"
+
 				else
 					# Caso nenhum. Saia!
 					exit 0
 				fi
 			fi
 		else
-
+			# **************************************
+			# ********* UP SERVICES DOCKER *********
+			# **************************************
 			SERVICE_SELECIONADO=$(zenity --height="300" --width="600" --list --text "Ativando serviços" \
 			--checklist \
 			--column "Selecionar" \
