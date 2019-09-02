@@ -23,8 +23,8 @@
 
     <div class="card-action">
       <p>
-        <a style="cursor: pointer; color: red" @click="liked(id)">
-          <i class="material-icons" style="color: red">{{ like }}</i>{{totalLikes}}
+        <a style="cursor: pointer; color: blue" @click="liked(id)">
+          <i class="material-icons" style="color: blue">{{ like }}</i>{{totalLikes}}
         </a>
         <a style="cursor: pointer; color: #076305;" @click="openComment()">
           <i class="material-icons" style="color: #076305">question_answer</i>{{listComments.length}}
@@ -68,7 +68,7 @@ export default {
   props: ['id','perfil','nome','data','totallikes','likecontent','totalcomments', 'userId'],
   data () {
     return {
-      like: this.likecontent ? 'favorite' : 'favorite_border',
+      like: this.likecontent ? 'how_to_reg' : 'person_add',
       totalLikes: this.totallikes,
       textComment: '',
       showComment: false,
@@ -89,10 +89,10 @@ export default {
             this.totalLikes = res.data.likes
             this.$store.commit('setContentsTimeLine', res.data.list.contents.data)
 
-            if (this.like == 'favorite_border') {
-              this.like = 'favorite'
+            if (this.like == 'person_add') {
+              this.like = 'how_to_reg'
             } else {
-              this.like = 'favorite_border'
+              this.like = 'person_add'
             }
 
           } else {
