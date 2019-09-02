@@ -36,16 +36,6 @@ ADD .docker/api/ /var/www
 #VOLUME .docker/api/:/var/www
 COPY up.sh /var/www
 RUN ln -s public html
-
-#RUN composer update --no-plugins --no-scripts
-    # && php artisan key:generate \
-    # && php artisan cache:clear \
-    # && chmod -R 775 storage
-
-#WORKDIR /usr/local/etc/php/conf.d
-
-
-
 # ## Prod
 # FROM php:7.3.6-fpm-alpine3.9
 # RUN apk add --no-cache mysql-client

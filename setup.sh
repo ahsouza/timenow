@@ -21,7 +21,7 @@ export CONTAINER=$(docker ps -a --format "{{.Names}}")
 		    --radiolist  \
 		    --column "" \
 		    --column "Excluir" \
-		    FALSE $CONTAINER FALSE Apagar-Tudo);
+		    TRUE Apagar-Tudo FALSE $CONTAINER);
 
 		    # Caso a exclusão foi para containers; então
 			if [[ "${DELETE}" == "${CONTAINER}" ]]; then
