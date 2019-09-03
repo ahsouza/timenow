@@ -10,6 +10,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'vuesax/dist/vuesax.css'
 import 'material-icons/iconfont/material-icons.css'
 import slug from 'slug'
+import VueJQuery from 'vue-jquery'
+
+Vue.use(VueJQuery)
 
 library.add(faUserSecret)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

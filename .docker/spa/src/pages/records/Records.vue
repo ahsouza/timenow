@@ -173,19 +173,16 @@ export default {
       this.record = true
     }
   },
-  computed() {
-    const player = document.getElementById('player');
-
-    const handleSuccess = function(stream) {
-      if (window.URL) {
-        player.srcObject = stream;
-      } else {
-        player.src = stream;
-      }
-    };
-
-    navigator.mediaDevices.getUserMedia({ audio: true, video: false })
-      .then(handleSuccess);  
+  beforeMounted() {
+    console.log('M<ounted')
+  },
+  mounted() {
+    $(function() {
+      navigator
+        .mediaDevices
+        .getUserMedia({ audio: true, video: false })
+        .then(handleSuccess)
+    })
   }
   
 }
