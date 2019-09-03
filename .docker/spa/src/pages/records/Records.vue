@@ -178,10 +178,40 @@ export default {
   },
   mounted() {
     $(function() {
+      let mediaRecorder
+      let chunks = []
+
       navigator
         .mediaDevices
-        .getUserMedia({ audio: true, video: false })
-        .then(handleSuccess)
+          .getUserMedia({ audio: true, video: false })
+
+          .then( stream => {
+            mediaRecorder = new MediaRecorder(stream)
+
+            mediaRecorder.ondataavailable = data => {
+              chunks.push(data.data)
+            }
+
+            mediaRecorder.onstop = () => {
+              const blob = new Blob(chunks, { type: 'audio/ogg; code=opus'})
+
+              const reader = new window.FileReader()
+              reader.readAsDataURL(blob)
+              reader.onloadend = () => {
+                const audio = document.createElement('audio')
+                audio.src = reader.result
+                $('body').append(audio)
+              }
+
+            } 
+
+            mediaRecorder.start()
+            setTimeout(() => mediaRecorder.stop(), 3000)
+
+          }, err => {
+            alert('Você precisa permitir o microfone para gravações de voz')
+          })
+
     })
   }
   
