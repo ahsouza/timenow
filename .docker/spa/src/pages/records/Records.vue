@@ -36,7 +36,7 @@
 
 
 
-          <audio id="player" controls></audio>
+          <button type="button" id="btn-record">Gravar</button>
         </div>
         
 
@@ -184,7 +184,7 @@ export default {
       navigator
         .mediaDevices
           .getUserMedia({ audio: true, video: false })
-
+          
           .then( stream => {
             mediaRecorder = new MediaRecorder(stream)
 
@@ -200,18 +200,30 @@ export default {
               reader.onloadend = () => {
                 const audio = document.createElement('audio')
                 audio.src = reader.result
+                audio.controls = true
                 $('body').append(audio)
               }
-
             } 
 
-            mediaRecorder.start()
-            setTimeout(() => mediaRecorder.stop(), 3000)
 
           }, err => {
             alert('Você precisa permitir o microfone para gravações de voz')
           })
+          
+          $('#btn-record').click(function() {
 
+            if ($(this).text() === 'Gravar') {
+              
+              mediaRecorder.start()
+              $(this).text('Parar')
+
+            } else {
+              
+              mediaRecorder.stop()
+              $(this).text('Gravar')
+            }
+
+          })
     })
   }
   
