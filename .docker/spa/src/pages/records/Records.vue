@@ -181,49 +181,47 @@ export default {
       let mediaRecorder
       let chunks = []
 
-      navigator
-        .mediaDevices
-          .getUserMedia({ audio: true, video: false })
-          
-          .then( stream => {
-            mediaRecorder = new MediaRecorder(stream)
+        navigator
+          .mediaDevices
+            .getUserMedia({ audio: true, video: false })
 
-            mediaRecorder.ondataavailable = data => {
-              chunks.push(data.data)
-            }
+            .then( stream => {
+              mediaRecorder = new MediaRecorder(stream)
 
-            mediaRecorder.onstop = () => {
-              const blob = new Blob(chunks, { type: 'audio/ogg; code=opus'})
-
-              const reader = new window.FileReader()
-              reader.readAsDataURL(blob)
-              reader.onloadend = () => {
-                const audio = document.createElement('audio')
-                audio.src = reader.result
-                audio.controls = true
-                $('body').append(audio)
+              mediaRecorder.ondataavailable = data => {
+                chunks.push(data.data)
               }
-            } 
 
+              mediaRecorder.onstop = () => {
+                const blob = new Blob(chunks, { type: 'audio/ogg; code=opus'})
 
-          }, err => {
-            alert('Você precisa permitir o microfone para gravações de voz')
-          })
-          
-          $('#btn-record').click(function() {
+                const reader = new window.FileReader()
+                reader.readAsDataURL(blob)
+                reader.onloadend = () => {
+                  const audio = document.createElement('audio')
+                  audio.src = reader.result
+                  audio.controls = true
+                  $('body').append(audio)
+                }
+              } 
 
-            if ($(this).text() === 'Gravar') {
-              
-              mediaRecorder.start()
-              $(this).text('Parar')
+            }, err => {
+              alert('Você precisa permitir o microfone para gravações de voz')
+            })
+              $('#btn-record').click(function() {
+                alert($(this).attr('color'))
+                if ($(this).attr("color") === "purple") {
+                  alert('funcionando')
+                  mediaRecorder.start()
+                  $(this).attr('color', 'brown')
+                  //$(this).text('PARAR')
+                } else {
 
-            } else {
-              
-              mediaRecorder.stop()
-              $(this).text('Gravar')
-            }
+                  mediaRecorder.stop()
+                  //$(this).text('GRAVAR')
+                }
 
-          })
+              })
     })
   }
   
