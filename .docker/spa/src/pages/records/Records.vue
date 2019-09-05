@@ -25,7 +25,17 @@
         
         <div class="col s6 m6 l6">
 
-          <a id="btn-record" class="btn-floating btn-large waves-effect waves-light red"><i id="icon-record" class="material-icons">mic</i></a>
+          <a id="btn-record" class="btn-floating btn-large waves-effect waves-light purple darken-1"><i id="icon-record" class="material-icons">mic</i></a>
+
+  
+
+
+
+
+
+
+
+          
 
         </div>
         
@@ -35,6 +45,22 @@
         ****************************************************** -->
 
         <div class="col s6 m6 l6 animated fadeInRight list-voices-friends"> 
+
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                Reproduzir Gravação  <i class="material-icons right">more_vert</i>
+              </span>
+              
+            </div>
+            <div class="card-reveal">
+              <span id="span-reveal" class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+            </div>
+          </div>
+
+
+
+
 
           <vs-list style="overflow-y: scroll; overflow-x: hidden; height: 340px;">
             <!-- GRAVAÇÕES REALIZADAS -->
@@ -189,7 +215,7 @@ export default {
                     const audio = document.createElement('audio')
                     audio.src = reader.result
                     audio.controls = true
-                    $('body').append(audio)
+                    $('#span-reveal').append(audio)
                   }
                 } 
 
@@ -203,13 +229,13 @@ export default {
                   
                   mediaRecorder.start()
                   $('#btn-record').addClass('animated pulse')
-                  $('#btn-record').removeClass('red').addClass('blue')
+                  $('#btn-record').removeClass('purple darken-1').addClass('pink darken-1')
                   $('#icon-record').text('mic_off')
                 } else {
 
                   mediaRecorder.stop()
                   $('#btn-record').removeClass('animated pulse')
-                  $('#btn-record').removeClass('blue').addClass('red')
+                  $('#btn-record').removeClass('pink darken-1').addClass('purple darken-1')
                   $('#icon-record').text('mic')
                 }
 
