@@ -24,19 +24,9 @@
       <div class="row" style="margin-top: 18%">
         
         <div class="col s6 m6 l6">
-          <div v-if="record">
-            <vs-avatar @click="recordOn" class="animated fadeIn" size="100px" color="purple" icon="keyboard_voice"/>
-            
-          </div>
-          <div v-else>
-            <vs-avatar @click="recordOff" class="animated pulse" size="100px" color="brown" icon="keyboard_voice"/>
-          </div>
 
+          <a id="btn-record" class="btn-floating btn-large waves-effect waves-light red"><i id="icon-record" class="material-icons">mic</i></a>
 
-
-
-
-          <button type="button" id="btn-record">Gravar</button>
         </div>
         
 
@@ -133,6 +123,7 @@
   
 </template>
 
+
 <script>
 import SiteTemplate from '@/templates/SiteTemplate'
 import CardContentVue from '@/components/patterns/CardContentVue'
@@ -141,6 +132,11 @@ import PublicContentVue from '@/components/patterns/PublicContentVue'
 import GridVue from '@/components/layouts/GridVue'
 
 export default {
+  head: {
+    script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' },
+    ]
+  },
   name: 'Records',
   data() {
     return {
@@ -166,63 +162,59 @@ export default {
     console.log("Before Create!")
   },
   methods: {
-    recordOn() {
-      this.record = false
-    },
-    recordOff() {
-      this.record = true
-    }
-  },
-  beforeMounted() {
-    console.log('M<ounted')
+
   },
   mounted() {
     $(function() {
-      let mediaRecorder
-      let chunks = []
+        let mediaRecorder
+        let chunks = []
 
-        navigator
-          .mediaDevices
-            .getUserMedia({ audio: true, video: false })
+          navigator
+            .mediaDevices
+              .getUserMedia({ audio: true, video: false })
 
-            .then( stream => {
-              mediaRecorder = new MediaRecorder(stream)
+              .then( stream => {
+                mediaRecorder = new MediaRecorder(stream)
 
-              mediaRecorder.ondataavailable = data => {
-                chunks.push(data.data)
-              }
-
-              mediaRecorder.onstop = () => {
-                const blob = new Blob(chunks, { type: 'audio/ogg; code=opus'})
-
-                const reader = new window.FileReader()
-                reader.readAsDataURL(blob)
-                reader.onloadend = () => {
-                  const audio = document.createElement('audio')
-                  audio.src = reader.result
-                  audio.controls = true
-                  $('body').append(audio)
+                mediaRecorder.ondataavailable = data => {
+                  chunks.push(data.data)
                 }
-              } 
 
-            }, err => {
-              alert('Você precisa permitir o microfone para gravações de voz')
-            })
+                mediaRecorder.onstop = () => {
+                  const blob = new Blob(chunks, { type: 'audio/ogg; code=opus'})
+
+                  const reader = new window.FileReader()
+                  reader.readAsDataURL(blob)
+                  reader.onloadend = () => {
+                    const audio = document.createElement('audio')
+                    audio.src = reader.result
+                    audio.controls = true
+                    $('body').append(audio)
+                  }
+                } 
+
+
+              }, err => {
+                alert('Você precisa permitir o microfone para gravações de voz')
+              })
               $('#btn-record').click(function() {
-                alert($(this).attr('color'))
-                if ($(this).attr("color") === "purple") {
-                  alert('funcionando')
+
+                if ($('#icon-record').text() === "mic") {
+                  
                   mediaRecorder.start()
-                  $(this).attr('color', 'brown')
-                  //$(this).text('PARAR')
+                  $('#btn-record').addClass('animated pulse')
+                  $('#btn-record').removeClass('red').addClass('blue')
+                  $('#icon-record').text('mic_off')
                 } else {
 
                   mediaRecorder.stop()
-                  //$(this).text('GRAVAR')
+                  $('#btn-record').removeClass('animated pulse')
+                  $('#btn-record').removeClass('blue').addClass('red')
+                  $('#icon-record').text('mic')
                 }
 
               })
-    })
+        })
   }
   
 }
