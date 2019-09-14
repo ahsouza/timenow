@@ -34,3 +34,11 @@ Building...
 
 
 Now just access from your favorite browser: http://localhost:8080
+
+![alt](https://github.com/ahsouza/timenow/blob/master/assets/dash.png)
+
+![alt](https://github.com/ahsouza/timenow/blob/master/assets/profile.png)
+
+![alt](https://github.com/ahsouza/timenow/blob/master/assets/friends.png)
+
+![alt](https://github.com/ahsouza/timenow/blob/master/assets/side.png)
